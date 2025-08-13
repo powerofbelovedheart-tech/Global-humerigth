@@ -1,0 +1,19 @@
+<nav>
+  <button id="lang-no">NO</button>
+  <button id="lang-en">EN</button>
+</nav>
+
+<h1 data-no="GA-13: Hjerte for menneskerettigheter"
+    data-en="GA-13: Heart for Human Rights"></h1>
+
+<script>
+const setLang = l => {
+  localStorage.setItem('lang', l);
+  document.querySelectorAll('[data-no]').forEach(el=>{
+    el.textContent = l==='en' ? el.dataset.en : el.dataset.no;
+  });
+};
+document.getElementById('lang-no').onclick=()=>setLang('no');
+document.getElementById('lang-en').onclick=()=>setLang('en');
+setLang(localStorage.getItem('lang')||'no');
+</script>
