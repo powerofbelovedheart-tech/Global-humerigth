@@ -3,213 +3,288 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GA-13 – Global Human Rights Network</title>
-  <meta name="description" content="GA-13 er et nøytralt nettverk for menneskerett, juridisk førstehjelp, økonomisk støtte, utdanning og trygg teknologi – på norsk og engelsk."/>
+  <title>GA-13 • Global Human Rights Network</title>
+  <meta name="description" content="GA-13: Menneskerettigheter i praksis – juridisk støtte, utdanning og trygg teknologi for barn, familier og samfunn." />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<header class="site-header">
-  <div class="container header-row">
-    <a href="#" class="brand" aria-label="GA-13 Home">
-      <span class="brand-mark">GA-13</span>
-      <span class="brand-sub" data-i18n="tagline">Global Human Rights Network</span>
-    </a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">GA-13</span>
+        <span class="brand-sub">Global Human Rights Network</span>
+      </a>
 
-    <nav class="main-nav" aria-label="Hovedmeny">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">☰</button>
-      <ul id="nav-list">
-        <li><a href="#mission" data-i18n="nav.mission">Vårt oppdrag</a></li>
-        <li><a href="#pillars" data-i18n="nav.pillars">Kjerneområder</a></li>
-        <li><a href="#help" data-i18n="nav.help">Hjelp meg nå</a></li>
-        <li><a href="#learn" data-i18n="nav.learn">Lær & kurs</a></li>
-        <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
-      </ul>
-    </nav>
+      <nav class="main-nav" aria-label="Hovedmeny">
+        <button class="nav-toggle" aria-controls="nav" aria-expanded="false">☰</button>
+        <ul id="nav">
+          <li><a href="#mission">Visjon</a></li>
+          <li><a href="#pillars">Kjerneområder</a></li>
+          <li><a href="#help">Hjelp meg nå</a></li>
+          <li><a href="#education">Utdanning</a></li>
+          <li><a href="#legal">Juridisk</a></li>
+          <li><a href="#community">Fellesskap</a></li>
+        </ul>
+      </nav>
 
-    <div class="lang-switch" role="group" aria-label="Språk">
-      <button data-lang="no" class="active">NO</button>
-      <button data-lang="en">EN</button>
-    </div>
-  </div>
-</header>
-
-<main>
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1 data-i18n="hero.title">Menneskelighet er en rett – ikke noe du må bevise</h1>
-      <p class="lead" data-i18n="hero.text">
-        GA-13 samler mennesker, verktøy og kunnskap for å beskytte rettigheter, gi rask hjelp og bygge trygg fremtid med teknologi.
-      </p>
-      <div class="hero-actions">
-        <a href="#help" class="btn primary" data-i18n="hero.cta">Hjelp meg nå</a>
-        <a href="#pillars" class="btn ghost" data-i18n="hero.secondary">Utforsk kjerneområdene</a>
+      <div class="lang-switch" aria-label="Språk">
+        <button data-lang="no" class="active">NO</button>
+        <button data-lang="en">EN</button>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- Mission -->
-  <section id="mission" class="section">
-    <div class="container">
-      <h2 data-i18n="mission.title">Vårt oppdrag</h2>
-      <p data-i18n="mission.text">
-        Vi forbedrer verden – praktisk, ikke politisk. Plattformen er nøytral, åpen og menneskefokusert. 
-        Den gjør det enkelt å dokumentere, forstå rettigheter, få veiledning på minutter og koble deg til ekte hjelp.
-      </p>
-      <ul class="bullets">
-        <li data-i18n="mission.b1">Nøytral og inkluderende – ingen skiller etter land, tro eller bakgrunn.</li>
-        <li data-i18n="mission.b2">Rask førstelinjehjelp med AI-støtte (økonomi, jus, skole, teknologi).</li>
-        <li data-i18n="mission.b3">Barnas beste først – trygge læringsløp med digital dømmekraft.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Pillars -->
-  <section id="pillars" class="section alt">
-    <div class="container">
-      <h2 data-i18n="pillars.title">Kjerneområder</h2>
-
-      <div class="pillars-grid">
-        <article class="card">
-          <h3 data-i18n="p1.title">Økonomisk støtte og rettferdighet</h3>
-          <p data-i18n="p1.text">
-            Råd om gjeld, refinansiering og rettigheter. Nettverk av økonomiske fagpersoner. Rapporter ulovlig press, renter og svindel.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3 data-i18n="p2.title">Juridisk bistand</h3>
-          <p data-i18n="p2.text">
-            Maler og verktøy for klager, innsyn og søksmål. Tilknytning til advokater og rettshjelp. Arkiv med lover og konvensjoner.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3 data-i18n="p3.title">Barne- og utdanningsutvikling</h3>
-          <p data-i18n="p3.text">
-            Ressurser for foreldre og skoler. Trygge læringsrom, kreative oppgaver og digital kompetanse fra tidlig alder.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3 data-i18n="p4.title">Samfunnsforbedring</h3>
-          <p data-i18n="p4.text">
-            Plattform for å melde fra om urett, diskriminering og dårlig behandling. Samtale, forslag og samarbeid – uten skittkasting.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3 data-i18n="p5.title">Teknologi & AI for rettigheter</h3>
-          <p data-i18n="p5.text">
-            Trygg bruk av AI til dokumentasjon, innsikt og kommunikasjon. Løsninger som beskytter privatliv og barnas sikkerhet.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3 data-i18n="p6.title">Aktivitets- og kompetansesenter</h3>
-          <p data-i18n="p6.text">
-            Digitale og lokale møteplasser: kurs, idrett, skapende verksted, teknologiverksted og praktisk karrierehjelp.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Help me now -->
-  <section id="help" class="section focus">
-    <div class="container narrow">
-      <h2 data-i18n="help.title">Hjelp meg nå</h2>
-      <p data-i18n="help.text">
-        Beskriv kort hva som skjer. Legg ved stikkord (sted, hvem, hva, barn involvert, dokumenter). 
-        Du kan sende som e-post eller bruke skjemaet under. Ikke vent – skriv nå.
-      </p>
-
-      <form class="help-form" name="helpForm" netlify>
-        <label>
-          <span data-i18n="help.name">Navn (valgfritt)</span>
-          <input type="text" name="name" autocomplete="name"/>
-        </label>
-        <label>
-          <span data-i18n="help.email">E-post for svar</span>
-          <input type="email" name="email" required autocomplete="email"/>
-        </label>
-        <label>
-          <span data-i18n="help.topic">Tema</span>
-          <select name="topic" required>
-            <option value="legal" data-i18n="opt.legal">Juridisk</option>
-            <option value="finance" data-i18n="opt.finance">Økonomi</option>
-            <option value="children" data-i18n="opt.children">Barn/skole</option>
-            <option value="tech" data-i18n="opt.tech">Teknologi</option>
-            <option value="other" data-i18n="opt.other">Annet</option>
-          </select>
-        </label>
-        <label>
-          <span data-i18n="help.message">Hva skjer? (så konkret du klarer)</span>
-          <textarea name="message" rows="8" required></textarea>
-        </label>
-
-        <div class="form-actions">
-          <button class="btn primary" type="submit" data-i18n="help.send">Send</button>
-          <a class="btn ghost" id="mailtoLink" href="#" data-i18n="help.mail">Send via e-post</a>
-        </div>
-
-        <p class="privacy" data-i18n="help.privacy">
-          Personvern: Vi behandler opplysningene fortrolig. Del aldri passord eller sensitiv bankinfo i skjemaet.
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1 data-i18n="hero_title">Menneskerett er en rett – ikke en tjeneste.</h1>
+        <p class="lead" data-i18n="hero_tag">
+          Teknologi i sivilsamfunnets hender. En plattform som gir stemme, kunnskap og handling – fra barnas hjerte til de voksnes ansvar.
         </p>
-      </form>
-    </div>
-  </section>
-
-  <!-- Learn & Courses -->
-  <section id="learn" class="section">
-    <div class="container">
-      <h2 data-i18n="learn.title">Lær & kurs</h2>
-      <div class="cards">
-        <article class="card">
-          <h3 data-i18n="learn.c1.t">AI & digital dømmekraft (familie)</h3>
-          <p data-i18n="learn.c1.d">Grunnkurs om barns trygghet på nett, deepfakes, personvern og praktiske regler hjemme.</p>
-        </article>
-        <article class="card">
-          <h3 data-i18n="learn.c2.t">Rettighetsverksted (innsyn & klager)</h3>
-          <p data-i18n="learn.c2.d">Slik ber du om innsyn, skriver klage og dokumenterer hendelser riktig – steg for steg.</p>
-        </article>
-        <article class="card">
-          <h3 data-i18n="learn.c3.t">Økonomi førstehjelp</h3>
-          <p data-i18n="learn.c3.d">Gjeld, renter, purringer, namsmann – forstå rettighetene og lag en konkret plan.</p>
-        </article>
+        <div class="hero-cta">
+          <a class="btn primary" href="#help" data-i18n="hero_cta">Hjelp meg nå</a>
+          <a class="btn" href="#pillars" data-i18n="hero_learn">Lær mer</a>
+        </div>
+        <p class="tagline">“High five or low — that’s just how tall you are.”</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section alt">
-    <div class="container narrow">
-      <h2 data-i18n="contact.title">Kontakt & samarbeid</h2>
-      <p data-i18n="contact.text">
-        Vil du bidra, undervise eller bygge med oss? Vi søker frivillige, jurister, lærere, teknologer og støttespillere.
-      </p>
-      <div class="contact-ways">
-        <a class="btn" href="mailto:contact@ga13.org">contact@ga13.org</a>
-        <a class="btn ghost" href="#help" data-i18n="contact.cta">Send sak</a>
+    <!-- MISSION -->
+    <section id="mission" class="section">
+      <div class="container">
+        <h2 data-i18n="mission_h">Hvorfor GA-13?</h2>
+        <p data-i18n="mission_p">
+          GA-13 er bygget av levd erfaring og vitenskap: et praktisk verktøy når livet brenner. Vi forenkler veien til rettferdighet,
+          dokumentasjon og støtte – uten at du må bevise menneskeverd eller betale for å bli tatt på alvor.
+        </p>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
 
-<footer class="site-footer">
-  <div class="container footer-row">
-    <div class="foot-brand">
-      <strong>GA-13</strong> · <span data-i18n="foot.tag">Global Human Rights Network</span>
-    </div>
-    <div class="foot-links">
-      <a href="#mission" data-i18n="foot.about">Om</a>
-      <a href="#pillars" data-i18n="foot.pillars">Kjerneområder</a>
-      <a href="#contact" data-i18n="foot.contact">Kontakt</a>
-      <a href="#" data-i18n="foot.privacy">Personvern</a>
-    </div>
-  </div>
-</footer>
+    <!-- PILLARS -->
+    <section id="pillars" class="section alt">
+      <div class="container">
+        <h2 data-i18n="pillars_h">Kjerneområder</h2>
 
-<script src="script.js"></script>
+        <div class="cards">
+          <article class="card">
+            <h3 data-i18n="p1_h">Økonomisk støtte og rettferdighet</h3>
+            <ul>
+              <li data-i18n="p1_1">Rådgivning om gjeld, refinansiering og økonomiske rettigheter</li>
+              <li data-i18n="p1_2">Nettverk av økonomiske eksperter og støttetiltak</li>
+              <li data-i18n="p1_3">Rapporteringskanal for økonomisk urett og bedrageri</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="p2_h">Juridisk bistand</h3>
+            <ul>
+              <li data-i18n="p2_1">Tilgang til advokater, juridiske veiledere og rettighetsorg.</li>
+              <li data-i18n="p2_2">Verktøy for å skrive, sende og følge opp klager og søksmål</li>
+              <li data-i18n="p2_3">Arkiv for rettigheter, lover og internasjonale konvensjoner</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="p3_h">Barne- og utdanningsutvikling</h3>
+            <ul>
+              <li data-i18n="p3_1">Samarbeid med skoler for rettferdig behandling av barn</li>
+              <li data-i18n="p3_2">Ressurser for foreldre og barn i konflikt med barnevern/skole</li>
+              <li data-i18n="p3_3">Kreative læringsrom og digitale verktøy</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="p4_h">Samfunnsforbedring og forståelse</h3>
+            <ul>
+              <li data-i18n="p4_1">Plattform for dialog, forslag og utvikling</li>
+              <li data-i18n="p4_2">Varslingskanal for urett og diskriminering</li>
+              <li data-i18n="p4_3">Fremmer respekt, åpenhet og medmenneskelighet</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="p5_h">Teknologi & AI for menneskerettigheter</h3>
+            <ul>
+              <li data-i18n="p5_1">AI-støtte for rettferdighet, opplæring og dokumentasjon</li>
+              <li data-i18n="p5_2">Digitale løsninger for bevis og trygg kommunikasjon</li>
+              <li data-i18n="p5_3">Trygge nettverk for barn, familier og lokalsamfunn</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="p6_h">Aktivitets- og kompetansesenter</h3>
+            <ul>
+              <li data-i18n="p6_1">Fysiske og digitale møteplasser for alle</li>
+              <li data-i18n="p6_2">Kreative verksteder, idrett og teknologiopplæring</li>
+              <li data-i18n="p6_3">Kurs for personlig og profesjonell utvikling</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HELP NOW -->
+    <section id="help" class="section">
+      <div class="container">
+        <h2 data-i18n="help_h">Hjelp meg nå</h2>
+        <p data-i18n="help_p">
+          Akutt situasjon? Start enkelt: skriv kort hva som har skjedd, legg ved bilde av dokumenter, og trykk send.
+        </p>
+        <!-- Enkelt første steg: e-post. Vi bytter senere til skjema/API -->
+        <a class="btn primary big" href="mailto:help@ga13.org?subject=Hjelp%20meg%20nå&body=Kort%20beskrivelse%20av%20situasjonen:%0A%0ALenker/vedlegg:%0A" data-i18n="help_cta">
+          Send e-post
+        </a>
+        <p class="micro" data-i18n="help_note">* Ikke del sensitiv info du ikke er komfortabel med. Du kan alltid anonymisere.</p>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section alt">
+      <div class="container">
+        <h2 data-i18n="edu_h">Utdanning & skole</h2>
+        <p data-i18n="edu_p">
+          Barn og unge skal lære trygt – også om teknologi og AI. Vi tilbyr gratis ressurser til foreldre, lærere og elever:
+          kursopplegg, klasseregler for trygg teknologi, og øvelser som styrker språk, empati og kritisk tenkning.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="#" data-i18n="edu_btn1">Last ned lærerpakke (NO)</a>
+          <a class="btn" href="#" data-i18n="edu_btn2">Download Teacher Pack (EN)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEGAL -->
+    <section id="legal" class="section">
+      <div class="container">
+        <h2 data-i18n="legal_h">Juridiske verktøy</h2>
+        <p data-i18n="legal_p">
+          Ferdige maler for innsyn, klager og varsling. Fyll inn og send – vi hjelper deg å finne riktig paragraf og mottaker.
+        </p>
+        <ul class="bullet-grid">
+          <li data-i18n="legal_l1">Innsynsbegjæring (forv.lov/off.lov)</li>
+          <li data-i18n="legal_l2">Klage på vedtak / saksbehandling</li>
+          <li data-i18n="legal_l3">Varsel om rettighetsbrudd (EMK/Barnekonv.)</li>
+          <li data-i18n="legal_l4">Begjæring om utsatt iverksettelse</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section id="community" class="section alt">
+      <div class="container">
+        <h2 data-i18n="com_h">Fellesskap & trygghet</h2>
+        <p data-i18n="com_p">
+          Del erfaringer, få veiledning, og bygg lokale nettverk som løfter hverandre. Ingen dømming – bare framdrift.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> GA-13 • Global Human Rights Network</p>
+      <p data-i18n="foot_line">Menneskeverd er medfødt. Frihet deles – ikke gis.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobilmeny
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('nav');
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('open');
+    });
+
+    // Språk (enkel demo – kan erstattes med ekte i18n senere)
+    const strings = {
+      en: {
+        hero_title: "Human rights are a right — not a service.",
+        hero_tag: "Technology in the hands of civil society. A platform for voice, knowledge and action — from children’s hearts to adults’ responsibility.",
+        hero_cta: "Help me now",
+        hero_learn: "Learn more",
+
+        mission_h: "Why GA-13?",
+        mission_p: "Built from lived experience and science: a practical tool when life burns. We simplify the path to justice, documentation and support — without paying to be taken seriously.",
+
+        pillars_h: "Core Areas",
+
+        p1_h: "Economic Support & Fairness",
+        p1_1: "Advice on debt, refinancing and financial rights",
+        p1_2: "Network of financial experts and support schemes",
+        p1_3: "Reporting channel for fraud and unfair practices",
+
+        p2_h: "Legal Assistance",
+        p2_1: "Access to lawyers, legal guides and rights orgs",
+        p2_2: "Tools to write, send and follow up complaints and suits",
+        p2_3: "Archive of rights, laws and international conventions",
+
+        p3_h: "Children & Education",
+        p3_1: "Co-creating with schools for fair treatment",
+        p3_2: "Resources for families in conflict with welfare/schools",
+        p3_3: "Creative learning spaces and digital tools",
+
+        p4_h: "Societal Improvement",
+        p4_1: "Platform for dialogue, proposals and development",
+        p4_2: "Channel for reporting injustice and discrimination",
+        p4_3: "Promoting respect, openness and humanity",
+
+        p5_h: "Tech & AI for Rights",
+        p5_1: "AI to support justice, learning and documentation",
+        p5_2: "Digital solutions for evidence and safe comms",
+        p5_3: "Trusted networks for children, families and communities",
+
+        p6_h: "Activity & Skills Centers",
+        p6_1: "Physical & digital places for everyone",
+        p6_2: "Creative labs, sports and tech literacy",
+        p6_3: "Courses for personal & professional growth",
+
+        help_h: "Help me now",
+        help_p: "In crisis? Start simple: describe what happened, attach photos of documents, and send.",
+        help_cta: "Send email",
+        help_note: "* Don’t share more than you’re comfortable with. You can anonymize first.",
+
+        edu_h: "Education & School",
+        edu_p: "Children must learn safely — including tech & AI. Free resources for families, teachers and students: lesson plans, classroom rules, and activities that build language, empathy and critical thinking.",
+        edu_btn1: "Download Teacher Pack (NO)",
+        edu_btn2: "Download Teacher Pack (EN)",
+
+        legal_h: "Legal Tools",
+        legal_p: "Ready-to-use templates for access requests, complaints and reporting. Fill in and send — we’ll help find the right article and recipient.",
+        legal_l1: "Access request (Public Admin/Access laws)",
+        legal_l2: "Appeal of decision / procedure",
+        legal_l3: "Notice of rights violation (ECHR/CRC)",
+        legal_l4: "Request to postpone enforcement",
+
+        com_h: "Community & Safety",
+        com_p: "Share experience, get guidance, and build local networks that lift each other. No judgment — only momentum.",
+
+        foot_line: "Human dignity is innate. Freedom is shared — not granted."
+      }
+    };
+
+    const langButtons = document.querySelectorAll('.lang-switch button');
+    langButtons.forEach(b => b.addEventListener('click', () => {
+      langButtons.forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      const lang = b.dataset.lang;
+      if (lang === 'en') {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (strings.en[key]) el.textContent = strings.en[key];
+        });
+      } else {
+        location.reload(); // enkel måte å gå tilbake til NO
+      }
+    }));
+
+    // År i footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
