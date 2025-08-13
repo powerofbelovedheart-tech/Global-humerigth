@@ -47,3 +47,14 @@ ul{margin:8px 0 8px 18px}
 @media (max-width:720px){
   .hide-sm{display:none}
 }
+/* Wizard (modal) */
+.wizard::backdrop{background:rgba(0,0,0,.6)}
+.wizard{border:none;padding:0;border-radius:16px;width:min(720px,92%);background:#0f1420}
+.wizard__box{padding:1rem 1rem 1.2rem}
+.wizard__close{position:absolute;right:.6rem;top:.4rem;background:transparent;border:0;color:#cbd6e8;font-size:26px;line-height:1}
+.wizard h3{margin:.2rem 0 1rem}
+.wizard .muted{color:var(--muted)}
+.wizard__nav{display:flex;gap:.6rem;justify-content:flex-end;margin-top:.6rem}
+.wizard__summary{background:#0b1020;border:1px solid #222;border-radius:12px;padding:.8rem;margin:.8rem 0}
+.lang{opacity:.9}
+.lang:hover{opacity:1}
