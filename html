@@ -1,0 +1,25 @@
+<form name="hjelp-meg-na" method="POST" data-netlify="true" enctype="multipart/form-data">
+  <input type="hidden" name="form-name" value="hjelp-meg-na" />
+  <label>Navn <input name="navn" required></label>
+  <label>E-post <input type="email" name="epost" required></label>
+  <label>Land/kommune <input name="sted"></label>
+  <label>Tema
+    <select name="tema" required>
+      <option>Økonomi</option>
+      <option>Juridisk</option>
+      <option>Barne/skole</option>
+      <option>Annet</option>
+    </select>
+  </label>
+  <label>Beskriv saken kort
+    <textarea name="beskrivelse" rows="6" required></textarea>
+  </label>
+  <label>Last opp dokument (valgfritt)
+    <input type="file" name="vedlegg">
+  </label>
+  <label>
+    <input type="checkbox" name="samtykke" required>
+    Jeg samtykker til at GA-13 kontakter meg om henvendelsen.
+  </label>
+  <button type="submit">Send</button>
+</form>
