@@ -2,383 +2,214 @@
 <html lang="no">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>GA13 – Global Human Rights Network</title>
-  <meta name="description" content="GA13 er et åpent nettverk som gir mennesker praktiske verktøy for økonomi, juss, barnerett, utdanning, samfunnsutvikling og trygg bruk av teknologi/AI." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GA-13 – Global Human Rights Network</title>
+  <meta name="description" content="GA-13 er et nøytralt nettverk for menneskerett, juridisk førstehjelp, økonomisk støtte, utdanning og trygg teknologi – på norsk og engelsk."/>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="logo.svg" type="image/svg+xml" /> <!-- NEW -->
 </head>
 <body>
-  <!-- Topbar -->
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="#top" aria-label="GA13 forside">
-        <img src="logo.svg" alt="" width="28" height="28" style="vertical-align:middle;margin-right:.5rem" /> <!-- NEW -->
-        <span class="brand__mark">GA13</span>
-        <span class="brand__text">Global Human Rights Network</span>
-      </a>
+<header class="site-header">
+  <div class="container header-row">
+    <a href="#" class="brand" aria-label="GA-13 Home">
+      <span class="brand-mark">GA-13</span>
+      <span class="brand-sub" data-i18n="tagline">Global Human Rights Network</span>
+    </a>
 
-      <nav class="nav" aria-label="Hovedmeny">
-        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">Meny</button>
-        <ul class="nav__list" id="navMenu">
-          <li><a href="#okonomi">Økonomi</a></li>
-          <li><a href="#juss">Juridisk</a></li>
-          <li><a href="#barn">Barn & Utdanning</a></li>
-          <li><a href="#samfunn">Samfunn</a></li>
-          <li><a href="#teknologi">Teknologi & AI</a></li>
-          <li><a href="#aktivitet">Aktivitet</a></li>
-          <li><a class="btn btn--small" href="#kontakt">Kontakt</a></li>
-          <li><a class="lang" href="en.html" hreflang="en" aria-label="English">EN</a></li> <!-- NEW -->
-        </ul>
-      </nav>
+    <nav class="main-nav" aria-label="Hovedmeny">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">☰</button>
+      <ul id="nav-list">
+        <li><a href="#mission" data-i18n="nav.mission">Vårt oppdrag</a></li>
+        <li><a href="#pillars" data-i18n="nav.pillars">Kjerneområder</a></li>
+        <li><a href="#help" data-i18n="nav.help">Hjelp meg nå</a></li>
+        <li><a href="#learn" data-i18n="nav.learn">Lær & kurs</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <div class="lang-switch" role="group" aria-label="Språk">
+      <button data-lang="no" class="active">NO</button>
+      <button data-lang="en">EN</button>
     </div>
-  </header>
+  </div>
+</header>
 
+<main>
   <!-- Hero -->
-  <section class="hero" id="top">
-    <div class="container hero__inner">
-      <h1>Hjerte til hjerte. Rettigheter i praksis.</h1>
-      <p class="lead">
-        GA13 er en uavhengig plattform som hjelper deg å forstå og bruke dine rettigheter – med verktøy for
-        <strong>økonomi</strong>, <strong>juss</strong>, <strong>barnerett & utdanning</strong>, <strong>samfunn</strong>, og trygg <strong>teknologi/AI</strong>.
+  <section class="hero">
+    <div class="container">
+      <h1 data-i18n="hero.title">Menneskelighet er en rett – ikke noe du må bevise</h1>
+      <p class="lead" data-i18n="hero.text">
+        GA-13 samler mennesker, verktøy og kunnskap for å beskytte rettigheter, gi rask hjelp og bygge trygg fremtid med teknologi.
       </p>
-      <div class="hero__cta">
-        <button class="btn" id="openWizard">Hjelp meg nå</button> <!-- CHANGED -->
-        <a class="btn btn--ghost" href="#okonomi">Se verktøyene</a>
+      <div class="hero-actions">
+        <a href="#help" class="btn primary" data-i18n="hero.cta">Hjelp meg nå</a>
+        <a href="#pillars" class="btn ghost" data-i18n="hero.secondary">Utforsk kjerneområdene</a>
       </div>
     </div>
   </section>
 
-  <!-- Intro strip -->
-  <section class="strip">
-    <div class="container strip__inner">
-      <p><strong>Menneskeverd først.</strong> Du trenger ikke bevise menneskeligheten din eller betale for å få vite dine rettigheter. Vi samler kunnskap, maler og trygge prosesser – slik at du kan handle raskt og riktig.</p>
+  <!-- Mission -->
+  <section id="mission" class="section">
+    <div class="container">
+      <h2 data-i18n="mission.title">Vårt oppdrag</h2>
+      <p data-i18n="mission.text">
+        Vi forbedrer verden – praktisk, ikke politisk. Plattformen er nøytral, åpen og menneskefokusert. 
+        Den gjør det enkelt å dokumentere, forstå rettigheter, få veiledning på minutter og koble deg til ekte hjelp.
+      </p>
+      <ul class="bullets">
+        <li data-i18n="mission.b1">Nøytral og inkluderende – ingen skiller etter land, tro eller bakgrunn.</li>
+        <li data-i18n="mission.b2">Rask førstelinjehjelp med AI-støtte (økonomi, jus, skole, teknologi).</li>
+        <li data-i18n="mission.b3">Barnas beste først – trygge læringsløp med digital dømmekraft.</li>
+      </ul>
     </div>
   </section>
 
-  <!-- Økonomi -->
-  <section class="section" id="okonomi">
+  <!-- Pillars -->
+  <section id="pillars" class="section alt">
     <div class="container">
-      <h2>Økonomisk støtte og rettferdighet</h2>
-      <p class="section__lead">Rådene du trenger for å stoppe blødning, få oversikt og ta tilbake kontrollen.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Gjeld & refinansiering</h3>
-          <p>Kartleggingsmal, sjekklister og steg-for-steg forhandling med kreditorer. Lær å dokumentere inntekt/utgift, rentevilkår og gebyrer.</p>
-        </article>
-        <article class="card">
-          <h3>Dine økonomiske rettigheter</h3>
-          <p>Oppsummering av sentrale rettigheter, klagefrister og maler for innsigelse, betalingsutsettelse og urimelige vilkår.</p>
-        </article>
-        <article class="card">
-          <h3>Rapporter urett</h3>
-          <p>En enkel kanal for å beskrive urett/bedrageri. Bevar dokumentasjon trygt, og få en strukturert rapport du kan sende videre.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+      <h2 data-i18n="pillars.title">Kjerneområder</h2>
 
-  <!-- Juss -->
-  <section class="section alt" id="juss">
-    <div class="container">
-      <h2>Juridisk bistand</h2>
-      <p class="section__lead">Innsyn, maler og sporbar dialog – uten å drukne i papir.</p>
-      <div class="cards">
+      <div class="pillars-grid">
         <article class="card">
-          <h3>Klage- & søksmålsverktøy</h3>
-          <p>Generer brev basert på situasjonen din. Vi foreslår relevante lover/konvensjoner og struktur.</p>
+          <h3 data-i18n="p1.title">Økonomisk støtte og rettferdighet</h3>
+          <p data-i18n="p1.text">
+            Råd om gjeld, refinansiering og rettigheter. Nettverk av økonomiske fagpersoner. Rapporter ulovlig press, renter og svindel.
+          </p>
         </article>
-        <article class="card">
-          <h3>Rettighetsarkiv</h3>
-          <p>Kort forklarte utdrag fra forvaltningsloven, offentlighetsloven, EMK, barnekonvensjonen m.m. – på forståelig språk.</p>
-        </article>
-        <article class="card">
-          <h3>Nettverk</h3>
-          <p>Koblinger til jurister og menneskerettighetsmiljøer. Velg selv om du vil stå frem med navn eller være anonym i første runde.</p>
-        </article>
-      </div>
-    </div>
-  </section>
 
-  <!-- Barn & utdanning -->
-  <section class="section" id="barn">
-    <div class="container">
-      <h2>Barn & utdanning</h2>
-      <p class="section__lead">Trygghet, samvær og læring – i praksis.</p>
-      <div class="cards">
         <article class="card">
-          <h3>Foreldreverktøy</h3>
-          <p>Maler for dialog med skole/barnevern, møtereferat-mal, samværsskjema og «barnets beste»-sjekkliste.</p>
+          <h3 data-i18n="p2.title">Juridisk bistand</h3>
+          <p data-i18n="p2.text">
+            Maler og verktøy for klager, innsyn og søksmål. Tilknytning til advokater og rettshjelp. Arkiv med lover og konvensjoner.
+          </p>
         </article>
+
         <article class="card">
-          <h3>Læringsrom</h3>
-          <p>Enkle opplegg for kritisk tenkning, teknologiforståelse og trygg nettbruk fra tidlig alder.</p>
+          <h3 data-i18n="p3.title">Barne- og utdanningsutvikling</h3>
+          <p data-i18n="p3.text">
+            Ressurser for foreldre og skoler. Trygge læringsrom, kreative oppgaver og digital kompetanse fra tidlig alder.
+          </p>
         </article>
+
         <article class="card">
-          <h3>Trygg dokumentasjon</h3>
-          <p>Last opp lyd/bilde/tekst på en måte som ivaretar barnets personvern og bevisverdi.</p>
+          <h3 data-i18n="p4.title">Samfunnsforbedring</h3>
+          <p data-i18n="p4.text">
+            Plattform for å melde fra om urett, diskriminering og dårlig behandling. Samtale, forslag og samarbeid – uten skittkasting.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="p5.title">Teknologi & AI for rettigheter</h3>
+          <p data-i18n="p5.text">
+            Trygg bruk av AI til dokumentasjon, innsikt og kommunikasjon. Løsninger som beskytter privatliv og barnas sikkerhet.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="p6.title">Aktivitets- og kompetansesenter</h3>
+          <p data-i18n="p6.text">
+            Digitale og lokale møteplasser: kurs, idrett, skapende verksted, teknologiverksted og praktisk karrierehjelp.
+          </p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Samfunn -->
-  <section class="section alt" id="samfunn">
-    <div class="container">
-      <h2>Samfunnsforbedring</h2>
-      <p class="section__lead">Åpenhet, respekt og medmenneskelighet – fra ord til handling.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Dialog & forslag</h3>
-          <p>En trygg plass å løfte forslag og dele erfaringer. Vi hjelper deg å gjøre innspill konkrete.</p>
-        </article>
-        <article class="card">
-          <h3>Varsling</h3>
-          <p>Rapportér diskriminering, maktmisbruk eller dårlig behandling. Velg delingsnivå og tid for publisering.</p>
-        </article>
-        <article class="card">
-          <h3>Ressurser</h3>
-          <p>Korte guider i klarspråk om medieforståelse, ryktespredning og digitale spor.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+  <!-- Help me now -->
+  <section id="help" class="section focus">
+    <div class="container narrow">
+      <h2 data-i18n="help.title">Hjelp meg nå</h2>
+      <p data-i18n="help.text">
+        Beskriv kort hva som skjer. Legg ved stikkord (sted, hvem, hva, barn involvert, dokumenter). 
+        Du kan sende som e-post eller bruke skjemaet under. Ikke vent – skriv nå.
+      </p>
 
-  <!-- Teknologi & AI -->
-  <section class="section" id="teknologi">
-    <div class="container">
-      <h2>Teknologi & AI for menneskerettigheter</h2>
-      <p class="section__lead">AI som forsterker menneskers stemmer – ikke erstatter dem.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Trygg bruk</h3>
-          <p>Praktiske råd for å unngå manipulerte bilder/tekster, holde oversikt på bevis og dele ansvarlig.</p>
-        </article>
-        <article class="card">
-          <h3>Dokumentasjon</h3>
-          <p>Verktøy for tidsstempling, filintegritet og strukturert lagring som gjør innsyn enklere.</p>
-        </article>
-        <article class="card">
-          <h3>Opplæring</h3>
-          <p>Mikrokurs for foreldre, ungdom og fagfolk: AI-grunnforståelse, kritisk tenkning, personvern.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Aktivitet -->
-  <section class="section alt" id="aktivitet">
-    <div class="container">
-      <h2>Aktivitets- & kompetansesenter</h2>
-      <p class="section__lead">Digitale og fysiske møteplasser – på tvers av alder og bakgrunn.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Kreative verksteder</h3>
-          <p>Foto, film, musikk, tekst, design – la uttrykk bli til stemme, bevis og brobygging.</p>
-        </article>
-        <article class="card">
-          <h3>Idrett & helse</h3>
-          <p>Lavterskel aktivitet som bygger mestring og fellesskap – med respekt og trygghet i bunn.</p>
-        </article>
-        <article class="card">
-          <h3>Kurs & mentor</h3>
-          <p>Korte kurs, 1–1 veiledning og fellesskap som følger deg over tid.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Kontakt -->
-  <section class="section contact" id="kontakt">
-    <div class="container">
-      <h2>Kontakt oss</h2>
-      <p class="section__lead">Trenger du rask hjelp? Beskriv kort hva som haster – vi svarer så fort vi kan.</p>
-      <form class="form" name="contact" netlify>
-        <div class="grid">
-          <label class="field">
-            <span>Navn</span>
-            <input type="text" name="name" required />
-          </label>
-          <label class="field">
-            <span>E-post</span>
-            <input type="email" name="email" required />
-          </label>
-        </div>
-        <label class="field">
-          <span>Hva gjelder det?</span>
+      <form class="help-form" name="helpForm" netlify>
+        <label>
+          <span data-i18n="help.name">Navn (valgfritt)</span>
+          <input type="text" name="name" autocomplete="name"/>
+        </label>
+        <label>
+          <span data-i18n="help.email">E-post for svar</span>
+          <input type="email" name="email" required autocomplete="email"/>
+        </label>
+        <label>
+          <span data-i18n="help.topic">Tema</span>
           <select name="topic" required>
-            <option value="Økonomi">Økonomi</option>
-            <option value="Juridisk">Juridisk</option>
-            <option value="Barn & utdanning">Barn & utdanning</option>
-            <option value="Samfunn">Samfunn</option>
-            <option value="Teknologi & AI">Teknologi & AI</option>
-            <option value="Aktivitet">Aktivitet</option>
-            <option value="Annet">Annet</option>
+            <option value="legal" data-i18n="opt.legal">Juridisk</option>
+            <option value="finance" data-i18n="opt.finance">Økonomi</option>
+            <option value="children" data-i18n="opt.children">Barn/skole</option>
+            <option value="tech" data-i18n="opt.tech">Teknologi</option>
+            <option value="other" data-i18n="opt.other">Annet</option>
           </select>
         </label>
-        <label class="field">
-          <span>Din beskjed</span>
-          <textarea name="message" rows="6" required></textarea>
+        <label>
+          <span data-i18n="help.message">Hva skjer? (så konkret du klarer)</span>
+          <textarea name="message" rows="8" required></textarea>
         </label>
-        <button class="btn" type="submit">Send melding</button>
+
+        <div class="form-actions">
+          <button class="btn primary" type="submit" data-i18n="help.send">Send</button>
+          <a class="btn ghost" id="mailtoLink" href="#" data-i18n="help.mail">Send via e-post</a>
+        </div>
+
+        <p class="privacy" data-i18n="help.privacy">
+          Personvern: Vi behandler opplysningene fortrolig. Del aldri passord eller sensitiv bankinfo i skjemaet.
+        </p>
       </form>
-      <p class="contact__alt">Eller skriv til <a href="mailto:kontakt@ga13.org">kontakt@ga13.org</a></p>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p>© <span id="year"></span> GA13 – Global Human Rights Network. Alle hjerter på jord.</p>
-      <nav aria-label="Bunnmeny">
-        <a href="#top">Til toppen</a>
-        <a href="#juss">Rettigheter</a>
-        <a href="#teknologi">Personvern & AI</a>
-      </nav>
+  <!-- Learn & Courses -->
+  <section id="learn" class="section">
+    <div class="container">
+      <h2 data-i18n="learn.title">Lær & kurs</h2>
+      <div class="cards">
+        <article class="card">
+          <h3 data-i18n="learn.c1.t">AI & digital dømmekraft (familie)</h3>
+          <p data-i18n="learn.c1.d">Grunnkurs om barns trygghet på nett, deepfakes, personvern og praktiske regler hjemme.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="learn.c2.t">Rettighetsverksted (innsyn & klager)</h3>
+          <p data-i18n="learn.c2.d">Slik ber du om innsyn, skriver klage og dokumenterer hendelser riktig – steg for steg.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="learn.c3.t">Økonomi førstehjelp</h3>
+          <p data-i18n="learn.c3.d">Gjeld, renter, purringer, namsmann – forstå rettighetene og lag en konkret plan.</p>
+        </article>
+      </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- NEW: Hjelp-meg-nå veiviser -->
-  <dialog id="wizard" class="wizard">
-    <form method="dialog" class="wizard__box" name="wizardForm" netlify>
-      <button class="wizard__close" aria-label="Lukk" value="close">×</button>
-      <h3>Hjelp meg nå</h3>
-
-      <div class="wizard__step" data-step="1">
-        <p class="muted">Trinn 1 av 3</p>
-        <label class="field">
-          <span>Hva gjelder det?</span>
-          <select id="w_topic" required>
-            <option value="">Velg område…</option>
-            <option>Økonomi</option>
-            <option>Juridisk</option>
-            <option>Barn & utdanning</option>
-            <option>Samfunn</option>
-            <option>Teknologi & AI</option>
-            <option>Aktivitet</option>
-          </select>
-        </label>
-        <label class="field">
-          <span>Hvor akutt er det?</span>
-          <select id="w_urgency" required>
-            <option value="Lav">Lav</option>
-            <option value="Middels">Middels</option>
-            <option value="Høy">Høy</option>
-            <option value="Kritisk">Kritisk</option>
-          </select>
-        </label>
-        <div class="wizard__nav">
-          <button class="btn" id="next1">Neste</button>
-        </div>
+  <!-- Contact -->
+  <section id="contact" class="section alt">
+    <div class="container narrow">
+      <h2 data-i18n="contact.title">Kontakt & samarbeid</h2>
+      <p data-i18n="contact.text">
+        Vil du bidra, undervise eller bygge med oss? Vi søker frivillige, jurister, lærere, teknologer og støttespillere.
+      </p>
+      <div class="contact-ways">
+        <a class="btn" href="mailto:contact@ga13.org">contact@ga13.org</a>
+        <a class="btn ghost" href="#help" data-i18n="contact.cta">Send sak</a>
       </div>
+    </div>
+  </section>
+</main>
 
-      <div class="wizard__step" data-step="2" hidden>
-        <p class="muted">Trinn 2 av 3</p>
-        <label class="field">
-          <span>Beskriv kort hva som har skjedd</span>
-          <textarea id="w_desc" rows="6" placeholder="Kort fakta: hvem, hva, når…" required></textarea>
-        </label>
-        <div class="wizard__nav">
-          <button class="btn btn--ghost" id="back2">Tilbake</button>
-          <button class="btn" id="next2">Neste</button>
-        </div>
-      </div>
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div class="foot-brand">
+      <strong>GA-13</strong> · <span data-i18n="foot.tag">Global Human Rights Network</span>
+    </div>
+    <div class="foot-links">
+      <a href="#mission" data-i18n="foot.about">Om</a>
+      <a href="#pillars" data-i18n="foot.pillars">Kjerneområder</a>
+      <a href="#contact" data-i18n="foot.contact">Kontakt</a>
+      <a href="#" data-i18n="foot.privacy">Personvern</a>
+    </div>
+  </div>
+</footer>
 
-      <div class="wizard__step" data-step="3" hidden>
-        <p class="muted">Trinn 3 av 3</p>
-        <label class="field">
-          <span>Navn</span>
-          <input id="w_name" type="text" required />
-        </label>
-        <label class="field">
-          <span>E-post</span>
-          <input id="w_email" type="email" required />
-        </label>
-        <details class="field">
-          <summary>Legg til referanser (valgfritt)</summary>
-          <textarea id="w_refs" rows="4" placeholder="Lenker, saksnr., datoer …"></textarea>
-        </details>
-
-        <input type="hidden" name="topic" id="f_topic">
-        <input type="hidden" name="urgency" id="f_urgency">
-        <input type="hidden" name="description" id="f_desc">
-        <input type="hidden" name="references" id="f_refs">
-        <input type="hidden" name="name" id="f_name">
-        <input type="hidden" name="email" id="f_email">
-        <input type="hidden" name="form-name" value="wizardForm">
-
-        <div class="wizard__summary" id="w_summary"></div>
-
-        <div class="wizard__nav">
-          <button class="btn btn--ghost" id="back3">Tilbake</button>
-          <button class="btn" type="submit">Send</button>
-        </div>
-      </div>
-    </form>
-  </dialog>
-
-  <script>
-    // år i footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // mobilmeny
-    const toggle = document.getElementById('navToggle');
-    const menu = document.getElementById('navMenu');
-    toggle.addEventListener('click', () => {
-      const open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!open));
-      menu.classList.toggle('nav__list--open');
-    });
-
-    // Wizard
-    const wizard = document.getElementById('wizard');
-    const openWizard = document.getElementById('openWizard');
-    const steps = [...document.querySelectorAll('.wizard__step')];
-
-    function showStep(n){
-      steps.forEach((s,i)=> s.hidden = i!==n-1);
-    }
-
-    openWizard.addEventListener('click', ()=> {
-      wizard.showModal();
-      showStep(1);
-    });
-
-    wizard.addEventListener('click', (e)=>{
-      if(e.target === wizard) wizard.close();
-    });
-
-    const next1 = document.getElementById('next1');
-    const next2 = document.getElementById('next2');
-    const back2 = document.getElementById('back2');
-    const back3 = document.getElementById('back3');
-
-    next1.addEventListener('click', (e)=>{
-      e.preventDefault();
-      const topic = document.getElementById('w_topic').value;
-      const urg = document.getElementById('w_urgency').value;
-      if(!topic){ alert('Velg område.'); return; }
-      if(!urg){ alert('Velg akutt-nivå.'); return; }
-      showStep(2);
-    });
-
-    back2.addEventListener('click', (e)=>{ e.preventDefault(); showStep(1); });
-    next2.addEventListener('click', (e)=>{
-      e.preventDefault();
-      const desc = document.getElementById('w_desc').value.trim();
-      if(!desc){ alert('Skriv en kort beskrivelse.'); return; }
-      // fyll oppsummering
-      const sum = document.getElementById('w_summary');
-      const topic = document.getElementById('w_topic').value;
-      const urg = document.getElementById('w_urgency').value;
-      sum.innerHTML = `
-        <h4>Oppsummering</h4>
-        <ul>
-          <li><strong>Område:</strong> ${topic}</li>
-          <li><strong>Akutt-nivå:</strong> ${urg}</li>
-          <li><strong>Beskrivelse:</strong> ${desc.replace(/</g,'&lt;')}</li>
-        </ul>`;
-      showStep(3);
-    });
-    back3.addEventListener('click', (e)=>{ e.preventDefault(); showStep(2); });
-
-    // send-synk: fyll skjulte felt
+<script src="script.js"></script>
+</body>
+</html>
