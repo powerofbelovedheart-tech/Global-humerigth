@@ -651,7 +651,81 @@
 
     <button class="hamburger" id="hamburger" aria-label="Meny">☰</button>
   </header>
+  <!-- HJELP NÅ -->
+  <section id="help">
+    <div class="wrap">
+      <h3 style="margin-bottom:12px">Hjelp nå</h3>
+      <div class="grid-3">
+        <!-- 1: Beskriv saken -->
+        <div class="card" style="grid-column: span 2;">
+          <strong>1) Beskriv saken kort</strong>
+          <p class="muted">Skriv med egne ord. Du kan også lime inn notater. (Ingen data sendes før du selv trykker “Lag e-post”.)</p>
+          <textarea id="caseText" rows="9" placeholder="Hva skjedde? Hvem var til stede? Dato/klokkeslett? Hva ønsker du? (f.eks. innsyn, oppheving, erstatning)" style="width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--ink);padding:12px"></textarea>
+          <div class="buttons" style="margin-top:10px">
+            <button class="btn ghost" data-template="innsyn">Fyll inn mal: Krav om innsyn</button>
+            <button class="btn ghost" data-template="logg">Fyll inn mal: Manglende loggføring</button>
+            <button class="btn ghost" data-template="besoks">Fyll inn mal: Besøksforbud</button>
+            <button class="btn ghost" id="copyCase">Kopier tekst</button>
+          </div>
+        </div>
 
+        <!-- 2: Bevis & tidslinje -->
+        <div class="card">
+          <strong>2) Bevis & tidslinje</strong>
+          <p class="muted">Lag en enkel tidslinje (lokalt på siden). Du kan eksportere den til CSV.</p>
+
+          <div style="display:grid;gap:8px">
+            <input id="tlDate" type="datetime-local" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--ink)">
+            <input id="tlWhat" type="text" placeholder="Hendelse / observasjon" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--ink)">
+            <button class="btn ghost" id="addTL">Legg til i tidslinje</button>
+            <div id="tlList" class="tiny muted" style="max-height:180px;overflow:auto;border:1px dashed rgba(255,255,255,.12);border-radius:10px;padding:8px"></div>
+            <button class="btn ghost" id="exportTL">Last ned CSV</button>
+          </div>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,.08);margin:14px 0">
+          <strong>Bevisfiler</strong>
+          <p class="tiny muted">Velg filer for egen oversikt (sendes kun hvis du selv legger dem ved i e-posten).</p>
+          <input id="evidence" type="file" multiple style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--ink);width:100%">
+          <div id="evList" class="tiny muted" style="margin-top:6px"></div>
+        </div>
+      </div>
+
+      <!-- 3: Lag e-post -->
+      <div class="band">
+        <div>
+          <strong>3) Lag e-post automatisk</strong>
+          <div class="tiny muted">Oppretter en e-postkladd med tekst + tidslinje. Legg ved filer før du sender.</div>
+        </div>
+        <div class="buttons">
+          <button class="btn primary" id="makeEmail">Åpne e-postkladd</button>
+          <a class="btn ghost" href="mailto:contact@ga13.org?subject=Hjelp%20nå%20(GA-13)">Eller skriv oss direkte</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MALER / VEILEDNING -->
+  <section id="templates">
+    <div class="wrap grid-2">
+      <div class="card">
+        <h3>Kjappe maler (juss)</h3>
+        <ul class="clean">
+          <li><strong>Krav om innsyn</strong> – forvaltningsloven §§ 11, 17 og offentleglova § 3.</li>
+          <li><strong>Krav om loggføring</strong> – alle tjenestehandlinger skal dokumenteres.</li>
+          <li><strong>Klage på besøksforbud</strong> – vurdering av vilkår, forholdsmessighet, tidsangivelse.</li>
+        </ul>
+        <p class="tiny muted">Maler er veiledende. Tilpass fakta og legg ved tidslinje/bevis.</p>
+      </div>
+      <div class="card">
+        <h3>Trygg bruk</h3>
+        <ul class="clean">
+          <li>Del bare det du er komfortabel med. Fjern sensitive detaljer før innsending.</li>
+          <li>Ved akutt fare: bruk nødnummer først.</li>
+          <li>Oppbevar originalfiler sikkert (sky + fysisk kopi).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
   <main>
     <!-- HERO -->
     <section class="hero" id="hero">
