@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="brand">One Nation – Alle hjerter på jord</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta name="generator" content="ChatGPT + Python"/>
+</head>
+<body>
+<nav>
+  <div class="container navbar">
+    <div class="logo">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="28" stroke="url(#g1)" stroke-width="3"/>
+        <path d="M20 28c0-6 4-10 12-10s12 4 12 10c0 10-12 18-12 18S20 38 20 28z" fill="url(#g2)"/>
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="64" y2="64"><stop stop-color="#4ea8de"/><stop offset="1" stop-color="#ffd166"/></linearGradient>
+          <linearGradient id="g2" x1="20" y1="18" x2="44" y2="46"><stop stop-color="#4ea8de"/><stop offset="1" stop-color="#ffd166"/></linearGradient>
+        </defs>
+      </svg>
+      <span data-i18n="brand">One Nation – Alle hjerter på jord</span>
+    </div>
+    <div class="navfill"></div>
+    <div class="links">
+      <a href="index.html" class="muted" data-i18n="nav_home">Hjem</a>
+      <a href="education.html" class="muted" data-i18n="nav_edu">Utdanning</a>
+      <a href="economy.html"  data-i18n="nav_econ">Økonomi & rett</a>
+      <a href="templates.html" class="muted" data-i18n="nav_templates">Maler</a>
+      <a href="index.html#help" data-i18n="nav_help">Hjelp meg nå</a>
+    </div>
+    <div class="lang">
+      <button id="lang-no" class="btn ghost">NO</button>
+      <button id="lang-en" class="btn ghost">EN</button>
+    </div>
+  </div>
+</nav>
+<script defer src="script.js"></script>
+<div class="container">
+
+<section class="hero">
+  <h1 data-i18n="econ_title">Økonomi & rett</h1>
+  <p data-i18n="econ_intro">Praktiske sjekklister og begrepsforklaringer – laget for folk, ikke jurister.</p>
+</section>
+<div class="grid cards">
+  <div class="card">
+    <h3 data-i18n="econ_c1_t">Renter & inkasso</h3>
+    <p class="muted" data-i18n="econ_c1_b">Hva er lov? Hva kan bestrides? Hvilke dokumenter må de ha?</p>
+    <ul>
+      <li>Be om full spesifikasjon (dato, grunnlag, rente, gebyr)</li>
+      <li>Sjekk foreldelse og manglende varsler</li>
+      <li>Bestrid skriftlig – hold frister</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 data-i18n="econ_c2_t">Tvangssalg</h3>
+    <p class="muted" data-i18n="econ_c2_b">Når kan det skje? Hva kan du gjøre før og etter varsel? Maler inkludert.</p>
+    <ul>
+      <li>Krev betalingsavtale og stans ved uenighet</li>
+      <li>Dokumenter uforutsette forhold (sykdom, inntekt)</li>
+      <li>Send klage/anke – bruk malbiblioteket</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 data-i18n="econ_c3_t">Familieliv & rettigheter</h3>
+    <p class="muted" data-i18n="econ_c3_b">Barnets beste, samvær, kommunikasjon med barnevern/skole.</p>
+    <ul>
+      <li>Alltid sporbar skriftlig dialog</li>
+      <li>Be om innsyn – få protokoller og vedtak</li>
+      <li>Dokumenter samværshindringer fortløpende</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+<footer>
+  <div class="container">
+    <div class="grid cards">
+      <div class="card">
+        <div class="kicker">GitHub</div>
+        <div class="muted">Koden til denne siden kan hostes gratis på Netlify eller GitHub Pages.</div>
+      </div>
+      <div class="card">
+        <div class="kicker">Personvern</div>
+        <div class="muted">Innsendte skjema behandles konfidensielt. Del aldri sensitiv info du ikke vil sende digitalt.</div>
+      </div>
+    </div>
+    <p class="center" style="margin-top:18px"><span data-i18n="footer">Laget for mennesker – med mennesker. ©</span> 2025</p>
+  </div>
+</footer>
+</body>
+</html>
