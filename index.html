@@ -1395,6 +1395,116 @@
     </div>
   </div>
 </section>
+<script>
+(function(){
+  const caseEl = document.getElementById('caseText');
+  const ev = document.getElementById('evidence');
+  const evList = document.getElementById('evList');
+  const tlList = document.getElementById('tlList');
+  const tl = [];
+  const TEMPLATES = {
+    innsyn:
+`KRAV OM INNSYN – Forvaltningsloven §§ 11 og 17, offentleglova § 3
+
+Jeg ber om fullt innsyn i alle dokumenter, logger, notater, rapporter, lyd/bilde og interne meldinger som gjelder meg/mine barn for perioden [fra–til].
+Vennligst spesifisér dato, klokkeslett, hvem som var involvert og formål for hver handling.
+
+Jeg ber om rask behandling, jf. offentleglova § 29.
+Med hilsen
+[Navn, fødselsdato, kontaktinfo]`,
+    logg:
+`KRAV OM DOKUMENTASJON/LOGGFØRING
+
+Jeg ber om komplett logg over alle tjenestehandlinger rettet mot meg/mine barn (oppmøte, telefoner, registreringer, tiltak), inkludert dato, klokkeslett, sted, deltakere og hjemmel.
+
+Manglende dokumentasjon svekker min rettssikkerhet. Vennligst oversend innen fristen.
+Med hilsen
+[Navn, fødselsdato, kontaktinfo]`,
+    besoks:
+`KLAGE PÅ BESØKSFORBUD
+
+Jeg klager over ilagt besøksforbud datert [dato].
+Jeg ber om revurdering med begrunnelse i vilkår, forholdsmessighet og tidsangivelse. Det foreligger ikke tilstrekkelig grunnlag, og forbudet rammer urimelig hardt (familieliv/arbeid).
+
+Vedlagt: tidslinje og bevisoversikt.
+Med hilsen
+[Navn, fødselsdato, kontaktinfo]`
+  };
+
+  // Mal-knapper
+  document.querySelectorAll('button[data-template]').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      const key = b.getAttribute('data-template');
+      caseEl.value = (caseEl.value ? caseEl.value + "\n\n" : "") + TEMPLATES[key];
+      caseEl.focus();
+    });
+  });
+
+  // Kopier tekst
+  document.getElementById('copyCase').addEventListener('click', async ()=>{
+    try { await navigator.clipboard.writeText(caseEl.value || ""); bToast("Tekst kopiert."); }
+    catch(e){ alert("Kunne ikke kopiere. Marker teksten og kopier manuelt."); }
+  });
+
+  // Tidslinje
+  function renderTL(){
+    if(!tl.length){ tlList.innerHTML = '<div class="tiny muted">Ingen hendelser lagt til ennå.</div>'; return; }
+    tlList.innerHTML = tl.map((r,i)=>`<div style="padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.08)">
+      <strong>${i+1}.</strong> ${r.when} — ${r.what}
+    </div>`).join('');
+  }
+  document.getElementById('addTL').addEventListener('click', ()=>{
+    const when = document.getElementById('tlDate').value;
+    const what = (document.getElementById('tlWhat').value || "").trim();
+    if(!when || !what) return bToast("Fyll inn dato/klokkeslett og tekst.");
+    tl.push({when, what});
+    document.getElementById('tlWhat').value="";
+    renderTL();
+  });
+  document.getElementById('exportTL').addEventListener('click', ()=>{
+    const rows = [["#","tidspunkt","hendelse"], ...tl.map((r,i)=>[i+1,r.when,r.what])];
+    const csv = rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(",")).join("\n");
+    const blob = new Blob([csv],{type:"text/csv;charset=utf-8;"});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = "tidslinje.csv";
+    a.click();
+  });
+
+  // Bevis (kun liste for din oversikt lokalt)
+  ev?.addEventListener('change', ()=>{
+    if(!ev.files?.length){ evList.textContent = ""; return; }
+    evList.innerHTML = Array.from(ev.files).map(f=>`• ${f.name} (${Math.round(f.size/1024)} kB)`).join("<br>");
+  });
+
+  // Lag e-postkladd
+  document.getElementById('makeEmail').addEventListener('click', ()=>{
+    const to = "contact@ga13.org";
+    const subject = "Hjelp nå (GA-13)";
+    const bodyParts = [];
+    bodyParts.push("Sak/beskrivelse:\n" + (caseEl.value || "[skriv her]"));
+    if(tl.length){
+      bodyParts.push("\nTidslinje:");
+      tl.forEach((r,i)=> bodyParts.push(`${i+1}. ${r.when} — ${r.what}`));
+    }
+    bodyParts.push("\nJeg samtykker til at denne henvendelsen kan behandles for å gi meg hjelp.\n[Navn, telefon]");
+    const body = encodeURIComponent(bodyParts.join("\n\n"));
+    window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${body}`;
+  });
+
+  // liten toast
+  function bToast(msg){
+    const t = document.createElement('div');
+    t.textContent = msg;
+    t.style.cssText = 'position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#111731;border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:10px;color:#eaf0ff;z-index:99;box-shadow:0 10px 30px rgba(0,0,0,.4)';
+    document.body.appendChild(t);
+    setTimeout(()=>t.remove(),1800);
+  }
+
+  // init
+  renderTL();
+})();
+</script>
     </body>
 </section>
 </html>
