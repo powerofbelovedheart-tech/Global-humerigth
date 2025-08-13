@@ -354,7 +354,44 @@
         Trenger du rask støtte? Start her. Du kan beskrive situasjonen din med egne ord.
         Vi hjelper deg å strukturere teksten med riktige paragrafer og sende til riktig instans.
       </p>
-      <form class="help-form" onsubmit="event.preventDefault(); alert('Takk! Vi har registrert henvendelsen (demo).');">
+   <form class="help-form" name="help-now" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="help-now" />
+  <label>
+    Ditt navn (valgfritt)
+    <input type="text" name="navn" placeholder="Ola Nordmann" />
+  </label>
+  <label>
+    E-post (for svar)
+    <input type="email" name="epost" placeholder="ola@eksempel.no" required />
+  </label>
+  <label>
+    Hva gjelder det?
+    <select name="kategori" required>
+      <option value="">Velg kategori…</option>
+      <option>Juridisk (besøksforbud, innsyn, klage)</option>
+      <option>Økonomi (gjeld, renter, tvangssalg)</option>
+      <option>Barne- og utdanning</option>
+      <option>Diskriminering / dårlig behandling</option>
+      <option>Annet</option>
+    </select>
+  </label>
+  <label>
+    Beskriv situasjonen kort
+    <textarea name="beskrivelse" rows="6" placeholder="Skriv med dine egne ord…"></textarea>
+  </label>
+  <div class="row">
+    <label class="half">
+      Last opp vedlegg (valgfritt)
+      <input type="file" name="vedlegg" />
+    </label>
+    <label class="half">
+      <input type="checkbox" name="samtykke" required />
+      Jeg samtykker til at henvendelsen lagres for oppfølging.
+    </label>
+  </div>
+  <button class="btn primary" type="submit">Send</button>
+  <p class="tiny">Når du trykker «Send», mottar vi skjemaet og følger opp på e-post.</p>
+</form>
         <label>
           Ditt navn (valgfritt)
           <input type="text" placeholder="Ola Nordmann" />
