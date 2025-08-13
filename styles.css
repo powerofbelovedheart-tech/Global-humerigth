@@ -1,300 +1,93 @@
-
 :root{
-  --bg:#0e1116; --card:#151923; --text:#e9eef7; --muted:#a6b3c9;
-  --brand:#4ea8de; --brand2:#ffd166; --ok:#7bd389; --danger:#ef476f;
-  --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.35);
+  --bg:#0b1020;
+  --card:#111731;
+  --ink:#eaf0ff;
+  --muted:#aeb7d6;
+  --brand:#4da3ff;
+  --accent:#9dd9ff;
 }
+
 *{box-sizing:border-box}
-html,body{margin:0;height:100%;scroll-behavior:smooth}
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-a{color:var(--brand);text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:1050px;margin:0 auto;padding:24px}
-nav{position:sticky;top:0;background:rgba(14,17,22,.7);backdrop-filter:blur(8px);border-bottom:1px solid #1f2430;z-index:10}
-.navbar{display:flex;align-items:center;gap:16px;padding:14px 0}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800}
-.logo svg{width:28px;height:28px}
-.navfill{flex:1}
-nav .links{display:flex;gap:18px;flex-wrap:wrap}
-.lang{display:flex;gap:8px;margin-left:auto}
-button, .btn{appearance:none;border:0;border-radius:12px;padding:10px 14px;background:var(--brand);color:#001018;font-weight:700;cursor:pointer}
-.btn.secondary{background:#2a3140;color:var(--text)}
-.btn.ghost{background:transparent;border:1px solid #2a3140;color:var(--text)}
-.btn.warn{background:var(--danger);color:#fff}
-.btn.ok{background:var(--ok);color:#01331a}
-.hero{padding:48px 0 18px}
-.grid{display:grid;gap:18px}
-.cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.card{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);border:1px solid #1f2430}
-h1,h2,h3{line-height:1.2;margin:0 0 10px}
-h1{font-size:2.1rem}
-h2{font-size:1.6rem;margin-top:8px}
-h3{font-size:1.2rem}
-.mono{font-family:ui-monospace,Consolas,Menlo,monospace;color:var(--muted)}
-small, .muted{color:var(--muted)}
-footer{border-top:1px solid #1f2430;color:var(--muted);padding:24px 0;margin-top:36px}
-section{margin:10px 0 20px}
-input,textarea,select{width:100%;background:#0f131b;border:1px solid #2a3140;border-radius:10px;color:var(--text);padding:10px}
-label{display:block;margin:10px 0 6px;color:#c9d6ea}
-.form{display:grid;gap:12px}
-.kicker{letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);font-weight:800;font-size:.8rem}
-.banner{padding:14px;border-radius:12px;background:#111826;border:1px dashed #2a3140}
-code.inline{background:#111826;border:1px solid #2a3140;border-radius:8px;padding:2px 6px}
-pre{background:#111826;border:1px solid #2a3140;border-radius:12px;padding:14px;overflow:auto}
-ul{margin:8px 0 8px 18px}
-.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-.center{text-align:center}
-@media (max-width:720px){
-  .hide-sm{display:none}
+html,body{margin:0;padding:0}
+body{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,#0a0e1d 0%, #0b1228 100%);
 }
-/* Wizard (modal) */
-.wizard::backdrop{background:rgba(0,0,0,.6)}
-.wizard{border:none;padding:0;border-radius:16px;width:min(720px,92%);background:#0f1420}
-.wizard__box{padding:1rem 1rem 1.2rem}
-.wizard__close{position:absolute;right:.6rem;top:.4rem;background:transparent;border:0;color:#cbd6e8;font-size:26px;line-height:1}
-.wizard h3{margin:.2rem 0 1rem}
-.wizard .muted{color:var(--muted)}
-.wizard__nav{display:flex;gap:.6rem;justify-content:flex-end;margin-top:.6rem}
-.wizard__summary{background:#0b1020;border:1px solid #222;border-radius:12px;padding:.8rem;margin:.8rem 0}
-.lang{opacity:.9}
-.lang:hover{opacity:1}
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>GA13 – Global Human Rights Network</title>
-  <meta name="description" content="GA13 helps people act on their rights with practical tools for finance, legal access, child protection & education, community building, and safe technology/AI." />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="logo.svg" type="image/svg+xml" />
-</head>
-<body>
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="#top" aria-label="GA13 Home">
-        <img src="logo.svg" alt="" width="28" height="28" style="vertical-align:middle;margin-right:.5rem" />
-        <span class="brand__mark">GA13</span>
-        <span class="brand__text">Global Human Rights Network</span>
-      </a>
-      <nav class="nav" aria-label="Main menu">
-        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
-        <ul class="nav__list" id="navMenu">
-          <li><a href="#finance">Finance</a></li>
-          <li><a href="#legal">Legal</a></li>
-          <li><a href="#children">Children & Education</a></li>
-          <li><a href="#community">Community</a></li>
-          <li><a href="#tech">Technology & AI</a></li>
-          <li><a href="#centers">Activity</a></li>
-          <li><a class="btn btn--small" href="#contact">Contact</a></li>
-          <li><a class="lang" href="index.html" hreflang="no" aria-label="Norsk">NO</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <section class="hero" id="top">
-    <div class="container hero__inner">
-      <h1>Heart to heart. Rights in action.</h1>
-      <p class="lead">
-        GA13 is an independent platform that helps you understand and use your rights – with tools for
-        <strong>finance</strong>, <strong>legal access</strong>, <strong>children & education</strong>, <strong>community</strong>, and safe <strong>technology/AI</strong>.
-      </p>
-      <div class="hero__cta">
-        <a class="btn" href="#contact">Help me now</a>
-        <a class="btn btn--ghost" href="#finance">See the tools</a>
-      </div>
-    </div>
-  </section>
+.container{width:min(1100px,92vw);margin-inline:auto}
 
-  <section class="strip">
-    <div class="container strip__inner">
-      <p><strong>Human dignity first.</strong> You don’t need to prove your humanity or pay to learn your rights. We collect clear guides, templates and safe processes – so you can act fast and act right.</p>
-    </div>
-  </section>
+.site-header{
+  position:sticky; top:0; z-index:10;
+  background:rgba(10,14,29,.7); backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.header-inner{display:flex;align-items:center;gap:16px;padding:14px 0}
+.brand{display:flex;flex-direction:column;text-decoration:none;color:var(--ink)}
+.brand-mark{font-weight:800;letter-spacing:.2px}
+.brand-sub{font-size:.8rem;color:var(--muted)}
 
-  <section class="section" id="finance">
-    <div class="container">
-      <h2>Economic support & fairness</h2>
-      <p class="section__lead">Stop the bleeding, get clarity, and regain control.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Debt & refinancing</h3>
-          <p>Assessment template, checklists, and step-by-step creditor dialogue.</p>
-        </article>
-        <article class="card">
-          <h3>Your financial rights</h3>
-          <p>Key rights, deadlines, and templates to dispute unfair terms.</p>
-        </article>
-        <article class="card">
-          <h3>Report wrongdoing</h3>
-          <p>Describe issues and keep evidence safe. Export a structured report.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:16px}
+.main-nav a{color:var(--muted);text-decoration:none;font-weight:600}
+.main-nav a:hover{color:var(--ink)}
+.nav-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.2);color:var(--ink);padding:6px 10px;border-radius:8px}
 
-  <section class="section alt" id="legal">
-    <div class="container">
-      <h2>Legal access</h2>
-      <p class="section__lead">Access, templates and traceable dialogue – without drowning in paper.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Complaints & claims</h3>
-          <p>Generate letters based on your situation. We suggest relevant laws/conventions and structure.</p>
-        </article>
-        <article class="card">
-          <h3>Rights library</h3>
-          <p>Plain-language summaries of administrative law, access to information, ECHR, CRC, and more.</p>
-        </article>
-        <article class="card">
-          <h3>Network</h3>
-          <p>Connect to legal and human-rights communities. Share your name later if you prefer.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+.lang-switch{margin-left:auto;display:flex;gap:6px}
+.lang-switch button{
+  background:none;border:1px solid rgba(255,255,255,.2);
+  color:var(--muted);padding:6px 10px;border-radius:8px;cursor:pointer
+}
+.lang-switch button.active{border-color:var(--brand);color:var(--ink)}
 
-  <section class="section" id="children">
-    <div class="container">
-      <h2>Children & education</h2>
-      <p class="section__lead">Safety, contact, and learning – in practice.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Parent tools</h3>
-          <p>Meeting notes, school/child services dialogue templates, contact schedules, and best-interest checklists.</p>
-        </article>
-        <article class="card">
-          <h3>Learning rooms</h3>
-          <p>Simple modules for critical thinking, tech literacy, and safe online practice.</p>
-        </article>
-        <article class="card">
-          <h3>Safe documentation</h3>
-          <p>Upload audio/images/text respecting privacy and evidence value.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+.hero{
+  background:
+    radial-gradient(70% 60% at 50% 20%, rgba(77,163,255,.20) 0%, rgba(0,0,0,0) 60%),
+    radial-gradient(40% 40% at 80% 0%, rgba(157,217,255,.18) 0%, rgba(0,0,0,0) 60%);
+  padding:72px 0 56px;
+}
+.hero-inner{text-align:center}
+.hero h1{font-size:clamp(26px,4vw,42px);margin:0 0 12px}
+.lead{color:var(--muted);font-size:clamp(16px,2vw,19px);margin:0 auto 20px;max-width:60ch}
+.hero-cta{display:flex;justify-content:center;gap:12px;margin-bottom:12px}
+.tagline{opacity:.8;font-size:.95rem}
 
-  <section class="section alt" id="community">
-    <div class="container">
-      <h2>Community improvement</h2>
-      <p class="section__lead">Openness, respect and care – from words to action.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Dialogue & ideas</h3>
-          <p>A safe space to share proposals and experiences. We help you make inputs concrete.</p>
-        </article>
-        <article class="card">
-          <h3>Whistleblowing</h3>
-          <p>Report discrimination, abuse of power or poor treatment. Choose visibility and timing.</p>
-        </article>
-        <article class="card">
-          <h3>Resources</h3>
-          <p>Short guides on media literacy, rumor control and digital traces.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+.btn{
+  display:inline-block;border:1px solid rgba(255,255,255,.18);
+  color:var(--ink);text-decoration:none;font-weight:700;
+  padding:10px 14px;border-radius:12px
+}
+.btn.primary{background:linear-gradient(180deg,var(--brand),#3c83cf);border-color:transparent}
+.btn.big{padding:14px 18px}
 
-  <section class="section" id="tech">
-    <div class="container">
-      <h2>Technology & AI for human rights</h2>
-      <p class="section__lead">AI amplifies human voices – it doesn’t replace them.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Safe practice</h3>
-          <p>Avoid manipulated media, keep evidence organized, share responsibly.</p>
-        </article>
-        <article class="card">
-          <h3>Documentation</h3>
-          <p>Timestamps, file integrity and structured storage to enable access requests.</p>
-        </article>
-        <article class="card">
-          <h3>Training</h3>
-          <p>Micro-courses for parents, youth and professionals: AI basics, critical thinking, privacy.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+.section{padding:48px 0}
+.section.alt{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0))}
+.section h2{margin:0 0 14px;font-size:clamp(22px,3.2vw,30px)}
+.section p{color:var(--muted);max-width:70ch}
 
-  <section class="section alt" id="centers">
-    <div class="container">
-      <h2>Activity & competence centers</h2>
-      <p class="section__lead">Digital and physical spaces – across ages and backgrounds.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Creative labs</h3>
-          <p>Photo, film, music, writing, design – expression becomes voice and evidence.</p>
-        </article>
-        <article class="card">
-          <h3>Sports & health</h3>
-          <p>Low-barrier activities that build mastery and belonging.</p>
-        </article>
-        <article class="card">
-          <h3>Courses & mentoring</h3>
-          <p>Short courses, 1–1 guidance and communities that follow you over time.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+.cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;margin-top:18px
+}
+.card{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:14px;padding:16px
+}
+.card h3{margin-top:0}
+.card ul{margin:8px 0 0 18px;color:var(--muted)}
 
-  <section class="section contact" id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p class="section__lead">Need fast help? Tell us briefly what’s urgent – we’ll reply as soon as possible.</p>
-      <form class="form" name="contact_en" netlify>
-        <div class="grid">
-          <label class="field">
-            <span>Name</span>
-            <input type="text" name="name" required />
-          </label>
-          <label class="field">
-            <span>Email</span>
-            <input type="email" name="email" required />
-          </label>
-        </div>
-        <label class="field">
-          <span>Topic</span>
-          <select name="topic" required>
-            <option value="Finance">Finance</option>
-            <option value="Legal">Legal</option>
-            <option value="Children & education">Children & education</option>
-            <option value="Community">Community</option>
-            <option value="Technology & AI">Technology & AI</option>
-            <option value="Activity">Activity</option>
-            <option value="Other">Other</option>
-          </select>
-        </label>
-        <label class="field">
-          <span>Message</span>
-          <textarea name="message" rows="6" required></textarea>
-        </label>
-        <button class="btn" type="submit">Send</button>
-      </form>
-      <p class="contact__alt">Or email <a href="mailto:contact@ga13.org">contact@ga13.org</a></p>
-    </div>
-  </section>
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p>© <span id="year"></span> GA13 – Global Human Rights Network. One heart, worldwide.</p>
-      <nav aria-label="Footer">
-        <a href="#top">Back to top</a>
-        <a href="#legal">Rights</a>
-        <a href="#tech">Privacy & AI</a>
-      </nav>
-    </div>
-  </footer>
+.bullet-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;color:var(--muted);margin:12px 0 0}
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const toggle = document.getElementById('navToggle');
-    const menu = document.getElementById('navMenu');
-    toggle.addEventListener('click', () => {
-      const open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!open));
-      menu.classList.toggle('nav__list--open');
-    });
-  </script>
-</body>
-</html>
+.site-footer{
+  border-top:1px solid rgba(255,255,255,.06);
+  padding:22px 0;color:var(--muted);text-align:center
+}
+
+/* Mobilnav */
+@media (max-width:820px){
+  .main-nav ul{display:none;position:absolute;right:12px;top:58px;background:var(--card);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.08)}
+  .main-nav ul.open{display:block}
+  .nav-toggle{display:inline-block}
+}
