@@ -296,3 +296,558 @@
 </script>
 </body>
 </html>
+
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GA-13 • Global Human Rights Network</title>
+  <meta name="description" content="GA-13 er et åpent, nøytralt nettverk for menneskerettigheter: juridisk hjelp, økonomisk veiledning, utdanning og trygg teknologi.">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#">
+      <span class="logo">GA-13</span>
+      <span class="brand-sub">Global Human Rights Network</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#help">Hjelp nå</a>
+      <a href="#core">Kjerneområder</a>
+      <a href="#learn">Læring & Utdanning</a>
+      <a href="#tools">Verktøy</a>
+      <a href="#contact" class="pill">Kontakt</a>
+      <button class="lang" id="langToggle" aria-label="Bytt språk">NO</button>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Meny">☰</button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <h1>Humanitet er en rettighet – ikke noe du må bevise</h1>
+        <p class="lead">
+          GA-13 er en nøytral plattform hvor mennesker kan bli hørt, få hjelp og samarbeide.
+          Vi kobler <strong>juridisk støtte</strong>, <strong>økonomisk veiledning</strong>, <strong>utdanning</strong> og
+          <strong>trygg teknologi</strong> – fra hjerte til hjerte.
+        </p>
+        <div class="cta-row">
+          <a href="#help" class="btn primary">Hjelp meg nå</a>
+          <a href="#core" class="btn ghost">Utforsk kjerneområder</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <!-- Sett inn et nøytralt hero-bilde i ./assets/hero.jpg ved behov -->
+      </div>
+    </section>
+
+    <!-- HJELP NÅ -->
+    <section class="panel" id="help">
+      <h2>Hjelp nå</h2>
+      <p>
+        Trenger du rask støtte? Start her. Du kan beskrive situasjonen din med egne ord.
+        Vi hjelper deg å strukturere teksten med riktige paragrafer og sende til riktig instans.
+      </p>
+      <form class="help-form" onsubmit="event.preventDefault(); alert('Takk! Vi har registrert henvendelsen (demo).');">
+        <label>
+          Ditt navn (valgfritt)
+          <input type="text" placeholder="Ola Nordmann" />
+        </label>
+
+        <label>
+          E-post (for svar)
+          <input type="email" placeholder="ola@eksempel.no" required />
+        </label>
+
+        <label>
+          Hva gjelder det?
+          <select required>
+            <option value="">Velg kategori…</option>
+            <option>Juridisk (besøksforbud, innsyn, klage)</option>
+            <option>Økonomi (gjeld, renter, tvangssalg)</option>
+            <option>Barne- og utdanning</option>
+            <option>Diskriminering / dårlig behandling</option>
+            <option>Annet</option>
+          </select>
+        </label>
+
+        <label>
+          Beskriv situasjonen kort
+          <textarea rows="6" placeholder="Skriv med dine egne ord…"></textarea>
+        </label>
+
+        <div class="row">
+          <label class="half">
+            Last opp vedlegg (valgfritt)
+            <input type="file" />
+          </label>
+          <label class="half">
+            Samtykke til behandling (påkrevd)
+            <input type="checkbox" required /> Jeg godtar at henvendelsen lagres for oppfølging.
+          </label>
+        </div>
+
+        <button class="btn primary" type="submit">Send</button>
+        <p class="tiny">*Denne demoen sender ikke data. I produksjon kobles dette til trygg behandling av henvendelser.</p>
+      </form>
+    </section>
+
+    <!-- KJERNEOMRÅDER -->
+    <section class="panel" id="core">
+      <h2>Kjerneområder</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Økonomisk støtte og rettferdighet</h3>
+          <ul>
+            <li>Rådgivning om gjeld, renter og refinansiering</li>
+            <li>Nettverk av økonomiske eksperter</li>
+            <li>Rapportering av økonomisk urett og bedrageri</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Juridisk bistand</h3>
+          <ul>
+            <li>Veien til innsyn, klage og søksmål</li>
+            <li>Malverk for brev (Forvaltningsloven, Offentleglova, EMK, Barnekonvensjonen)</li>
+            <li>Kart over uavhengige hjelpetjenester</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Barne- og utdanningsutvikling</h3>
+          <ul>
+            <li>Ressurser for foreldre og skoler</li>
+            <li>Rettferdig behandling og tidlig medvirkning for barn</li>
+            <li>Kreative læringsrom og digitale verktøy</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Samfunnsforbedring og forståelse</h3>
+          <ul>
+            <li>Åpen dialog og forslag til forbedringer</li>
+            <li>Varsling av urett og diskriminering</li>
+            <li>Fremme respekt, åpenhet og medmenneskelighet</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Teknologi og AI for rettigheter</h3>
+          <ul>
+            <li>Trygg bruk av AI i hverdagen</li>
+            <li>Digitale løsninger for dokumentasjon og bevis</li>
+            <li>Sikre nettverk for barn, familier og lokalsamfunn</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Aktivitets- og kompetansesenter</h3>
+          <ul>
+            <li>Fysiske og digitale møteplasser</li>
+            <li>Idrett, skaperglede og teknologiopplæring</li>
+            <li>Kurs for personlig og profesjonell utvikling</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- LÆRING -->
+    <section class="panel alt" id="learn">
+      <h2>Læring & Utdanning</h2>
+      <p>
+        Vi utvikler åpne, praktiske mikrokurs i menneskerettigheter, digital dømmekraft og AI-forståelse –
+        tilpasset barn, ungdom, foreldre og lærere. Målet er <em>lav terskel, høy effekt</em>.
+      </p>
+
+      <div class="list">
+        <div>
+          <h4>Grunnkurs: Dine rettigheter</h4>
+          <p>Forvaltningsloven, Offentleglova, EMK/Barnekonvensjonen – forklart enkelt med maler du kan bruke.</p>
+        </div>
+        <div>
+          <h4>Digital trygghet & AI</h4>
+          <p>Hvordan oppdage manipulasjon, ivareta personvern og bruke AI trygt og smart i hverdagen.</p>
+        </div>
+        <div>
+          <h4>Foreldre & skole</h4>
+          <p>Dialog, dokumentasjon, samarbeid – og hvordan stå opp for barnets beste.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERKTØY -->
+    <section class="panel" id="tools">
+      <h2>Verktøy</h2>
+      <div class="tools-grid">
+        <a class="tool" href="#" aria-disabled="true">
+          📄 Brev/mal-generator <span>Kommer</span>
+        </a>
+        <a class="tool" href="#" aria-disabled="true">
+          ⚖️ Paragraf-veileder <span>Kommer</span>
+        </a>
+        <a class="tool" href="#" aria-disabled="true">
+          🧭 Innsyn/navigasjon <span>Kommer</span>
+        </a>
+        <a class="tool" href="#" aria-disabled="true">
+          🛡️ Trygg filopplasting <span>Kommer</span>
+        </a>
+      </div>
+      <p class="tiny">* Markerte moduler aktiveres fortløpende. Foreløpig vises en statisk demo.</p>
+    </section>
+
+    <!-- KONTAKT -->
+    <section class="panel alt" id="contact">
+      <h2>Kontakt</h2>
+      <p>Vil du bidra, teste, eller trenger du hjelp? Send en melding.</p>
+
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Takk! Vi tar kontakt (demo).');">
+        <div class="row">
+          <label class="half">
+            Navn
+            <input type="text" placeholder="Ditt navn" />
+          </label>
+          <label class="half">
+            E-post
+            <input type="email" placeholder="din@epost.no" required />
+          </label>
+        </div>
+        <label>
+          Melding
+          <textarea rows="6" placeholder="Skriv her…"></textarea>
+        </label>
+        <button class="btn primary">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="foot-grid">
+      <div>
+        <div class="logo">GA-13</div>
+        <p>One Nation – alle hjerter på jord. Vi bygger trygge rammer for rettferdighet, utdanning og hverdagsmestring.</p>
+      </div>
+      <div>
+        <h5>Sider</h5>
+        <ul>
+          <li><a href="#help">Hjelp nå</a></li>
+          <li><a href="#core">Kjerneområder</a></li>
+          <li><a href="#learn">Læring</a></li>
+          <li><a href="#tools">Verktøy</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Språk</h5>
+        <ul>
+          <li><button class="linklike" id="noBtn">Norsk</button></li>
+          <li><button class="linklike" id="enBtn">English</button></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fineprint">© <span id="year"></span> GA-13 • Global Human Rights Network. Bygd med hjerte og teknologi.</p>
+  </footer>
+
+  <script>
+    // Enkle småting: mobilmeny, årstall, (plassholder) språkknapp
+    const year = document.getElementById('year');
+    if (year) year.textContent = new Date().getFullYear();
+
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburger?.addEventListener('click', () => nav.classList.toggle('open'));
+
+    const langToggle = document.getElementById('langToggle');
+    langToggle?.addEventListener('click', () => {
+      alert('Språkbytte (demo). I neste versjon laster vi EN-innhold.');
+    });
+
+    document.getElementById('noBtn')?.addEventListener('click', () => alert('Norsk (demo)'));
+    document.getElementById('enBtn')?.addEventListener('click', () => alert('English (demo)'));
+  </script>
+</body>
+</html>
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GA-13 • Global Human Rights Network</title>
+  <meta name="description" content="GA-13 er et åpent, nøytralt nettverk for menneskerettigheter: juridisk hjelp, økonomisk veiledning, utdanning og trygg teknologi.">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#">
+      <span class="logo">GA-13</span>
+      <span class="brand-sub">Global Human Rights Network</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#help">Hjelp nå</a>
+      <a href="#core">Kjerneområder</a>
+      <a href="#learn">Læring & Utdanning</a>
+      <a href="#tools">Verktøy</a>
+      <a href="#contact" class="pill">Kontakt</a>
+      <button class="lang" id="langToggle" aria-label="Bytt språk">NO</button>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Meny">☰</button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <h1>Humanitet er en rettighet – ikke noe du må bevise</h1>
+        <p class="lead">
+          GA-13 er en nøytral plattform hvor mennesker kan bli hørt, få hjelp og samarbeide.
+          Vi kobler <strong>juridisk støtte</strong>, <strong>økonomisk veiledning</strong>, <strong>utdanning</strong> og
+          <strong>trygg teknologi</strong> – fra hjerte til hjerte.
+        </p>
+        <div class="cta-row">
+          <a href="#help" class="btn primary">Hjelp meg nå</a>
+          <a href="#core" class="btn ghost">Utforsk kjerneområder</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <!-- Sett inn et nøytralt hero-bilde i ./assets/hero.jpg ved behov -->
+      </div>
+    </section>
+
+    <!-- HJELP NÅ -->
+    <section class="panel" id="help">
+      <h2>Hjelp nå</h2>
+      <p>
+        Trenger du rask støtte? Start her. Du kan beskrive situasjonen din med egne ord.
+        Vi hjelper deg å strukturere teksten med riktige paragrafer og sende til riktig instans.
+      </p>
+      <form class="help-form" onsubmit="event.preventDefault(); alert('Takk! Vi har registrert henvendelsen (demo).');">
+        <label>
+          Ditt navn (valgfritt)
+          <input type="text" placeholder="Ola Nordmann" />
+        </label>
+
+        <label>
+          E-post (for svar)
+          <input type="email" placeholder="ola@eksempel.no" required />
+        </label>
+
+        <label>
+          Hva gjelder det?
+          <select required>
+            <option value="">Velg kategori…</option>
+            <option>Juridisk (besøksforbud, innsyn, klage)</option>
+            <option>Økonomi (gjeld, renter, tvangssalg)</option>
+            <option>Barne- og utdanning</option>
+            <option>Diskriminering / dårlig behandling</option>
+            <option>Annet</option>
+          </select>
+        </label>
+
+        <label>
+          Beskriv situasjonen kort
+          <textarea rows="6" placeholder="Skriv med dine egne ord…"></textarea>
+        </label>
+
+        <div class="row">
+          <label class="half">
+            Last opp vedlegg (valgfritt)
+            <input type="file" />
+          </label>
+          <label class="half">
+            Samtykke til behandling (påkrevd)
+            <input type="checkbox" required /> Jeg godtar at henvendelsen lagres for oppfølging.
+          </label>
+        </div>
+
+        <button class="btn primary" type="submit">Send</button>
+        <p class="tiny">*Denne demoen sender ikke data. I produksjon kobles dette til trygg behandling av henvendelser.</p>
+      </form>
+    </section>
+
+    <!-- KJERNEOMRÅDER -->
+    <section class="panel" id="core">
+      <h2>Kjerneområder</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Økonomisk støtte og rettferdighet</h3>
+          <ul>
+            <li>Rådgivning om gjeld, renter og refinansiering</li>
+            <li>Nettverk av økonomiske eksperter</li>
+            <li>Rapportering av økonomisk urett og bedrageri</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Juridisk bistand</h3>
+          <ul>
+            <li>Veien til innsyn, klage og søksmål</li>
+            <li>Malverk for brev (Forvaltningsloven, Offentleglova, EMK, Barnekonvensjonen)</li>
+            <li>Kart over uavhengige hjelpetjenester</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Barne- og utdanningsutvikling</h3>
+          <ul>
+            <li>Ressurser for foreldre og skoler</li>
+            <li>Rettferdig behandling og tidlig medvirkning for barn</li>
+            <li>Kreative læringsrom og digitale verktøy</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Samfunnsforbedring og forståelse</h3>
+          <ul>
+            <li>Åpen dialog og forslag til forbedringer</li>
+            <li>Varsling av urett og diskriminering</li>
+            <li>Fremme respekt, åpenhet og medmenneskelighet</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Teknologi og AI for rettigheter</h3>
+          <ul>
+            <li>Trygg bruk av AI i hverdagen</li>
+            <li>Digitale løsninger for dokumentasjon og bevis</li>
+            <li>Sikre nettverk for barn, familier og lokalsamfunn</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Aktivitets- og kompetansesenter</h3>
+          <ul>
+            <li>Fysiske og digitale møteplasser</li>
+            <li>Idrett, skaperglede og teknologiopplæring</li>
+            <li>Kurs for personlig og profesjonell utvikling</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- LÆRING -->
+    <section class="panel alt" id="learn">
+      <h2>Læring & Utdanning</h2>
+      <p>
+        Vi utvikler åpne, praktiske mikrokurs i menneskerettigheter, digital dømmekraft og AI-forståelse –
+        tilpasset barn, ungdom, foreldre og lærere. Målet er <em>lav terskel, høy effekt</em>.
+      </p>
+
+      <div class="list">
+        <div>
+          <h4>Grunnkurs: Dine rettigheter</h4>
+          <p>Forvaltningsloven, Offentleglova, EMK/Barnekonvensjonen – forklart enkelt med maler du kan bruke.</p>
+        </div>
+        <div>
+          <h4>Digital trygghet & AI</h4>
+          <p>Hvordan oppdage manipulasjon, ivareta personvern og bruke AI trygt og smart i hverdagen.</p>
+        </div>
+        <div>
+          <h4>Foreldre & skole</h4>
+          <p>Dialog, dokumentasjon, samarbeid – og hvordan stå opp for barnets beste.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERKTØY -->
+    <section class="panel" id="tools">
+      <h2>Verktøy</h2>
+      <div class="tools-grid">
+        <a class="tool" href="#" aria-disabled="true">
+          📄 Brev/mal-generator <span>Kommer</span>
+        </a>
+        <a class="tool" href="#" aria-disabled="true">
+          ⚖️ Paragraf-veileder <span>Kommer</span>
+        </a>
+        <a class="tool" href="#" aria-disabled="true">
+          🧭 Innsyn/navigasjon <span>Kommer</span>
+        </a>
+        <a class="tool" href="#" aria-disabled="true">
+          🛡️ Trygg filopplasting <span>Kommer</span>
+        </a>
+      </div>
+      <p class="tiny">* Markerte moduler aktiveres fortløpende. Foreløpig vises en statisk demo.</p>
+    </section>
+
+    <!-- KONTAKT -->
+    <section class="panel alt" id="contact">
+      <h2>Kontakt</h2>
+      <p>Vil du bidra, teste, eller trenger du hjelp? Send en melding.</p>
+
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Takk! Vi tar kontakt (demo).');">
+        <div class="row">
+          <label class="half">
+            Navn
+            <input type="text" placeholder="Ditt navn" />
+          </label>
+          <label class="half">
+            E-post
+            <input type="email" placeholder="din@epost.no" required />
+          </label>
+        </div>
+        <label>
+          Melding
+          <textarea rows="6" placeholder="Skriv her…"></textarea>
+        </label>
+        <button class="btn primary">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="foot-grid">
+      <div>
+        <div class="logo">GA-13</div>
+        <p>One Nation – alle hjerter på jord. Vi bygger trygge rammer for rettferdighet, utdanning og hverdagsmestring.</p>
+      </div>
+      <div>
+        <h5>Sider</h5>
+        <ul>
+          <li><a href="#help">Hjelp nå</a></li>
+          <li><a href="#core">Kjerneområder</a></li>
+          <li><a href="#learn">Læring</a></li>
+          <li><a href="#tools">Verktøy</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Språk</h5>
+        <ul>
+          <li><button class="linklike" id="noBtn">Norsk</button></li>
+          <li><button class="linklike" id="enBtn">English</button></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fineprint">© <span id="year"></span> GA-13 • Global Human Rights Network. Bygd med hjerte og teknologi.</p>
+  </footer>
+
+  <script>
+    // Enkle småting: mobilmeny, årstall, (plassholder) språkknapp
+    const year = document.getElementById('year');
+    if (year) year.textContent = new Date().getFullYear();
+
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburger?.addEventListener('click', () => nav.classList.toggle('open'));
+
+    const langToggle = document.getElementById('langToggle');
+    langToggle?.addEventListener('click', () => {
+      alert('Språkbytte (demo). I neste versjon laster vi EN-innhold.');
+    });
+
+    document.getElementById('noBtn')?.addEventListener('click', () => alert('Norsk (demo)'));
+    document.getElementById('enBtn')?.addEventListener('click', () => alert('English (demo)'));
+  </script>
+</body>
+</html>
