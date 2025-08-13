@@ -6,12 +6,14 @@
   <title>GA13 – Global Human Rights Network</title>
   <meta name="description" content="GA13 er et åpent nettverk som gir mennesker praktiske verktøy for økonomi, juss, barnerett, utdanning, samfunnsutvikling og trygg bruk av teknologi/AI." />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="logo.svg" type="image/svg+xml" /> <!-- NEW -->
 </head>
 <body>
   <!-- Topbar -->
   <header class="topbar">
     <div class="container topbar__inner">
       <a class="brand" href="#top" aria-label="GA13 forside">
+        <img src="logo.svg" alt="" width="28" height="28" style="vertical-align:middle;margin-right:.5rem" /> <!-- NEW -->
         <span class="brand__mark">GA13</span>
         <span class="brand__text">Global Human Rights Network</span>
       </a>
@@ -24,8 +26,9 @@
           <li><a href="#barn">Barn & Utdanning</a></li>
           <li><a href="#samfunn">Samfunn</a></li>
           <li><a href="#teknologi">Teknologi & AI</a></li>
-          <li><a href="#aktivitet">Aktivitetssenter</a></li>
+          <li><a href="#aktivitet">Aktivitet</a></li>
           <li><a class="btn btn--small" href="#kontakt">Kontakt</a></li>
+          <li><a class="lang" href="en.html" hreflang="en" aria-label="English">EN</a></li> <!-- NEW -->
         </ul>
       </nav>
     </div>
@@ -40,7 +43,7 @@
         <strong>økonomi</strong>, <strong>juss</strong>, <strong>barnerett & utdanning</strong>, <strong>samfunn</strong>, og trygg <strong>teknologi/AI</strong>.
       </p>
       <div class="hero__cta">
-        <a class="btn" href="#kontakt">Hjelp meg nå</a>
+        <button class="btn" id="openWizard">Hjelp meg nå</button> <!-- CHANGED -->
         <a class="btn btn--ghost" href="#okonomi">Se verktøyene</a>
       </div>
     </div>
@@ -234,6 +237,85 @@
     </div>
   </footer>
 
+  <!-- NEW: Hjelp-meg-nå veiviser -->
+  <dialog id="wizard" class="wizard">
+    <form method="dialog" class="wizard__box" name="wizardForm" netlify>
+      <button class="wizard__close" aria-label="Lukk" value="close">×</button>
+      <h3>Hjelp meg nå</h3>
+
+      <div class="wizard__step" data-step="1">
+        <p class="muted">Trinn 1 av 3</p>
+        <label class="field">
+          <span>Hva gjelder det?</span>
+          <select id="w_topic" required>
+            <option value="">Velg område…</option>
+            <option>Økonomi</option>
+            <option>Juridisk</option>
+            <option>Barn & utdanning</option>
+            <option>Samfunn</option>
+            <option>Teknologi & AI</option>
+            <option>Aktivitet</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Hvor akutt er det?</span>
+          <select id="w_urgency" required>
+            <option value="Lav">Lav</option>
+            <option value="Middels">Middels</option>
+            <option value="Høy">Høy</option>
+            <option value="Kritisk">Kritisk</option>
+          </select>
+        </label>
+        <div class="wizard__nav">
+          <button class="btn" id="next1">Neste</button>
+        </div>
+      </div>
+
+      <div class="wizard__step" data-step="2" hidden>
+        <p class="muted">Trinn 2 av 3</p>
+        <label class="field">
+          <span>Beskriv kort hva som har skjedd</span>
+          <textarea id="w_desc" rows="6" placeholder="Kort fakta: hvem, hva, når…" required></textarea>
+        </label>
+        <div class="wizard__nav">
+          <button class="btn btn--ghost" id="back2">Tilbake</button>
+          <button class="btn" id="next2">Neste</button>
+        </div>
+      </div>
+
+      <div class="wizard__step" data-step="3" hidden>
+        <p class="muted">Trinn 3 av 3</p>
+        <label class="field">
+          <span>Navn</span>
+          <input id="w_name" type="text" required />
+        </label>
+        <label class="field">
+          <span>E-post</span>
+          <input id="w_email" type="email" required />
+        </label>
+        <details class="field">
+          <summary>Legg til referanser (valgfritt)</summary>
+          <textarea id="w_refs" rows="4" placeholder="Lenker, saksnr., datoer …"></textarea>
+        </details>
+
+        <input type="hidden" name="topic" id="f_topic">
+        <input type="hidden" name="urgency" id="f_urgency">
+        <input type="hidden" name="description" id="f_desc">
+        <input type="hidden" name="references" id="f_refs">
+        <input type="hidden" name="name" id="f_name">
+        <input type="hidden" name="email" id="f_email">
+        <input type="hidden" name="form-name" value="wizardForm">
+
+        <div class="wizard__summary" id="w_summary"></div>
+
+        <div class="wizard__nav">
+          <button class="btn btn--ghost" id="back3">Tilbake</button>
+          <button class="btn" type="submit">Send</button>
+        </div>
+      </div>
+    </form>
+  </dialog>
+
   <script>
     // år i footer
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -246,80 +328,57 @@
       toggle.setAttribute('aria-expanded', String(!open));
       menu.classList.toggle('nav__list--open');
     });
-  </script>
-</body>
-</html>
-:root{
-  --bg:#0d1117;
-  --panel:#161b22;
-  --ink:#e6edf3;
-  --muted:#9fb0c4;
-  --brand:#5fb2ff;
-  --brand-2:#a7d38a;
-  --accent:#ffd166;
-  --ok:#39d353;
-  --danger:#ff7b72;
-  --gap:clamp(16px,2.6vw,28px);
-  --radius:14px;
-  --shadow:0 10px 30px rgba(0,0,0,.25);
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.5}
-a{color:var(--brand);text-decoration:none}
-a:hover{text-decoration:underline}
-.container{width:min(1100px,92%);margin:auto}
 
-.topbar{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid #222}
-.topbar__inner{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
-.brand{display:flex;align-items:center;gap:.6rem}
-.brand__mark{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b1020;padding:.25rem .5rem;border-radius:10px;font-weight:800;letter-spacing:.5px}
-.brand__text{color:var(--muted);font-size:.95rem}
+    // Wizard
+    const wizard = document.getElementById('wizard');
+    const openWizard = document.getElementById('openWizard');
+    const steps = [...document.querySelectorAll('.wizard__step')];
 
-.nav__toggle{display:none;background:transparent;border:1px solid #2a3240;color:var(--ink);padding:.5rem .7rem;border-radius:10px}
-.nav__list{display:flex;gap:1rem;list-style:none;margin:0;padding:0;align-items:center}
-.nav__list a{padding:.4rem .6rem;border-radius:8px}
-.nav__list a:hover{background:#1b2230}
-.btn{display:inline-block;background:var(--brand);color:#0c1222;padding:.9rem 1.1rem;border-radius:12px;font-weight:700;box-shadow:var(--shadow)}
-.btn:hover{filter:brightness(1.05)}
-.btn--ghost{background:transparent;color:var(--ink);border:1px solid #2a3240;box-shadow:none}
-.btn--small{padding:.5rem .8rem;border-radius:10px}
+    function showStep(n){
+      steps.forEach((s,i)=> s.hidden = i!==n-1);
+    }
 
-.hero{background:radial-gradient(1000px 600px at 10% 0%,rgba(95,178,255,.18),transparent), radial-gradient(800px 500px at 90% 10%,rgba(167,211,138,.16),transparent);}
-.hero__inner{padding:clamp(48px,8vw,96px) 0}
-.hero h1{font-size:clamp(28px,5.4vw,52px);margin:0 0 .6rem}
-.lead{color:var(--muted);font-size:clamp(16px,2.2vw,20px);max-width:70ch}
-.hero__cta{display:flex;gap:.8rem;margin-top:1.2rem;flex-wrap:wrap}
+    openWizard.addEventListener('click', ()=> {
+      wizard.showModal();
+      showStep(1);
+    });
 
-.strip{border-top:1px solid #222;border-bottom:1px solid #222;background:#0f1420}
-.strip__inner{padding:1rem 0;color:#c9d6e6}
+    wizard.addEventListener('click', (e)=>{
+      if(e.target === wizard) wizard.close();
+    });
 
-.section{padding:clamp(40px,7vw,80px) 0}
-.section.alt{background:#0f1420}
-.section h2{font-size:clamp(22px,4.4vw,34px);margin:.2rem 0 1rem}
-.section__lead{color:var(--muted);margin:-.3rem 0 1.2rem}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
-.card{background:var(--panel);border:1px solid #222;border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
-.card h3{margin:.2rem 0 .4rem;font-size:1.05rem}
+    const next1 = document.getElementById('next1');
+    const next2 = document.getElementById('next2');
+    const back2 = document.getElementById('back2');
+    const back3 = document.getElementById('back3');
 
-.form{margin-top:1rem;background:var(--panel);padding:1rem;border:1px solid #222;border-radius:var(--radius)}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
-.field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:.9rem}
-.field span{color:#cbd6e8;font-size:.9rem}
-input,select,textarea{background:#0f1420;color:var(--ink);border:1px solid #2a3240;border-radius:10px;padding:.7rem .8rem}
-textarea{resize:vertical}
+    next1.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const topic = document.getElementById('w_topic').value;
+      const urg = document.getElementById('w_urgency').value;
+      if(!topic){ alert('Velg område.'); return; }
+      if(!urg){ alert('Velg akutt-nivå.'); return; }
+      showStep(2);
+    });
 
-.contact .contact__alt{margin-top:.8rem;color:var(--muted)}
+    back2.addEventListener('click', (e)=>{ e.preventDefault(); showStep(1); });
+    next2.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const desc = document.getElementById('w_desc').value.trim();
+      if(!desc){ alert('Skriv en kort beskrivelse.'); return; }
+      // fyll oppsummering
+      const sum = document.getElementById('w_summary');
+      const topic = document.getElementById('w_topic').value;
+      const urg = document.getElementById('w_urgency').value;
+      sum.innerHTML = `
+        <h4>Oppsummering</h4>
+        <ul>
+          <li><strong>Område:</strong> ${topic}</li>
+          <li><strong>Akutt-nivå:</strong> ${urg}</li>
+          <li><strong>Beskrivelse:</strong> ${desc.replace(/</g,'&lt;')}</li>
+        </ul>`;
+      showStep(3);
+    });
+    back3.addEventListener('click', (e)=>{ e.preventDefault(); showStep(2); });
 
-.footer{border-top:1px solid #222;background:#0f1420}
-.footer__inner{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 0;color:#9fb0c4}
-.footer a{color:#c9d6e6;margin-left:1rem}
-
-@media (max-width:900px){
-  .cards{grid-template-columns:1fr 1fr}
-  .grid{grid-template-columns:1fr}
-}
-@media (max-width:680px){
-  .nav__toggle{display:inline-block}
-  .nav__list{display:none;position:absolute;right:4%;top:56px;background:#0f1420;border:1px solid #222;border-radius:12px;padding:.6rem;flex-direction:column;min-width:220px}
-  .nav__list--open{display:flex}
-}
+    // send-synk: fyll skjulte felt
