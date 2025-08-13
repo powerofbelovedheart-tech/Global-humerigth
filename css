@@ -93,3 +93,35 @@ input,textarea,select{
 .btn--light { background: #fff; color: #0a3d62; }
 .btn--outline { background: transparent; color: #fff; border-color: #fff; }
 .btn:hover { transform: translateY(-1px); transition: .15s ease; }
+.cta {
+  background: linear-gradient(135deg, #004d7a, #008793, #00bf72);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.cta p {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+}
+
+.cta-button {
+  background-color: white;
+  color: #004d7a;
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #004d7a;
+  color: white;
+}
