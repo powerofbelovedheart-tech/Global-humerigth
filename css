@@ -174,3 +174,33 @@ input,textarea,select{
 .roadmap li strong {
   margin-left: 5px;
 }
+.roadmap {
+  background: #f8f9fa;
+  padding: 50px 20px;
+}
+
+.roadmap h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2em;
+}
+
+.roadmap ul {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.roadmap li {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+}
+
+.roadmap li svg {
+  margin-right: 12px;
+  flex-shrink: 0;
+}
