@@ -1,0 +1,24 @@
+// språk-bryter
+function setLang(lang){
+  localStorage.setItem('lang', lang);
+  document.querySelectorAll('[data-no]').forEach(el=>{
+    el.textContent = (lang==='en' && el.dataset.en) ? el.dataset.en : el.dataset.no;
+  });
+  // marker aktive knapper
+  document.querySelectorAll('.lang,.chip').forEach(b=>b.classList.remove('primary'));
+  if(lang==='en'){
+    document.getElementById('lang-en')?.classList.add('primary');
+    document.getElementById('f-en')?.classList.add('primary');
+  }else{
+    document.getElementById('lang-no')?.classList.add('primary');
+    document.getElementById('f-no')?.classList.add('primary');
+  }
+}
+document.getElementById('lang-no')?.addEventListener('click',()=>setLang('no'));
+document.getElementById('lang-en')?.addEventListener('click',()=>setLang('en'));
+document.getElementById('f-no')?.addEventListener('click',()=>setLang('no'));
+document.getElementById('f-en')?.addEventListener('click',()=>setLang('en'));
+setLang(localStorage.getItem('lang')||'no');
+
+// år i footer
+document.getElementById('year').textContent = new Date().getFullYear();
