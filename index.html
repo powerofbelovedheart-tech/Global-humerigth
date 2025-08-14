@@ -902,7 +902,36 @@ kom<!DOCTYPE html>
       </div>
       <p class="tiny">* Markerte moduler aktiveres fortløpende. Foreløpig vises en statisk demo.</p>
     </section>
+<section id="live-chat" class="section">
+  <div class="container">
+    <h2>Direkte hjelp (beta)</h2>
+    <p>Beskriv situasjonen din her. Du kan også sende talebeskjed.</p>
 
+    <div id="chat-box" style="max-height: 320px; overflow:auto; border:1px solid #ddd; border-radius:8px; padding:12px; margin-bottom:12px;">
+      <div id="messages" aria-live="polite"></div>
+    </div>
+
+    <div class="form-row">
+      <label for="chat-name">Ditt navn (valgfritt)</label>
+      <input id="chat-name" type="text" placeholder="Ola / anonym">
+    </div>
+
+    <div class="form-row">
+      <label for="chat-text">Melding</label>
+      <textarea id="chat-text" rows="3" placeholder="Skriv kort hva som skjer"></textarea>
+    </div>
+
+    <div class="form-row" style="display:flex; gap:8px; align-items:center;">
+      <button id="send-msg" type="button">Send</button>
+      <button id="rec-btn" type="button">🎙️ Talemelding</button>
+      <span id="rec-status" style="font-size:0.9rem; opacity:0.8;"></span>
+    </div>
+
+    <p style="font-size:0.85rem; opacity:0.8; margin-top:6px;">
+      Personvern: meldinger lagres kryptert hos vår driftspartner (Firebase). Ikke del fødselsnummer/kontoinfo. 
+    </p>
+  </div>
+</section>
     <!-- KONTAKT -->
     <!-- CONTACT START -->
 <section id="contact" class="section">
