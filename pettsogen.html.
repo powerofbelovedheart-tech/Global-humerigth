@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pettsogen – One Nation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Pettsogen</h1>
+        <nav>
+            <a href="index.html">Hjem</a> |
+            <a href="education.html">Utdanning</a> |
+            <a href="economy.html">Økonomi</a> |
+            <a href="pettsogen.html">Pettsogen</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Velkommen til Pettsogen</h2>
+            <p>Denne siden er en del av One Nation – Alle hjerter på jord.</p>
+            <p>Her kan vi legge inn mer informasjon om Pettsogen senere, både tekst, bilder og lenker.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 One Nation – Alle hjerter på jord</p>
+    </footer>
+</body>
+</html>
