@@ -238,3 +238,8 @@ label{display:block;margin:14px 0 6px}
 @media (max-width:700px){.form-row{grid-template-columns:1fr}}
 .notice{border-left:4px solid var(--brand);background:#0f1830;padding:12px 14px;border-radius:8px;color:#b8c8ea}
 .small{font-size:12px;color:#93a7d2}
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
+  <rect width="128" height="128" rx="24" fill="#16203a"/>
+  <path d="M40 74c0-18 24-18 24 0c0-18 24-18 24 0c0 14-12 22-24 30c-12-8-24-16-24-30z" fill="#4ca3ff"/>
+  <text x="64" y="30" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#7dd3fc">GA-13</text>
+</svg>
