@@ -1,46 +1,220 @@
 <!doctype html>
-<html lang="no">
+<html lang="no" data-lang="no">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GA-13</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GA-13 • Global Human Rights Network</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 </head>
 <body>
-
 <header class="site-header">
-  <div class="container">
-    <div class="logo">GA-13</div>
-    <div class="lang-switch">
-      <button data-lang="no">NO</button>
-      <button data-lang="en">EN</button>
+  <div class="container header__row">
+    <a class="brand" href="#top" aria-label="GA-13">
+      <img src="logo.svg" alt="GA-13 logo" />
+      <span>GA-13</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Hovedmeny">
+      <a href="#help"            data-i18n="nav_help">Hjelp nå</a>
+      <a href="#pillars"         data-i18n="nav_pillars">Kjerneområder</a>
+      <a href="#learning"        data-i18n="nav_learning">Læring & Utdanning</a>
+      <a href="#tools"           data-i18n="nav_tools">Verktøy</a>
+      <a href="#contact"         data-i18n="nav_contact">Kontakt</a>
+    </nav>
+
+    <div class="lang-switch" role="group" aria-label="Språk">
+      <button class="lang is-active" data-set-lang="no">NO</button>
+      <button class="lang"           data-set-lang="en">EN</button>
     </div>
   </div>
 </header>
 
-<section class="hero" id="topp">
-  <div class="container">
-    <div class="hero-card">
-      <h1>Menneskeverd først.<br>Verktøy som hjelper nå.</h1>
-      <p class="lead">
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__wrap">
+      <div class="hero__badge" aria-hidden="true">Global Human Rights Network</div>
+
+      <h1 class="hero__title">
+        <span data-i18n="hero_line1">Menneskeverd først.</span><br />
+        <span data-i18n="hero_line2">Verktøy som hjelper nå.</span>
+      </h1>
+
+      <p class="lead" data-i18n="hero_lead">
         GA-13 samler <strong>rettigheter, utdanning og trygg teknologi</strong> i én plattform.
         Du kan be om hjelp, dokumentere, lære – og bygge fellesskap.
       </p>
-      <div class="cta">
-        <a href="#hjelp" class="btn btn-primary">Hjelp meg nå</a>
-        <a href="#kjerne" class="btn btn-secondary">Se hva du får</a>
+
+      <div class="hero__cta">
+        <a class="btn btn-primary" href="#help" data-i18n="cta_help">Hjelp meg nå</a>
+        <a class="btn" href="#pillars" data-i18n="cta_see">Se hva du får</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Du kan legge til resten av seksjonene dine under her -->
-<section id="hjelp">
-  <div class="container">
-    <h2>Hvordan vi kan hjelpe</h2>
-    <p>Her kan du legge inn innholdet ditt om hjelp.</p>
-  </div>
-</section>
+  <!-- HJELP NÅ -->
+  <section id="help" class="section">
+    <div class="container">
+      <h2 data-i18n="help_title">Hjelp nå</h2>
+      <p data-i18n="help_text">
+        Trenger du rask veiledning? Start med å velge område under – vi viser deg steg for steg.
+      </p>
+      <ul class="cards">
+        <li class="card">
+          <h3 data-i18n="help_econ">Økonomi</h3>
+          <p data-i18n="help_econ_text">Råd om gjeld, refinansiering og rettigheter.</p>
+        </li>
+        <li class="card">
+          <h3 data-i18n="help_legal">Juridisk</h3>
+          <p data-i18n="help_legal_text">Koble til advokat og menneskerettighetsstøtte.</p>
+        </li>
+        <li class="card">
+          <h3 data-i18n="help_children">Barn & skole</h3>
+          <p data-i18n="help_children_text">Ressurser for foreldre, skole og rettferdig behandling.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
 
+  <!-- KJERNEOMRÅDER -->
+  <section id="pillars" class="section section--alt">
+    <div class="container">
+      <h2 data-i18n="pillars_title">Kjerneområder</h2>
+
+      <div class="grid-2">
+        <div>
+          <h3 data-i18n="p1_title">Økonomisk støtte & rettferdighet</h3>
+          <ul class="tick">
+            <li data-i18n="p1_1">Rådgivning om gjeld, refinansiering og økonomiske rettigheter</li>
+            <li data-i18n="p1_2">Nettverk av økonomiske eksperter og støttetiltak</li>
+            <li data-i18n="p1_3">Rapporteringskanal for økonomisk urett og bedrageri</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="p2_title">Juridisk bistand</h3>
+          <ul class="tick">
+            <li data-i18n="p2_1">Tilgang til advokater og rettshjelp</li>
+            <li data-i18n="p2_2">Verktøy for klager og søksmål</li>
+            <li data-i18n="p2_3">Arkiv for rettigheter, lover og konvensjoner</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="p3_title">Barne- og utdanningsutvikling</h3>
+          <ul class="tick">
+            <li data-i18n="p3_1">Samarbeid med skoler og lærere</li>
+            <li data-i18n="p3_2">Ressurser for foreldre og barn (barnevern/skole)</li>
+            <li data-i18n="p3_3">Kreative læringsrom og digitale verktøy</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="p4_title">Samfunnsforbedring og forståelse</h3>
+          <ul class="tick">
+            <li data-i18n="p4_1">Plattform for dialog og forslag</li>
+            <li data-i18n="p4_2">Varsling av urett og diskriminering</li>
+            <li data-i18n="p4_3">Fremme respekt, åpenhet og medmenneskelighet</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="p5_title">Teknologi & AI for rettigheter</h3>
+          <ul class="tick">
+            <li data-i18n="p5_1">AI-støtte for rettferdighet, opplæring og dokumentasjon</li>
+            <li data-i18n="p5_2">Digitale løsninger for bevis og trygg kommunikasjon</li>
+            <li data-i18n="p5_3">Trygge nettverk for barn, familier og samfunn</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="p6_title">Aktivitets- og kompetansesenter</h3>
+          <ul class="tick">
+            <li data-i18n="p6_1">Møteplasser for barn og voksne</li>
+            <li data-i18n="p6_2">Kreative verksteder, idrett og teknologiopplæring</li>
+            <li data-i18n="p6_3">Kurs for personlig og profesjonell utvikling</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LÆRING -->
+  <section id="learning" class="section">
+    <div class="container">
+      <h2 data-i18n="learn_title">Læring & Utdanning</h2>
+      <p data-i18n="learn_text">
+        Lær praktisk rettighetsforståelse, økonomi og digital trygghet – fra barn til voksne.
+      </p>
+    </div>
+  </section>
+
+  <!-- VERKTØY -->
+  <section id="tools" class="section section--alt">
+    <div class="container">
+      <h2 data-i18n="tools_title">Verktøy</h2>
+      <ul class="cards">
+        <li class="card"><strong data-i18n="t1">Skjema for klager</strong><br /><span data-i18n="t1d">Bygg og send inn klager riktig.</span></li>
+        <li class="card"><strong data-i18n="t2">Sikker deling</strong><br /><span data-i18n="t2d">Trygg deling av dokumentasjon.</span></li>
+        <li class="card"><strong data-i18n="t3">AI-veileder</strong><br /><span data-i18n="t3d">Veiviser steg for steg.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- KONTAKT (Netlify Forms) -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 data-i18n="contact_title">Kontakt oss</h2>
+      <p class="muted" data-i18n="contact_text">Vil du bidra, teste, eller trenger du hjelp? Send en melding.</p>
+
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hp"><label>Ikke fyll ut dette feltet: <input name="bot-field" /></label></p>
+
+        <label for="name" data-i18n="f_name">Navn</label>
+        <input id="name" name="name" required />
+
+        <label for="email" data-i18n="f_email">E-post</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="subject" data-i18n="f_subject">Emne</label>
+        <input id="subject" name="subject" />
+
+        <label for="message" data-i18n="f_message">Melding</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button class="btn btn-primary" type="submit" data-i18n="f_send">Send</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div>
+      <div class="logo-stack">
+        <img src="logo.svg" alt="GA-13 logo" />
+        <strong>GA-13</strong>
+      </div>
+      <p class="muted" data-i18n="tagline">
+        Bygd med hjerte og teknologi.
+      </p>
+    </div>
+    <nav aria-label="Sidemeny">
+      <strong data-i18n="nav_pages">Sider</strong>
+      <a href="#help" data-i18n="nav_help">Hjelp nå</a>
+      <a href="#pillars" data-i18n="nav_pillars">Kjerneområder</a>
+      <a href="#learning" data-i18n="nav_learning">Læring</a>
+      <a href="#tools" data-i18n="nav_tools">Verktøy</a>
+      <a href="#contact" data-i18n="nav_contact">Kontakt</a>
+    </nav>
+    <div>
+      <strong data-i18n="nav_lang">Språk</strong>
+      <div class="lang-switch lang-switch--footer">
+        <button class="lang is-active" data-set-lang="no">Norsk</button>
+        <button class="lang"           data-set-lang="en">English</button>
+      </div>
+      <p class="muted">© 2025 GA-13 • Global Human Rights Network</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
