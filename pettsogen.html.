@@ -30,3 +30,9 @@
     </footer>
 </body>
 </html>
+<nav>
+    <a href="index.html">Hjem</a> |
+    <a href="education.html">Utdanning</a> |
+    <a href="economy.html">Økonomi</a> |
+    <a href="pettsogen.html">Pettsogen</a>
+</nav>
