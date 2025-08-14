@@ -113,4 +113,102 @@ p, li { font-size: 1rem; }
   margin-bottom:.4rem;
   opacity:.9;
 }
+/* Enkelt, lesbart, mobil først */
+:root{
+  --bg:#0b1220;
+  --ink:#eaf0ff;
+  --soft:#c9d4ff;
+  --brand:#6ca9ff;
+  --muted:#9cb0d9;
+  --panel:#121a2b;
+  --panel-alt:#0e1626;
+  --card:#0f1730;
+  --ok:#3ddc97;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, var(--bg), #0a1020 60%, #080e1c);
+  color: var(--ink);
+  line-height:1.6;
+}
+
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+
+.site-header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(8,14,28,.8);backdrop-filter: blur(6px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
+.brand{color:#fff;text-decoration:none;font-weight:700;letter-spacing:.5px}
+.nav a{
+  color:var(--soft);text-decoration:none;margin-left:16px;font-size:14px
+}
+.nav a:hover{color:#fff}
+
+.hero{
+  padding:72px 0 56px;
+  background: radial-gradient(1200px 500px at 50% -10%, rgba(108,169,255,.18), transparent 60%);
+  text-align:center;
+}
+.hero h1{margin:0 0 12px;font-size:28px}
+.hero .lead{color:var(--soft);max-width:720px;margin:0 auto 20px}
+.btn{
+  display:inline-block;background:var(--brand);color:#081020;text-decoration:none;
+  padding:10px 16px;border-radius:8px;font-weight:700
+}
+.btn:hover{filter:brightness(1.1)}
+
+.section{padding:36px 0}
+.section-alt{background:var(--panel-alt)}
+.section h2{margin:0 0 12px;font-size:22px}
+
+.pillars{
+  list-style:none;margin:16px 0 0;padding:0;
+  display:grid;gap:14px;grid-template-columns:1fr;
+}
+.pillars li{
+  background:var(--card);border:1px solid rgba(255,255,255,.06);
+  padding:14px;border-radius:10px
+}
+.pillars h3{margin:0 0 6px;font-size:16px}
+.pillars p{margin:0;color:var(--soft);font-size:14px}
+
+.cta-grid{
+  display:grid;gap:14px;grid-template-columns:1fr;
+  margin-top:12px;
+}
+.card{
+  display:block;padding:14px;border-radius:10px;
+  background:var(--card);border:1px solid rgba(255,255,255,.07);
+  color:var(--ink);text-decoration:none
+}
+.card h3{margin:0 0 6px;font-size:16px}
+.card p{margin:0;color:var(--soft);font-size:14px}
+.card:hover{border-color:var(--brand)}
+
+.form{max-width:720px}
+.hidden{display:none}
+.row{display:flex;flex-direction:column;margin-bottom:12px}
+label{font-size:13px;color:var(--soft);margin-bottom:6px}
+input,textarea{
+  width:100%;background:#0b1324;border:1px solid rgba(255,255,255,.1);
+  color:#fff;border-radius:8px;padding:10px 12px;font-size:14px
+}
+input:focus,textarea:focus{outline:2px solid var(--brand);outline-offset:2px}
+
+.muted{color:var(--muted);font-size:13px}
+
+.site-footer{border-top:1px solid rgba(255,255,255,.06);padding:20px 0;background:#0a1020}
+.site-footer p{margin:0;color:var(--muted);font-size:13px}
+
+/* Tablet og opp */
+@media(min-width:720px){
+  .hero h1{font-size:36px}
+  .pillars{grid-template-columns:repeat(3,1fr)}
+  .cta-grid{grid-template-columns:repeat(3,1fr)}
+}
   
