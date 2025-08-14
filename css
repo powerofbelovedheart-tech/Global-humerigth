@@ -458,3 +458,89 @@ label{display:block;margin:14px 0 6px}
     text-align: left;
   }
 }
+/* ===== Hero – ryddig og responsivt ===== */
+.hero {
+  position: relative;
+  padding: 64px 20px 40px;
+  /* juster bakgrunn/gradient hvis du bruker bilde bak */
+}
+
+.hero__inner {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.hero__strap {
+  margin: 0 0 10px 0;
+  font-size: clamp(12px, 2.2vw, 14px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+
+.hero__title {
+  margin: 0 0 18px 0;
+  line-height: 1.15;
+  font-weight: 800;
+  font-size: clamp(28px, 6vw, 48px);
+}
+
+.hero__title span {
+  display: block;            /* tvinger 2 pene linjer */
+}
+
+.hero__lead {
+  margin: 0 0 22px 0;
+  font-size: clamp(15px, 3.5vw, 18px);
+  line-height: 1.6;
+  color: rgba(255,255,255,0.88);
+}
+
+/* Knapper – behold dine eksisterende btn-klasser; disse er bare trygge defaults */
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .05s ease, opacity .2s ease;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn--primary {
+  background: linear-gradient(135deg, #8be0ff, #7de8cf);
+  color: #0d1120;
+}
+.btn--ghost {
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  background: transparent;
+  margin-left: 12px;
+}
+
+/* Pyntetekst (valgfritt) – skjul på mobil, subtil på desktop */
+.hero__decor {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .hero__decor { display: none !important; }   /* skjul på mobil og nettbrett */
+  .hero { padding-top: 56px; }
+}
+
+/* Sørg for at evt. gamle vertikale ord-lister ikke vises på mobil */
+@media (max-width: 1024px) {
+  .vertical-text, .vertical-words, .left-words { display: none !important; }
+}
+
+/* Sikre at typografi ikke kræsjer med andre globale regler */
+.hero h1, .hero p, .hero a { word-wrap: break-word; }
