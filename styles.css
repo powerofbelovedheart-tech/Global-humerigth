@@ -247,3 +247,9 @@ textarea{ resize: vertical }
   visibility: hidden !important;
 }
 .hero { overflow: hidden; }
+.hero::before,
+.hero::after,
+.hero .card::before,
+.hero .card::after {
+  content: none !important;
+}
