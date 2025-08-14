@@ -243,3 +243,32 @@ label{display:block;margin:14px 0 6px}
   <path d="M40 74c0-18 24-18 24 0c0-18 24-18 24 0c0 14-12 22-24 30c-12-8-24-16-24-30z" fill="#4ca3ff"/>
   <text x="64" y="30" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#7dd3fc">GA-13</text>
 </svg>
+.section-cta {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+.section-cta .container { max-width: 900px; margin: 0 auto; }
+.btn { display:inline-block; padding:.9rem 1.2rem; border:1px solid transparent; border-radius:.6rem; font-weight:600; cursor:pointer; }
+.btn-primary { background:#1f6feb; color:#fff; }
+.btn-ghost { background:transparent; border-color:#cfcfcf; color:#333; margin-left:.75rem; }
+.btn:focus { outline:2px solid #1f6feb; outline-offset:2px; }
+
+.modal { position:fixed; inset:0; display:none; }
+.modal[aria-hidden="false"] { display:block; }
+.modal__backdrop { position:absolute; inset:0; background:rgba(0,0,0,.4); }
+.modal__content {
+  position:relative; margin:5vh auto; max-width:720px; background:#fff; border-radius:12px; padding:1.25rem 1.25rem 1.5rem;
+  box-shadow:0 12px 40px rgba(0,0,0,.18);
+}
+.modal__close { position:absolute; top:.5rem; right:.5rem; background:transparent; border:0; font-size:1.75rem; cursor:pointer; }
+
+.field { display:block; text-align:left; margin:.9rem 0; }
+.field > span { display:block; font-weight:600; margin-bottom:.35rem; }
+.field input, .field select, .field textarea {
+  width:100%; padding:.8rem .9rem; border:1px solid #d8d8d8; border-radius:.6rem; font:inherit;
+}
+.field input:focus, .field select:focus, .field textarea:focus { outline:2px solid #1f6feb; outline-offset:1px; border-color:#1f6feb; }
+.error { color:#b00020; font-size:.85rem; min-height:1.1em; display:block; }
+.form-actions { display:flex; gap:.75rem; align-items:center; margin-top:1rem; }
+.form-note { color:#666; font-size:.9rem; margin-top:.75rem; }
+.form-success { background:#e7f5e9; color:#0b6b2b; padding:.75rem 1rem; border-radius:.5rem; margin-top:1rem; border:1px solid #bfe3c7; }
