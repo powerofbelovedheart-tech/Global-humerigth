@@ -1729,6 +1729,70 @@ Med hilsen
 </footer>
 </body>
 </html>
+<!-- CTA SECTION -->
+<section id="cta" class="section-cta" aria-labelledby="cta-title">
+  <div class="container">
+    <h2 id="cta-title">Trenger du hjelp nå?</h2>
+    <p>Få rask støtte med økonomi, juss, skole og dokumentasjon – uten ventetid.</p>
+    <button class="btn btn-primary" id="open-cta-modal" aria-haspopup="dialog" aria-controls="cta-modal">
+      Hjelp meg nå
+    </button>
+    <a href="#how-it-works" class="btn btn-ghost">Slik fungerer det</a>
+  </div>
+</section>
+
+<!-- CTA MODAL -->
+<div class="modal" id="cta-modal" role="dialog" aria-modal="true" aria-labelledby="cta-modal-title" aria-hidden="true">
+  <div class="modal__backdrop" data-close-modal></div>
+  <div class="modal__content" role="document">
+    <button class="modal__close" id="close-cta-modal" aria-label="Lukk"><span>&times;</span></button>
+    <h3 id="cta-modal-title">Start forespørsel</h3>
+    <p class="modal__intro">Beskriv kort situasjonen – vi gir deg målrettede forslag og et ferdig brevutkast.</p>
+
+    <form id="cta-form" novalidate>
+      <label class="field">
+        <span>Navn</span>
+        <input type="text" name="name" autocomplete="name" required />
+        <small class="error" data-error-for="name"></small>
+      </label>
+
+      <label class="field">
+        <span>E-post</span>
+        <input type="email" name="email" autocomplete="email" required />
+        <small class="error" data-error-for="email"></small>
+      </label>
+
+      <label class="field">
+        <span>Velg område</span>
+        <select name="topic" required>
+          <option value="" selected disabled>— Velg —</option>
+          <option value="okonomi">Økonomi / gjeld</option>
+          <option value="juss">Juridisk / klage</option>
+          <option value="barne-skole">Barn / skole</option>
+          <option value="dokumentasjon">Dokumentasjon / bevis</option>
+          <option value="annet">Annet</option>
+        </select>
+        <small class="error" data-error-for="topic"></small>
+      </label>
+
+      <label class="field">
+        <span>Hva trenger du hjelp med?</span>
+        <textarea name="message" rows="6" placeholder="Skriv det viktigste (datoer, hvem, hva som skjedde)..." required></textarea>
+        <small class="error" data-error-for="message"></small>
+      </label>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Send</button>
+        <button type="button" class="btn btn-ghost" data-close-modal>Avbryt</button>
+      </div>
+
+      <p class="form-note">Ved innsending samler vi kun det du skriver her for å gi deg svar. Du kan når som helst be om sletting.</p>
+      <div class="form-success" id="cta-success" hidden>
+        Takk! Forespørselen er registrert. Vi sender neste steg til e-posten din.
+      </div>
+    </form>
+  </div>
+</div>
     </body>
     document.addEventListener('DOMContentLoaded', () => {
   // marker aktiv lenke i nav
