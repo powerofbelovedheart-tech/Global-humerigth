@@ -1973,6 +1973,118 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
+    // === chat.js ===
+// IMPORT Firebase (ES-moduler fra CDN for enkelhet)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, collection, addDoc, serverTimestamp, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+
+// 1) DIN KONFIG
+const firebaseConfig = {
+  apiKey: "REPLACE_ME",
+  authDomain: "REPLACE_ME.firebaseapp.com",
+  projectId: "REPLACE_ME",
+  storageBucket: "REPLACE_ME.appspot.com",
+  messagingSenderId: "REPLACE_ME",
+  appId: "REPLACE_ME"
+};
+
+// 2) Init
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const storage = getStorage(app);
+
+// 3) Anonym innlogging (automatisk)
+await signInAnonymously(auth).catch(console.error);
+
+// 4) UI-elementer
+const nameEl = document.getElementById("chat-name");
+const textEl = document.getElementById("chat-text");
+const sendBtn = document.getElementById("send-msg");
+const recBtn  = document.getElementById("rec-btn");
+const recStatus = document.getElementById("rec-status");
+const messagesEl = document.getElementById("messages");
+
+// 5) Lytt live på meldinger
+const msgsRef = collection(db, "chats");
+const q = query(msgsRef, orderBy("createdAt", "asc"));
+onSnapshot(q, (snap) => {
+  messagesEl.innerHTML = "";
+  snap.forEach(doc => {
+    const m = doc.data();
+    const who = m.name?.trim() || "Anonym";
+    const ts = m.createdAt?.toDate ? m.createdAt.toDate().toLocaleString() : "";
+    const el = document.createElement("div");
+    el.style.marginBottom = "10px";
+    el.innerHTML = `
+      <div style="font-weight:600">${who} <span style="opacity:.6; font-weight:400; font-size:.85rem">${ts}</span></div>
+      ${m.text ? `<div>${escapeHtml(m.text)}</div>` : ""}
+      ${m.audioUrl ? `<audio controls src="${m.audioUrl}" style="margin-top:6px; width:100%"></audio>` : ""}
+      <hr style="border:none; border-top:1px solid #eee; margin-top:8px;">
+    `;
+    messagesEl.appendChild(el);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  });
+});
+
+function escapeHtml(s=""){
+  return s.replace(/[&<>"']/g, (c)=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+}
+
+// 6) Send tekst
+sendBtn?.addEventListener("click", async () => {
+  const name = nameEl?.value || "";
+  const text = textEl?.value || "";
+  if (!text.trim()) return;
+  await addDoc(msgsRef, {
+    name,
+    text,
+    createdAt: serverTimestamp(),
+    audioUrl: null
+  });
+  textEl.value = "";
+});
+
+// 7) Talemelding (MediaRecorder)
+let mediaRecorder;
+let chunks = [];
+recBtn?.addEventListener("click", async () => {
+  if (!mediaRecorder || mediaRecorder.state === "inactive") {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaRecorder = new MediaRecorder(stream);
+      chunks = [];
+      mediaRecorder.ondataavailable = (e) => chunks.push(e.data);
+      mediaRecorder.onstop = async () => {
+        recStatus.textContent = "Lagrer lyd...";
+        const blob = new Blob(chunks, { type: "audio/webm" });
+        const fileName = `voice_${Date.now()}.webm`;
+        const fileRef = ref(storage, `voice/${fileName}`);
+        await uploadBytes(fileRef, blob);
+        const url = await getDownloadURL(fileRef);
+        const name = nameEl?.value || "";
+        await addDoc(msgsRef, {
+          name,
+          text: "",
+          audioUrl: url,
+          createdAt: serverTimestamp()
+        });
+        recStatus.textContent = "Talemelding sendt ✅";
+        setTimeout(()=>recStatus.textContent="", 1500);
+      };
+      mediaRecorder.start();
+      recStatus.textContent = "Opptak… trykk igjen for å stoppe";
+    } catch (err) {
+      recStatus.textContent = "Mikrofon blokkert/ikke tilgjengelig";
+      console.error(err);
+    }
+  } else {
+    mediaRecorder.stop();
+    recStatus.textContent = "Stopper…";
+  }
+});
     </body>
     document.addEventListener('DOMContentLoaded', () => {
   // marker aktiv lenke i nav
