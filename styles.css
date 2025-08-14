@@ -236,3 +236,14 @@ textarea{ resize: vertical }
   line-height: 1.45;
   margin-top: 0.8rem;
 }
+/* --- NØDLAPP: fjern vertikal/vanntetkst i hero på alle skjermer --- */
+.vertical-words,
+.vertical-text,
+.left-words,
+.hero .watermark,
+.hero .bg-words,
+.hero .bg-text {
+  display: none !important;
+  visibility: hidden !important;
+}
+.hero { overflow: hidden; }
