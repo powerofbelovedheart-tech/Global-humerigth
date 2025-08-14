@@ -903,6 +903,47 @@ kom<!DOCTYPE html>
     </section>
 
     <!-- KONTAKT -->
+    <!-- CONTACT START -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2>Kontakt oss</h2>
+
+    <!-- Netlify Forms: må ha name, data-netlify, hidden form-name + (valgfritt) honeypot -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
+      <input type="hidden" name="form-name" value="contact">
+      <p style="display:none;">
+        <label>Ikke fyll ut dette feltet: <input name="bot-field"></label>
+      </p>
+
+      <div class="form-row">
+        <label for="name">Navn</label>
+        <input id="name" name="name" type="text" required>
+      </div>
+
+      <div class="form-row">
+        <label for="email">E-post</label>
+        <input id="email" name="email" type="email" required>
+      </div>
+
+      <div class="form-row">
+        <label for="subject">Emne</label>
+        <input id="subject" name="subject" type="text">
+      </div>
+
+      <div class="form-row">
+        <label for="message">Melding</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+
+      <!-- reCAPTCHA (bruk kun hvis aktivert i Netlify Forms) -->
+      <!-- <div data-netlify-recaptcha="true"></div> -->
+
+      <button type="submit">Send</button>
+      <p id="form-status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+<!-- CONTACT END -->
     <section class="panel alt" id="contact">
       <h2>Kontakt</h2>
       <p>Vil du bidra, teste, eller trenger du hjelp? Send en melding.</p>
