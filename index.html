@@ -4,237 +4,120 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>GA-13 · Global Human Rights Network</title>
-  <meta name="description" content="GA-13: Et menneskedrevet nettverk for rettigheter, utdanning, teknologi og rask hjelp.">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <!-- Valgfritt: enkel, nøytral font -->
+  <meta name="description" content="Et menneskedrevet nettverk for rettigheter, utdanning og rask hjelp – med teknologi som føles menneskelig.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <!-- Topplinje / Nav -->
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#hero">GA-13</a>
 
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" id="navToggle">
-        <span class="nav-toggle-bar"></span>
-        <span class="sr-only">Meny</span>
-      </button>
-
-      <nav id="nav-menu" class="nav-menu">
-        <a href="#about">Om</a>
-        <a href="#pillars">Kjerneområder</a>
-        <a href="#tools">Verktøy</a>
-        <a href="#contact" class="btn btn-small">Kontakt</a>
-        <div class="lang-switch">
-          <button class="lang is-active" data-lang="no" type="button">NO</button>
-          <button class="lang" data-lang="en" type="button" title="English (placeholder)">EN</button>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section id="hero" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <h1>Et trygt sted å bli hørt – <span class="accent">GA-13</span></h1>
-        <p class="lead">
-          Globalt, menneskedrevet nettverk for <strong>rettigheter</strong>, <strong>utdanning</strong> og
-          <strong>rask hjelp</strong>. Bygget for å gjøre kompliserte ting enkle – med teknologi som føles menneskelig.
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#contact">Hjelp meg nå</a>
-          <a class="btn btn-ghost" href="#pillars">Se hva vi tilbyr</a>
-        </div>
-        <p class="micro">Menneskeverd er en rett, ikke noe du må bevise.</p>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">GA-13</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" id="navToggle">
+      <span class="nav-toggle-bar"></span><span class="sr-only">Meny</span>
+    </button>
+    <nav id="nav-menu" class="nav-menu">
+      <a href="index.html">Hjem</a>
+      <a href="about.html">Om</a>
+      <a href="learn.html">Læring</a>
+      <a href="contact.html" class="btn btn-small">Kontakt</a>
+      <div class="lang-switch">
+        <button class="lang is-active" type="button">NO</button>
+        <button class="lang" type="button" title="English (soon)">EN</button>
       </div>
+    </nav>
+  </div>
+</header>
 
-      <div class="hero-card">
-        <div class="card">
-          <h3>Start en trygg henvendelse</h3>
-          <p>Beskriv situasjonen kort – vi hjelper deg å strukturere neste steg.</p>
-          <a class="btn btn-block" href="#contact">Åpne skjema</a>
-          <ul class="meta">
-            <li>• Gratis å starte</li>
-            <li>• Du eier dine data</li>
-            <li>• Klart språk</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- Diskré bakgrunnsillustrasjon uten tekst over bilde -->
-    <div class="hero-bg" aria-hidden="true"></div>
-  </section>
-
-  <!-- Om -->
-  <section id="about" class="section">
-    <div class="container narrow">
-      <h2>Hva er GA-13?</h2>
-      <p>
-        GA-13 er en åpen, nøytral plattform som kobler mennesker, fagfolk og teknologi for å
-        <strong>redde tid</strong>, <strong>redusere stress</strong> og <strong>styrke rettighetene dine</strong>.
-        Vi hjelper deg å formulere saker, forstå lovverk, og få oversikt – uten at du må være jurist.
+<section class="hero">
+  <div class="bg" aria-hidden="true"></div>
+  <div class="container wrap">
+    <div>
+      <h1>Et trygt sted å bli hørt – <span class="accent">GA-13</span></h1>
+      <p class="lead">
+        Globalt, menneskedrevet nettverk for <strong>rettigheter</strong>, <strong>utdanning</strong> og
+        <strong>rask hjelp</strong>. Vi gjør kompliserte ting enkle – med teknologi som føles menneskelig.
       </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="contact.html">Hjelp meg nå</a>
+        <a class="btn btn-ghost" href="about.html">Hvordan virker det?</a>
+      </div>
+      <p class="micro">Menneskeverd er en rett, ikke noe du må bevise.</p>
     </div>
-  </section>
-
-  <!-- Kjerneområder -->
-  <section id="pillars" class="section section-muted">
-    <div class="container">
-      <h2>Kjerneområder</h2>
-
-      <div class="pillars-grid">
-        <article class="card">
-          <h3>Økonomisk støtte og rettferdighet</h3>
-          <ul>
-            <li>Råd om gjeld, refinansiering og økonomiske rettigheter</li>
-            <li>Nettverk av økonomiske rådgivere</li>
-            <li>Rapporteringskanal for urett og bedrageri</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>Juridisk bistand</h3>
-          <ul>
-            <li>Tilgang til advokater og rettighetsveiledere</li>
-            <li>Verktøy for klager/søksmål og sporing av svar</li>
-            <li>Oppslagsverk: lover & konvensjoner</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>Barne- og utdanningsutvikling</h3>
-          <ul>
-            <li>Rettferdig behandling i skole og barnevern</li>
-            <li>Ressurser for foreldre og barn</li>
-            <li>Kreative læringsrom og digitale verktøy</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>Samfunnsforbedring</h3>
-          <ul>
-            <li>Trygg dialog og varsling av urett</li>
-            <li>Antidiskriminering og likeverd</li>
-            <li>Åpenhet og medmenneskelighet</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>Teknologi & AI for gode formål</h3>
-          <ul>
-            <li>AI-støtte i dokumentasjon og opplæring</li>
-            <li>Trygg bevisinnsamling og kommunikasjon</li>
-            <li>Familievennlige sikkerhetsløsninger</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>Aktivitets- og kompetansesenter</h3>
-          <ul>
-            <li>Fysiske og digitale møteplasser</li>
-            <li>Skapende verksteder og idrett</li>
-            <li>Kurs for personlig og profesjonell vekst</li>
-          </ul>
-        </article>
+    <div class="hero-card">
+      <div class="card">
+        <h3>Start en trygg henvendelse</h3>
+        <p>Beskriv situasjonen kort – vi hjelper deg å strukturere neste steg.</p>
+        <a class="btn btn-block" href="contact.html">Åpne skjema</a>
+        <ul class="meta">
+          <li>• Gratis å starte</li>
+          <li>• Du eier dine data</li>
+          <li>• Klart språk</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Verktøy / CTA-bånd -->
-  <section id="tools" class="section">
-    <div class="container narrow">
-      <h2>Verktøy som virker</h2>
-      <p>
-        Smarte maler for klager og innsyn, tydelig språk, og automatiske påminnelser. Du kan starte selv – og koble på mennesker når du trenger det.
-      </p>
-      <div class="cta-row center">
-        <a class="btn btn-primary" href="#contact">Start gratis</a>
-        <a class="btn btn-ghost" href="#about">Les mer</a>
-      </div>
+<section class="section section-muted">
+  <div class="container">
+    <h2>Kjerneområder</h2>
+    <div class="grid-3">
+      <article class="card">
+        <h3>Økonomisk støtte</h3>
+        <p>Gjeld, refinansiering, rentersituasjon og dine økonomiske rettigheter.</p>
+        <span class="tag">Rådgivning</span>
+      </article>
+      <article class="card">
+        <h3>Juridisk bistand</h3>
+        <p>Maler for klager/søksmål, innsyn, og kobling til riktige instanser.</p>
+        <span class="tag">Rettigheter</span>
+      </article>
+      <article class="card">
+        <h3>Barn & skole</h3>
+        <p>Rettferdig behandling i skole og barnevern – med verktøy for foreldre og barn.</p>
+        <span class="tag">Utdanning</span>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Kontakt (Netlify Forms) -->
-  <section id="contact" class="section section-muted">
-    <div class="container">
-      <h2>Kontakt oss</h2>
-
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form">
-        <input type="hidden" name="form-name" value="contact">
-        <p class="hidden">
-          <label>Ikke fyll ut dette feltet: <input name="bot-field"></label>
-        </p>
-
-        <div class="grid-2">
-          <label class="form-row">
-            <span>Navn</span>
-            <input name="name" type="text" required>
-          </label>
-
-          <label class="form-row">
-            <span>E-post</span>
-            <input name="email" type="email" required>
-          </label>
-        </div>
-
-        <label class="form-row">
-          <span>Emne</span>
-          <input name="subject" type="text" placeholder="Kort tittel (valgfritt)">
-        </label>
-
-        <label class="form-row">
-          <span>Melding</span>
-          <textarea name="message" rows="6" required placeholder="Beskriv situasjonen – skriv gjerne i stikkord."></textarea>
-        </label>
-
-        <button type="submit" class="btn btn-primary">Send</button>
-        <p class="micro">Vi svarer så fort vi kan. Du kan også få kopi til e-post om du ønsker.</p>
-      </form>
+<section class="section">
+  <div class="container">
+    <h2>Teknologi & AI for mennesker</h2>
+    <div class="grid-3">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1200&auto=format&fit=crop" alt="">
+        <h3>Trygg dokumentasjon</h3>
+        <p>Enkle steg for å samle bevis og lage tidslinjer – uten avansert fagspråk.</p>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop" alt="">
+        <h3>Klart språk</h3>
+        <p>AI hjelper deg å skrive tydelig, rolig og presist – og foreslår paragrafer som passer.</p>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" alt="">
+        <h3>Familievennlig sikkerhet</h3>
+        <p>Veiledning for barn og foresatte om teknologi, deling og trygg kommunikasjon.</p>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>GA-13</strong><br>
-        Global Human Rights Network
-      </div>
-      <div class="footer-links">
-        <a href="#about">Om</a>
-        <a href="#pillars">Kjerneområder</a>
-        <a href="#contact">Kontakt</a>
-      </div>
-      <div class="micro dim">
-        © <span id="y"></span> GA-13. Menneskeverd først.
-      </div>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><strong>GA-13</strong><br>Global Human Rights Network</div>
+    <div class="footer-links">
+      <a href="about.html">Om</a>
+      <a href="learn.html">Læring</a>
+      <a href="contact.html">Kontakt</a>
     </div>
-  </footer>
+    <div class="micro">© <span id="y"></span> GA-13. Menneskeverd først.</div>
+  </div>
+</footer>
 
-  <script>
-    // mobilmeny
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('nav-menu');
-    navToggle?.addEventListener('click', () => {
-      const open = navMenu.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-
-    // årstall i footer
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // språk-knapper (placeholder)
-    document.querySelectorAll('.lang').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.lang').forEach(b => b.classList.remove('is-active'));
-        btn.classList.add('is-active');
-        // Her kan du senere koble på faktisk språkbytte
-      });
-    });
-  </script>
+<!-- JS -->
+<script src="script.js"></script>
 </body>
-<html>
+</html>
