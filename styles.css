@@ -1,154 +1,126 @@
-/* ====== Basis ====== */
+/* ====== GA-13 – base ====== */
 :root{
-  --bg:#0f1722;
-  --panel:#121b29;
-  --ink:#e9f1ff;
-  --ink-dim:#bcd0f7;
-  --brand:#8ce8ff; /* knapp-grad avblendet i CSS */
-  --accent:#a2ffcf;
-  --line:rgba(255,255,255,.08);
+  --bg: #0c1220;
+  --panel: #121a2b;
+  --muted: #9fb3c8;
+  --text: #e7eef6;
+  --brand: #79d0ff;
+  --brand-2:#a6ffe0;
+  --stroke: rgba(255,255,255,.08);
+  --radius:16px;
+  --shadow: 0 6px 24px rgba(0,0,0,.35);
 }
 
 *{box-sizing:border-box}
-html,body{height:100%}
+html,body{margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font:400 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-}
-
-/* Container */
-.container{
-  width:min(1100px, 92vw);
-  margin-inline:auto;
-}
-
-/* ====== Header ====== */
-.site-header{
-  position:sticky; top:0; z-index:50;
-  backdrop-filter: blur(8px);
-  background: linear-gradient(180deg, rgba(15,23,34,.85), rgba(15,23,34,.55));
-  border-bottom:1px solid var(--line);
-}
-.header-inner{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:12px 0;
-}
-.brand{display:flex; align-items:center; gap:.6rem; color:var(--ink); text-decoration:none}
-.brand__logo{width:32px; height:32px; display:block}
-.brand__name{font-weight:700; letter-spacing:.02em}
-
-/* Språkknapp */
-.lang-switch{display:flex; gap:.5rem}
-.lang-switch__btn{
-  border:1px solid var(--line);
-  background:#0f1826;
-  color:var(--ink-dim);
-  padding:.45rem .8rem;
-  border-radius:.8rem;
-  font-weight:600;
-}
-.lang-switch__btn.is-active{
-  color:#06121e;
-  background: linear-gradient(180deg, #c8f4ff, #7ad7ff);
-  border-color:transparent;
-}
-
-/* ====== Hero ====== */
-.hero{
-  position:relative;
-  overflow:hidden;
-  padding:48px 0 32px;
-  border-bottom:1px solid var(--line);
-}
-.hero__bg{
-  position:absolute; inset:0; z-index:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
   background:
-    radial-gradient(60% 60% at 80% 20%, rgba(162,255,207,.20), transparent 60%),
-    radial-gradient(60% 60% at 20% 80%, rgba(140,232,255,.20), transparent 60%);
-  opacity:.7;
+    radial-gradient(1200px 600px at 10% -10%, #1b2440 0%, transparent 60%),
+    radial-gradient(800px 400px at 100% 10%, #0f2a3a 0%, transparent 60%),
+    var(--bg);
+  line-height:1.6;
 }
-.hero__inner{position:relative; z-index:1}
-.hero__title{
-  font-size: clamp(28px, 5.5vw, 54px);
-  line-height:1.15; margin:0 0 .6rem 0; font-weight:800;
-  letter-spacing:.01em;
-  text-wrap:balance;
-}
-.hero__title--sub{opacity:.95}
-.lead{
-  font-size:clamp(16px, 2.6vw, 20px);
-  color:var(--ink-dim);
-  margin:0 0 1.1rem 0;
-}
-.hero__cta{display:flex; gap:.8rem; flex-wrap:wrap}
 
-/* Knapp */
+/* Layout helpers */
+.container{width:100%; max-width:1040px; margin:0 auto; padding:0 16px}
+.section{padding:56px 0}
+h1,h2,h3{line-height:1.2; margin:0 0 .6em}
+h1{font-size: clamp(28px, 5.6vw, 48px); font-weight:800}
+h2{font-size: clamp(22px, 3.8vw, 32px); font-weight:800}
+h3{font-size: clamp(18px, 2.8vw, 22px); font-weight:700}
+.lead{font-size: clamp(16px, 2.8vw, 19px); color:var(--muted)}
+
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:10;
+  background: linear-gradient(180deg, rgba(8,12,22,.9), rgba(8,12,22,.75));
+  backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid var(--stroke);
+}
+.header-inner{display:flex; align-items:center; gap:16px; justify-content:space-between; height:64px}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text)}
+.brand-badge{
+  display:inline-grid; place-items:center;
+  width:40px; height:40px; border-radius:12px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color:#072335; font-weight:800;
+  box-shadow: var(--shadow);
+}
+.brand-text{display:none; color:var(--muted); font-weight:600}
+@media (min-width:720px){ .brand-text{display:inline} }
+
+.nav{display:flex; gap:14px; flex-wrap:wrap}
+.nav a{
+  color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:10px;
+}
+.nav a:hover{color:var(--text); background:rgba(255,255,255,.04)}
+
+/* Hero */
+.hero{ padding:38px 0 22px }
+.hero .container{
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  padding:24px;
+  box-shadow: var(--shadow);
+}
+.hero-title{margin-top:6px; margin-bottom:.3em}
+.actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+
+/* Buttons */
 .btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:.78rem 1.05rem; border-radius:.9rem;
-  text-decoration:none; font-weight:700; letter-spacing:.01em;
-  border:1px solid var(--line);
+  display:inline-block; text-decoration:none; font-weight:700;
+  padding:12px 18px; border-radius:12px; border:1px solid var(--stroke);
 }
-.btn--primary{
-  color:#06121e;
-  background:linear-gradient(180deg, #c8f4ff, #7ad7ff);
-  border-color:transparent;
+.btn-primary{
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color:#082030; border-color:transparent;
 }
-.btn--ghost{
-  color:var(--ink); background:transparent;
+.btn-ghost{
+  background:transparent; color:var(--text);
 }
-.btn:active{transform:translateY(1px)}
+.btn:hover{transform:translateY(-1px)}
 
-/* ====== Seksjoner ====== */
-.section{padding:40px 0; border-bottom:1px solid var(--line)}
-.section--alt{background:var(--panel)}
-
-h2{
-  margin:0 0 .8rem 0; font-size:clamp(22px, 3.8vw, 30px);
+/* Lists / cards */
+.checklist, .bullets{padding-left:20px; margin:10px 0}
+.checklist li{margin:.5em 0}
+.cards{
+  display:grid; gap:14px; margin-top:16px;
+  grid-template-columns: 1fr;
 }
-
-/* Lister / lenker */
-.feature-list, .steps{margin:.2rem 0 1rem 0; padding-left:1.1rem}
-.feature-list li{margin:.35rem 0}
-.steps li{margin:.5rem 0}
-.inline-links{display:flex; gap:1rem; flex-wrap:wrap; margin-top:.6rem}
-.inline-links a{
-  color:var(--ink); text-decoration:none; border-bottom:1px dashed var(--ink-dim);
+@media (min-width:640px){ .cards{grid-template-columns: 1fr 1fr} }
+@media (min-width:980px){ .cards{grid-template-columns: 1fr 1fr 1fr} }
+.card{
+  background: var(--panel);
+  border:1px solid var(--stroke);
+  border-radius: var(--radius);
+  padding:16px;
+  box-shadow: var(--shadow);
 }
-.inline-links a:hover{border-bottom-color:var(--ink)}
+.card p{color:var(--muted); margin:.4em 0 0}
 
-/* Skjema */
-.form{max-width:700px}
-.form__row{display:flex; flex-direction:column; gap:.35rem; margin:.7rem 0}
-.form input, .form textarea{
-  width:100%; padding:.8rem .9rem; border-radius:.7rem;
-  border:1px solid var(--line); background:#0f1826; color:var(--ink);
+/* Kontaktform */
+.contact-form{
+  display:grid; gap:10px; margin-top:10px;
+  background: var(--panel); border:1px solid var(--stroke);
+  border-radius: var(--radius); padding:16px;
 }
-.hidden-field{display:none}
-
-/* Grid i punkt-listen */
-.cols{display:grid; gap:.45rem; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); list-style:disc; padding-left:1.1rem}
-
-/* ====== Footer ====== */
-.site-footer{padding:26px 0; background:#0e1520}
-.footer-inner{display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap}
-.footer-links{display:flex; gap:1rem}
-.footer-links a{color:var(--ink-dim); text-decoration:none}
-.footer-links a:hover{color:var(--ink)}
-
-/* ====== Responsiv finpuss ====== */
-@media (max-width:600px){
-  .hero{padding:36px 0 24px}
-  .lead{line-height:1.55}
-  .footer-inner{flex-direction:column; align-items:flex-start}
+.contact-form input,
+.contact-form textarea{
+  width:100%; padding:10px 12px; border-radius:10px;
+  border:1px solid var(--stroke); background:#0c1322; color:var(--text);
 }
+.contact-form input:focus,
+.contact-form textarea:focus{ outline:2px solid rgba(121,208,255,.35) }
+.sr-only{position:absolute; left:-9999px}
 
-/* ====== Rydder vekk gamle artefakter ======
-   Flere installasjoner hadde vertikal "Global / Human / Rights / Network"
-   som lå bak og kolliderte med overskriften. Skjul dem trygt. */
-.badge-words, .hero .badge, .watermark, .stacked-words{
-  display:none !important;
-}
+/* Footer */
+.site-footer{border-top:1px solid var(--stroke); padding:22px 0 36px; margin-top:30px}
+.footer-inner{display:flex; gap:12px; flex-direction:column}
+.footer-inner p{color:var(--muted); margin:0}
+.footer-nav{display:flex; gap:12px; flex-wrap:wrap}
+.footer-nav a{color:var(--muted); text-decoration:none}
+.footer-nav a:hover{color:var(--text)}
