@@ -1543,6 +1543,84 @@ Med hilsen
    ├─ logo.svg
    ├─ hero.jpg
    └─ icons/  (valgfritt)
+  <!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hjelp meg nå • GA-13</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <div class="logo"><img src="assets/logo.svg" alt="" width="28" height="28"> GA-13</div>
+    <nav style="margin-left:auto;display:flex;gap:10px;">
+      <a href="index.html">Hjem</a>
+      <a href="intake.html">Hjelp meg nå</a>
+      <a href="legal.html">Rettigheter</a>
+      <a href="education.html">Utdanning</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h1>Hjelp meg nå</h1>
+    <p class="notice">Fyll ut det du kan. Du kan alltid legge til mer senere. Opplysningene går trygt til oss via Netlify Forms.</p>
+
+    <form name="ga13-intake" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="ga13-intake">
+      <div class="form-row">
+        <div>
+          <label for="navn">Navn</label>
+          <input id="navn" name="navn" class="input" required>
+        </div>
+        <div>
+          <label for="epost">E-post</label>
+          <input id="epost" name="epost" type="email" class="input" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div>
+          <label for="kategori">Kategori</label>
+          <select id="kategori" name="kategori" class="input" required>
+            <option value="">Velg…</option>
+            <option>Økonomi</option>
+            <option>Juridisk</option>
+            <option>Barne/utdanning</option>
+            <option>Samfunn/diskriminering</option>
+            <option>Teknologi/AI</option>
+            <option>Annet</option>
+          </select>
+        </div>
+        <div>
+          <label for="sted">Sted (kommune / land)</label>
+          <input id="sted" name="sted" class="input">
+        </div>
+      </div>
+
+      <label for="beskrivelse">Hva har skjedd?</label>
+      <textarea id="beskrivelse" name="beskrivelse" rows="8" class="input" placeholder="Skriv i fritekst…"></textarea>
+
+      <label for="onsker">Hva ønsker du hjelp med?</label>
+      <textarea id="onsker" name="onsker" rows="5" class="input" placeholder="F.eks. innsynsbrev, klage, samtale…"></textarea>
+
+      <div style="margin-top:12px">
+        <button class="btn primary" type="submit">Send inn</button>
+        <span class="small" style="margin-left:12px">Du får bekreftelse på e-post når skjema er mottatt.</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container small">© GA-13 • Global Human Rights Network</div>
+</footer>
+</body>
+</html>
     </body>
     document.addEventListener('DOMContentLoaded', () => {
   // marker aktiv lenke i nav
