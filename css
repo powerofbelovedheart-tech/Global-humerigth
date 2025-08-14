@@ -435,3 +435,11 @@ label{display:block;margin:14px 0 6px}
 @media (max-width: 480px) {
   .hero-section { margin-bottom: .75rem; }
 }
+/* Skjul den vertikale logo-/bakgrunnsteksten på mobil */
+@media (max-width: 768px) {
+  .vertical-text,
+  .watermark,
+  .stacked-words {
+    display: none !important;
+  }
+}
