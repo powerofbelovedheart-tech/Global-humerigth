@@ -544,3 +544,12 @@ label{display:block;margin:14px 0 6px}
 
 /* Sikre at typografi ikke kræsjer med andre globale regler */
 .hero h1, .hero p, .hero a { word-wrap: break-word; }
+/* Skjul evt. vertikal ord-dekor på mobil/tablet */
+@media (max-width: 1024px) {
+  .vertical-words,
+  .vertical-text,
+  .left-words {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
