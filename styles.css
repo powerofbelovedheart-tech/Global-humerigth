@@ -1,214 +1,154 @@
+/* ====== Basis ====== */
 :root{
-  --bg:#0b1320;
-  --panel:#0f1a2e;
-  --ink:#eef3ff;
-  --muted:#b9c7e6;
-  --accent:#6aa7ff;
-  --accent-2:#78f3d1;
-  --line: #203048;
-  --shadow: 0 10px 30px rgba(0,0,0,.25);
+  --bg:#0f1722;
+  --panel:#121b29;
+  --ink:#e9f1ff;
+  --ink-dim:#bcd0f7;
+  --brand:#8ce8ff; /* knapp-grad avblendet i CSS */
+  --accent:#a2ffcf;
+  --line:rgba(255,255,255,.08);
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0}
+html,body{height:100%}
+html{scroll-behavior:smooth}
 body{
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Inter,Arial,sans-serif;
+  margin:0;
+  background:var(--bg);
   color:var(--ink);
-  background:linear-gradient(180deg,#081023 0%, #0b152a 100%);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  font:400 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
 }
 
-.container{width:min(1120px,92%);margin-inline:auto}
+/* Container */
+.container{
+  width:min(1100px, 92vw);
+  margin-inline:auto;
+}
 
-h1,h2,h3{line-height:1.2;margin:0 0 .6rem}
-h1{font-size: clamp(1.8rem, 2.5vw + 1rem, 3rem)}
-h2{font-size: clamp(1.4rem, 1.4vw + 1rem, 2rem)}
-h3{font-size: clamp(1.1rem, .9vw + 1rem, 1.4rem)}
-p{margin:.3rem 0 1rem}
-.lead{font-size:clamp(1rem, .7vw + 1rem, 1.25rem);color:var(--muted)}
-
-.section{padding:72px 0}
-.section.alt{background:linear-gradient(180deg, rgba(255,255,255,.02), transparent)}
-.muted{color:var(--muted)}
-.bullets{margin:1rem 0;padding-left:1.2rem}
-.bullets li{margin:.4rem 0}
-
-/* Header */
+/* ====== Header ====== */
 .site-header{
-  position:sticky;top:0;z-index:50;
-  background:rgba(8,16,35,.6);
-  backdrop-filter: blur(8px
-  /* === GA-13 quick polish overrides === */
-
-/* Typografi og luft */
-body { line-height: 1.7; }
-.section { padding: 88px 0 72px; }
-h1 { letter-spacing: .2px; }
-h2 { margin-bottom: .8rem; }
-p, li { font-size: 1rem; }
-
-/* Hero mer “rød tråd” og form */
-.hero { padding: 104px 0 84px; }
-.hero-copy .lead { max-width: 60ch; }
-.hero-inner { gap: 36px; }
-.art-bg {
-  border-radius: 20px;
-  border: 1px solid rgba(120,243,209,.25);
-  background:
-    radial-gradient(1200px 400px at 20% 120%, rgba(120,243,209,.18), transparent 60%),
-    radial-gradient(1000px 400px at 100% -40%, rgba(106,167,255,.22), transparent 60%),
-    linear-gradient(180deg, #09122a, #0c1831);
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(8px);
+  background: linear-gradient(180deg, rgba(15,23,34,.85), rgba(15,23,34,.55));
+  border-bottom:1px solid var(--line);
 }
-.art-bg .grid { opacity: .35; }
-.art-bg .pulse { width: 160px; height: 160px; filter: blur(10px); }
-
-/* Knapper litt “snappier” */
-.btn { border-width: 2px; }
-.btn-primary { box-shadow: 0 8px 20px rgba(58,121,255,.35); }
-.btn-primary:active { transform: translateY(0); }
-
-/* Kort/grid ryddigere på mobil */
-.card { padding: 20px; }
-.cards { gap: 22px; }
-@media (min-width: 720px){
-  .cards { grid-template-columns: repeat(2, 1fr); }
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 0;
 }
-@media (min-width: 1040px){
-  .cards { grid-template-columns: repeat(3, 1fr); }
+.brand{display:flex; align-items:center; gap:.6rem; color:var(--ink); text-decoration:none}
+.brand__logo{width:32px; height:32px; display:block}
+.brand__name{font-weight:700; letter-spacing:.02em}
+
+/* Språkknapp */
+.lang-switch{display:flex; gap:.5rem}
+.lang-switch__btn{
+  border:1px solid var(--line);
+  background:#0f1826;
+  color:var(--ink-dim);
+  padding:.45rem .8rem;
+  border-radius:.8rem;
+  font-weight:600;
+}
+.lang-switch__btn.is-active{
+  color:#06121e;
+  background: linear-gradient(180deg, #c8f4ff, #7ad7ff);
+  border-color:transparent;
 }
 
-/* Læring-bokser */
-.box { border-color: rgba(120,243,209,.18); }
-
-/* Skjema – bredere felt og bedre kontrast */
-.field input, .field textarea {
-  background: #0a1428;
-  border-color: rgba(120,243,209,.20);
-}
-.field input:focus, .field textarea:focus {
-  border-color: var(--accent-2);
-  box-shadow: 0 0 0 4px rgba(120,243,209,.10);
-}
-
-/* Sticky header – penere bakgrunn */
-.site-header {
-  background: linear-gradient(180deg, rgba(8,16,35,.75), rgba(8,16,35,.35));
-  border-bottom: 1px solid rgba(120,243,209,.15);
-}
-
-/* Footer tettere og renere */
-.site-footer { padding: 32px 0 36px; }
-.footer-nav a { opacity: .9; }
-.footer-nav a:hover { opacity: 1; }
-
-/* Liten eybrow-stil til over-overskrift (valgfritt) */
-.eyebrow {
-  display:inline-block;
-  font-size:.85rem;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-  color: var(--accent-2);
-  margin-bottom:.4rem;
-  opacity:.9;
-}
-/* Enkelt, lesbart, mobil først */
-:root{
-  --bg:#0b1220;
-  --ink:#eaf0ff;
-  --soft:#c9d4ff;
-  --brand:#6ca9ff;
-  --muted:#9cb0d9;
-  --panel:#121a2b;
-  --panel-alt:#0e1626;
-  --card:#0f1730;
-  --ok:#3ddc97;
-}
-
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: linear-gradient(180deg, var(--bg), #0a1020 60%, #080e1c);
-  color: var(--ink);
-  line-height:1.6;
-}
-
-.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
-
-.site-header{
-  position:sticky;top:0;z-index:10;
-  background:rgba(8,14,28,.8);backdrop-filter: blur(6px);
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-.site-header .wrap{display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
-.brand{color:#fff;text-decoration:none;font-weight:700;letter-spacing:.5px}
-.nav a{
-  color:var(--soft);text-decoration:none;margin-left:16px;font-size:14px
-}
-.nav a:hover{color:#fff}
-
+/* ====== Hero ====== */
 .hero{
-  padding:72px 0 56px;
-  background: radial-gradient(1200px 500px at 50% -10%, rgba(108,169,255,.18), transparent 60%);
-  text-align:center;
+  position:relative;
+  overflow:hidden;
+  padding:48px 0 32px;
+  border-bottom:1px solid var(--line);
 }
-.hero h1{margin:0 0 12px;font-size:28px}
-.hero .lead{color:var(--soft);max-width:720px;margin:0 auto 20px}
+.hero__bg{
+  position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(60% 60% at 80% 20%, rgba(162,255,207,.20), transparent 60%),
+    radial-gradient(60% 60% at 20% 80%, rgba(140,232,255,.20), transparent 60%);
+  opacity:.7;
+}
+.hero__inner{position:relative; z-index:1}
+.hero__title{
+  font-size: clamp(28px, 5.5vw, 54px);
+  line-height:1.15; margin:0 0 .6rem 0; font-weight:800;
+  letter-spacing:.01em;
+  text-wrap:balance;
+}
+.hero__title--sub{opacity:.95}
+.lead{
+  font-size:clamp(16px, 2.6vw, 20px);
+  color:var(--ink-dim);
+  margin:0 0 1.1rem 0;
+}
+.hero__cta{display:flex; gap:.8rem; flex-wrap:wrap}
+
+/* Knapp */
 .btn{
-  display:inline-block;background:var(--brand);color:#081020;text-decoration:none;
-  padding:10px 16px;border-radius:8px;font-weight:700
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:.78rem 1.05rem; border-radius:.9rem;
+  text-decoration:none; font-weight:700; letter-spacing:.01em;
+  border:1px solid var(--line);
 }
-.btn:hover{filter:brightness(1.1)}
-
-.section{padding:36px 0}
-.section-alt{background:var(--panel-alt)}
-.section h2{margin:0 0 12px;font-size:22px}
-
-.pillars{
-  list-style:none;margin:16px 0 0;padding:0;
-  display:grid;gap:14px;grid-template-columns:1fr;
+.btn--primary{
+  color:#06121e;
+  background:linear-gradient(180deg, #c8f4ff, #7ad7ff);
+  border-color:transparent;
 }
-.pillars li{
-  background:var(--card);border:1px solid rgba(255,255,255,.06);
-  padding:14px;border-radius:10px
+.btn--ghost{
+  color:var(--ink); background:transparent;
 }
-.pillars h3{margin:0 0 6px;font-size:16px}
-.pillars p{margin:0;color:var(--soft);font-size:14px}
+.btn:active{transform:translateY(1px)}
 
-.cta-grid{
-  display:grid;gap:14px;grid-template-columns:1fr;
-  margin-top:12px;
+/* ====== Seksjoner ====== */
+.section{padding:40px 0; border-bottom:1px solid var(--line)}
+.section--alt{background:var(--panel)}
+
+h2{
+  margin:0 0 .8rem 0; font-size:clamp(22px, 3.8vw, 30px);
 }
-.card{
-  display:block;padding:14px;border-radius:10px;
-  background:var(--card);border:1px solid rgba(255,255,255,.07);
-  color:var(--ink);text-decoration:none
+
+/* Lister / lenker */
+.feature-list, .steps{margin:.2rem 0 1rem 0; padding-left:1.1rem}
+.feature-list li{margin:.35rem 0}
+.steps li{margin:.5rem 0}
+.inline-links{display:flex; gap:1rem; flex-wrap:wrap; margin-top:.6rem}
+.inline-links a{
+  color:var(--ink); text-decoration:none; border-bottom:1px dashed var(--ink-dim);
 }
-.card h3{margin:0 0 6px;font-size:16px}
-.card p{margin:0;color:var(--soft);font-size:14px}
-.card:hover{border-color:var(--brand)}
+.inline-links a:hover{border-bottom-color:var(--ink)}
 
-.form{max-width:720px}
-.hidden{display:none}
-.row{display:flex;flex-direction:column;margin-bottom:12px}
-label{font-size:13px;color:var(--soft);margin-bottom:6px}
-input,textarea{
-  width:100%;background:#0b1324;border:1px solid rgba(255,255,255,.1);
-  color:#fff;border-radius:8px;padding:10px 12px;font-size:14px
+/* Skjema */
+.form{max-width:700px}
+.form__row{display:flex; flex-direction:column; gap:.35rem; margin:.7rem 0}
+.form input, .form textarea{
+  width:100%; padding:.8rem .9rem; border-radius:.7rem;
+  border:1px solid var(--line); background:#0f1826; color:var(--ink);
 }
-input:focus,textarea:focus{outline:2px solid var(--brand);outline-offset:2px}
+.hidden-field{display:none}
 
-.muted{color:var(--muted);font-size:13px}
+/* Grid i punkt-listen */
+.cols{display:grid; gap:.45rem; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); list-style:disc; padding-left:1.1rem}
 
-.site-footer{border-top:1px solid rgba(255,255,255,.06);padding:20px 0;background:#0a1020}
-.site-footer p{margin:0;color:var(--muted);font-size:13px}
+/* ====== Footer ====== */
+.site-footer{padding:26px 0; background:#0e1520}
+.footer-inner{display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap}
+.footer-links{display:flex; gap:1rem}
+.footer-links a{color:var(--ink-dim); text-decoration:none}
+.footer-links a:hover{color:var(--ink)}
 
-/* Tablet og opp */
-@media(min-width:720px){
-  .hero h1{font-size:36px}
-  .pillars{grid-template-columns:repeat(3,1fr)}
-  .cta-grid{grid-template-columns:repeat(3,1fr)}
+/* ====== Responsiv finpuss ====== */
+@media (max-width:600px){
+  .hero{padding:36px 0 24px}
+  .lead{line-height:1.55}
+  .footer-inner{flex-direction:column; align-items:flex-start}
 }
-  
+
+/* ====== Rydder vekk gamle artefakter ======
+   Flere installasjoner hadde vertikal "Global / Human / Rights / Network"
+   som lå bak og kolliderte med overskriften. Skjul dem trygt. */
+.badge-words, .hero .badge, .watermark, .stacked-words{
+  display:none !important;
+}
