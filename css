@@ -272,3 +272,14 @@ label{display:block;margin:14px 0 6px}
 .form-actions { display:flex; gap:.75rem; align-items:center; margin-top:1rem; }
 .form-note { color:#666; font-size:.9rem; margin-top:.75rem; }
 .form-success { background:#e7f5e9; color:#0b6b2b; padding:.75rem 1rem; border-radius:.5rem; margin-top:1rem; border:1px solid #bfe3c7; }
+.hero-title {
+    margin-top: 40px; /* Mer luft over tittelen */
+    line-height: 1.2; /* Bedre linjeavstand */
+    font-size: 1.8rem; /* Litt mindre skrift på mobil */
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+}
