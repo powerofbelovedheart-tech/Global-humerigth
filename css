@@ -443,3 +443,18 @@ label{display:block;margin:14px 0 6px}
     display: none !important;
   }
 }
+.vertical-text {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+}
+
+@media (max-width: 768px) {
+  .vertical-text {
+    position: static;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+}
