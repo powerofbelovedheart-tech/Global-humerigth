@@ -1,161 +1,107 @@
-<!doctype html>
-<html lang="no" data-lang="no">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GA-13 — Global Human Rights Network</title>
-  <meta name="description" content="Menneskeverd først. Verktøy som hjelper nå – rettigheter, utdanning og trygg teknologi i én plattform." />
+/* ---------- Reset & base ---------- */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+:root{
+  --bg:#0c121b;
+  --bg-2:#0f1724;
+  --panel:#121b2a;
+  --text:#e6eef7;
+  --muted:#a8b5c7;
+  --brand:#7fe7e7;
+  --brand-2:#7fb0ff;
+  --ok:#6ee7a1;
+  --radius:18px;
+}
+html{scroll-behavior:smooth}
+body{
+  background: radial-gradient(1200px 800px at 20% 0%, #0f2338 10%, var(--bg-2) 60%, var(--bg));
+  color:var(--text);
+  font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
 
-  <!-- NØDLAPP-CSS: ren layout + skjul gammel bakgrunnstekst -->
-  <style>
-    :root{
-      --bg:#0b1220; --card:#111a2c; --text:#dfe7ff; --muted:#9fb3d9;
-      --brand:#aee0ff; --btn:#9bd3ff; --btn2:#23324f;
-      --radius:16px; --space:20px; --max:1100px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.45}
-    a{color:var(--brand);text-decoration:none}
-    .container{max-width:var(--max);margin:0 auto;padding:24px}
-    header{position:sticky;top:0;z-index:10;background:linear-gradient(180deg,rgba(5,10,20,.95),rgba(5,10,20,.6),transparent)}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.04em}
-    .nav{display:flex;gap:14px;flex-wrap:wrap}
-    .nav a{padding:8px 12px;border-radius:10px;background:transparent}
-    .nav a:hover{background:rgba(255,255,255,.06)}
-    /* HERO */
-    .hero{padding:28px 0 8px}
-    .hero-card{
-      background:radial-gradient(1200px 500px at 15% 10%, rgba(120,180,255,.16), transparent 60%),
-                 radial-gradient(1200px 600px at 85% 10%, rgba(90,140,255,.1), transparent 60%),
-                 var(--card);
-      border-radius:var(--radius); padding:28px; box-shadow:0 10px 50px rgba(0,0,0,.35); overflow:hidden;
-    }
-    .hero h1{font-size:clamp(28px,6vw,44px);line-height:1.08;margin:0 0 12px}
-    .lead{color:var(--muted);font-size:clamp(16px,2.5vw,18px);max-width:72ch}
-    .cta{display:flex;gap:14px;margin-top:18px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:12px 16px;border-radius:14px;font-weight:700}
-    .btn-primary{background:var(--btn);color:#03223f}
-    .btn-secondary{background:var(--btn2);color:#dbe8ff}
-    .btn:active{transform:translateY(1px)}
-    /* Kort seksjon under */
-    section{padding:26px 0}
-    h2{font-size:clamp(22px,4.5vw,28px);margin:0 0 12px}
-    p{margin:0 0 12px}
-    /* Kontakt (Netlify) */
-    form .row{display:flex;flex-direction:column;margin-bottom:12px}
-    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #2a3a5a;background:#0e1627;color:var(--text)}
-    textarea{min-height:140px}
-    /* Skjul ALT av tidligere vannmerke/vertikaltekst/pseudo i hero fra gammel stil */
-    .vertical-words,.vertical-text,.left-words,.hero .watermark,.hero .bg-words,.hero .bg-text{display:none !important;visibility:hidden !important}
-    .hero::before,.hero::after,.hero-card::before,.hero-card::after{content:none !important}
-  </style>
-</head>
+/* ---------- Layout helpers ---------- */
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.section{padding:64px 0}
+.section--alt{background:rgba(255,255,255,.02)}
+.grid-2{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.cards{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);padding:16px;border-radius:14px}
 
-<body>
-  <!-- TOPP -->
-  <header>
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
-      <div class="brand">GA-13</div>
-      <nav class="nav" aria-label="Hovedmeny">
-        <a href="#hjelp">Hjelp nå</a>
-        <a href="#kjerne">Kjerneområder</a>
-        <a href="#laring">Læring</a>
-        <a href="#verktoy">Verktøy</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-    </div>
-  </header>
+/* ---------- Header ---------- */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(12,18,27,.7);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header__row{display:flex;align-items:center;gap:16px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:700}
+.brand img{height:28px;width:28px}
 
-  <!-- HERO (ENESTE) -->
-  <section class="hero" id="topp">
-    <div class="container">
-      <div class="hero-card">
-        <h1>Menneskeverd først.<br>Verktøy som hjelper nå.</h1>
-        <p class="lead">
-          GA-13 samler <strong>rettigheter, utdanning og trygg teknologi</strong> i én plattform.
-          Du kan be om hjelp, dokumentere, lære – og bygge fellesskap.
-        </p>
-        <div class="cta">
-          <a href="#hjelp" class="btn btn-primary">Hjelp meg nå</a>
-          <a href="#kjerne" class="btn btn-secondary">Se hva du får</a>
-        </div>
-      </div>
-    </div>
-  </section>
+.main-nav{display:none;gap:18px}
+.main-nav a{color:var(--muted);text-decoration:none}
+.main-nav a:hover{color:var(--text)}
 
-  <!-- KORT intro (kan utvides senere) -->
-  <section id="hjelp">
-    <div class="container">
-      <h2>Hva får du her?</h2>
-      <p>• Økonomiråd, juridiske maler og trygg dokumentasjon.<br>
-         • Læringsrom for barn og voksne, og verktøy som gjør ting enkelt.</p>
-    </div>
-  </section>
+.lang-switch{display:flex;gap:8px;margin-left:auto}
+.lang{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:var(--text);padding:6px 10px;border-radius:10px;cursor:pointer}
+.lang.is-active{outline:2px solid rgba(127,224,255,.6)}
 
-  <section id="kjerne">
-    <div class="container">
-      <h2>Kjerneområder</h2>
-      <p><strong>Økonomi & rettferdighet</strong> – gjeld, refinansiering, rapportering av urett.</p>
-      <p><strong>Juridisk bistand</strong> – kobling til advokater, klage- og søksmålsverktøy, rettighetsarkiv.</p>
-      <p><strong>Barn & utdanning</strong> – ressurser for foreldre, skoleprosjekter, rettferdig behandling.</p>
-      <p><strong>Samfunn & varslingskanal</strong> – dialog, forslag, varsle diskriminering og dårlig behandling.</p>
-      <p><strong>Teknologi & AI</strong> – bevisinnsamling, trygg kommunikasjon, nettverk.</p>
-      <p><strong>Aktivitets- og kompetansesenter</strong> – møteplasser, kurs og mestring.</p>
-    </div>
-  </section>
+/* Show menu on larger screens */
+@media(min-width:900px){ .main-nav{display:flex} }
 
-  <section id="laring">
-    <div class="container">
-      <h2>Læring & Utdanning</h2>
-      <p>Praktiske oppgaver, korte forklaringer, og ferdige opplegg for skole og hjem.</p>
-    </div>
-  </section>
+/* ---------- Hero ---------- */
+.hero{padding:56px 0 36px}
+.hero__wrap{
+  position:relative;
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius);
+  padding:28px 22px 28px;
+  overflow:hidden;
+}
 
-  <section id="verktoy">
-    <div class="container">
-      <h2>Verktøy</h2>
-      <p>Skjema-generator, trygg opplasting, og sjekklister for økonomi, juss og skole.</p>
-    </div>
-  </section>
+/* Diskret badge øverst – INGEN overlapp med tittelen */
+.hero__badge{
+  position:absolute;top:12px;left:16px;
+  font-size:.85rem;letter-spacing:.05em;
+  color:var(--muted);
+  opacity:.9;
+}
 
-  <!-- KONTAKT (Netlify Forms) -->
-  <section id="kontakt">
-    <div class="container">
-      <h2>Kontakt</h2>
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
-        <input type="hidden" name="form-name" value="contact" />
-        <p style="display:none;"><label>Ikke fyll ut dette feltet: <input name="bot-field" /></label></p>
+.hero__title{
+  margin:48px 0 10px;
+  font-size:clamp(28px,6vw,44px);
+  line-height:1.12;
+  letter-spacing:.3px;
+}
+.lead{color:var(--muted);max-width:60ch}
+.hero__cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
 
-        <div class="row">
-          <label for="name">Navn</label>
-          <input id="name" name="name" type="text" required />
-        </div>
+.btn{display:inline-block;padding:10px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:var(--text);text-decoration:none}
+.btn:hover{background:rgba(255,255,255,.1)}
+.btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#041016;border:none}
 
-        <div class="row">
-          <label for="email">E-post</label>
-          <input id="email" name="email" type="email" required />
-        </div>
+/* ---------- Lists ---------- */
+.tick{list-style:none;padding:0;margin:8px 0 0}
+.tick li{padding-left:24px;position:relative;margin:8px 0}
+.tick li::before{
+  content:"✔";position:absolute;left:0;top:0;color:var(--ok);font-weight:700;
+}
 
-        <div class="row">
-          <label for="subject">Emne</label>
-          <input id="subject" name="subject" type="text" />
-        </div>
+/* ---------- Form ---------- */
+.form{display:grid;gap:10px;max-width:700px}
+.form input,.form textarea{
+  width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.03);color:var(--text)
+}
+.form .hp{display:none}
+.muted{color:var(--muted)}
 
-        <div class="row">
-          <label for="message">Melding</label>
-          <textarea id="message" name="message" rows="6" required></textarea>
-        </div>
+/* ---------- Footer ---------- */
+.site-footer{border-top:1px solid rgba(255,255,255,.08);padding:26px 0;background:rgba(255,255,255,.02)}
+.footer__grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.logo-stack{display:flex;align-items:center;gap:10px}
+.logo-stack img{height:28px}
 
-        <button class="btn btn-primary" type="submit">Send</button>
-        <p id="form-status" aria-live="polite"></p>
-      </form>
-    </div>
-  </section>
+/* ---------- i18n visning ---------- */
+/* Skjul alle i18n-tags som ikke matcher valgt språk */
+[data-i18n]{display:revert}
+html[data-lang="no"] [data-i18n-en]{display:none}
+html[data-lang="en"] [data-i18n]{display:revert}
 
-  <footer>
-    <div class="container" style="opacity:.7;padding-bottom:40px">
-      © 2025 GA-13 • Global Human Rights Network. Bygd med hjerte og teknologi.
-    </div>
-  </footer>
-</body>
-</html>
+/* (Tekst byttes i JS, så vi trenger bare standard display) */
