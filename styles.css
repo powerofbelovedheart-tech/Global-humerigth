@@ -227,3 +227,12 @@ textarea{ resize: vertical }
   .nav.open{ display:flex }
   .hamburger{ display:block }
 }
+.hero h1 {
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+  word-break: normal;
+}
+.hero p.lead {
+  line-height: 1.45;
+  margin-top: 0.8rem;
+}
