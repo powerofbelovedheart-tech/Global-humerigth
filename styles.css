@@ -40,3 +40,77 @@ p{margin:.3rem 0 1rem}
   position:sticky;top:0;z-index:50;
   background:rgba(8,16,35,.6);
   backdrop-filter: blur(8px
+  /* === GA-13 quick polish overrides === */
+
+/* Typografi og luft */
+body { line-height: 1.7; }
+.section { padding: 88px 0 72px; }
+h1 { letter-spacing: .2px; }
+h2 { margin-bottom: .8rem; }
+p, li { font-size: 1rem; }
+
+/* Hero mer “rød tråd” og form */
+.hero { padding: 104px 0 84px; }
+.hero-copy .lead { max-width: 60ch; }
+.hero-inner { gap: 36px; }
+.art-bg {
+  border-radius: 20px;
+  border: 1px solid rgba(120,243,209,.25);
+  background:
+    radial-gradient(1200px 400px at 20% 120%, rgba(120,243,209,.18), transparent 60%),
+    radial-gradient(1000px 400px at 100% -40%, rgba(106,167,255,.22), transparent 60%),
+    linear-gradient(180deg, #09122a, #0c1831);
+}
+.art-bg .grid { opacity: .35; }
+.art-bg .pulse { width: 160px; height: 160px; filter: blur(10px); }
+
+/* Knapper litt “snappier” */
+.btn { border-width: 2px; }
+.btn-primary { box-shadow: 0 8px 20px rgba(58,121,255,.35); }
+.btn-primary:active { transform: translateY(0); }
+
+/* Kort/grid ryddigere på mobil */
+.card { padding: 20px; }
+.cards { gap: 22px; }
+@media (min-width: 720px){
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1040px){
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Læring-bokser */
+.box { border-color: rgba(120,243,209,.18); }
+
+/* Skjema – bredere felt og bedre kontrast */
+.field input, .field textarea {
+  background: #0a1428;
+  border-color: rgba(120,243,209,.20);
+}
+.field input:focus, .field textarea:focus {
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 4px rgba(120,243,209,.10);
+}
+
+/* Sticky header – penere bakgrunn */
+.site-header {
+  background: linear-gradient(180deg, rgba(8,16,35,.75), rgba(8,16,35,.35));
+  border-bottom: 1px solid rgba(120,243,209,.15);
+}
+
+/* Footer tettere og renere */
+.site-footer { padding: 32px 0 36px; }
+.footer-nav a { opacity: .9; }
+.footer-nav a:hover { opacity: 1; }
+
+/* Liten eybrow-stil til over-overskrift (valgfritt) */
+.eyebrow {
+  display:inline-block;
+  font-size:.85rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color: var(--accent-2);
+  margin-bottom:.4rem;
+  opacity:.9;
+}
+  
