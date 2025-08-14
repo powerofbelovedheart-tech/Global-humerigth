@@ -336,3 +336,102 @@ label{display:block;margin:14px 0 6px}
         display: none; /* skjul for å unngå overlapp */
     }
 }
+/* ---------- HERO LAYOUT OG KONTRAST ---------- */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  padding: 1.25rem 1rem 1.5rem;
+  border-radius: 1rem;
+}
+
+/* Mørk gradient over bakgrunnsbildet, gir bedre lesbarhet */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 12, 26, 0.65) 0%,
+    rgba(8, 12, 26, 0.35) 60%,
+    rgba(8, 12, 26, 0.15) 100%
+  );
+  z-index: 0;
+}
+
+/* sørg for at teksten ligger over gradienten */
+.hero-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.main-title {
+  margin: .25rem 0 .5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  /* Skalerer pent fra mobil til desktop */
+  font-size: clamp(1.9rem, 5.5vw, 3.2rem);
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.lead {
+  margin: 0 0 1rem;
+  font-size: clamp(1rem, 2.8vw, 1.125rem);
+  line-height: 1.55;
+  color: rgba(255,255,255,0.92);
+}
+
+/* “Global Human Rights Network” – vis på store skjermer, skjul på mobil */
+.sub-logo-text {
+  font-size: .95rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: .25rem;
+}
+@media (max-width: 768px) {
+  .sub-logo-text { display: none; }
+}
+
+/* knapper i hero */
+.cta-buttons {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .8rem 1.1rem;
+  border-radius: .8rem;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform .06s ease, opacity .2s ease;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn--primary {
+  background: linear-gradient(180deg, #8dd5ff 0%, #74bfff 100%);
+  color: #06121f;
+}
+.btn--ghost {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+/* ---------- RYDD BORT OVERLAPPENDE VANNMERKER ---------- */
+/* Hvis du har en vertikal/stacket tekst i hero fra før: skjul den på mobil */
+@media (max-width: 768px) {
+  .hero-section .watermark,
+  .hero-section .stacked-words,
+  .hero-section .badge,
+  .hero-section .logo-words {
+    display: none !important;
+  }
+}
+
+/* Litt ekstra luft under hero på mobil */
+@media (max-width: 480px) {
+  .hero-section { margin-bottom: .75rem; }
+}
