@@ -283,3 +283,24 @@ label{display:block;margin:14px 0 6px}
         font-size: 1.5rem;
     }
 }
+/* Overskrift-stil */
+.hero-title {
+    margin-top: 40px; /* luft over */
+    line-height: 1.2; /* bedre linjeavstand */
+    font-size: 2rem; /* normal størrelse på desktop */
+    font-weight: bold;
+    max-width: 90%; /* ikke for bred */
+}
+
+/* Mobiltilpasning */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 1.5rem; /* mindre tekst på mobil */
+        margin-top: 60px;  /* mer luft på mobil */
+    }
+}
+
+/* Gir plass mellom språkknapper og overskrift */
+.language-switcher {
+    margin-bottom: 20px;
+}
