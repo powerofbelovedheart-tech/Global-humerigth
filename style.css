@@ -1,201 +1,88 @@
-<!doctype html>
-<html lang="no">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>GA-13 | Global Human Rights Network</title>
-  <meta name="description" content="En nøytral plattform som kobler rettshjelp, økonomi, utdanning, samfunn og trygg teknologi – for å beskytte menneskerettigheter.">
-  <link rel="icon" href="/favicon.svg">
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-  <!-- Topbar -->
-  <header class="topbar">
-    <div class="wrap">
-      <a class="brand" href="/" data-no="GA-13" data-en="GA-13">GA-13</a>
-      <nav class="nav">
-        <a href="#kjerner" data-no="Kjerneområder" data-en="Focus Areas">Kjerneområder</a>
-        <a href="#hjelp" data-no="Hjelp meg nå" data-en="Help me now">Hjelp meg nå</a>
-        <a href="#contact" data-no="Kontakt" data-en="Contact">Kontakt</a>
-        <button id="lang-no" class="lang">NO</button>
-        <button id="lang-en" class="lang outline">EN</button>
-      </nav>
-    </div>
-  </header>
+/* ====== Reset & Base ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0d1220;
+  color: white;
+  line-height: 1.5;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="wrap">
-      <h1 data-no="Hjerte for menneskerettigheter"
-          data-en="Heart for Human Rights">Hjerte for menneskerettigheter</h1>
-      <p class="lead"
-         data-no="En nøytral, åpen plattform som kobler rettshjelp, økonomisk veiledning, barne- og skole­støtte, samfunnsforbedring og trygg teknologi. Rask, menneskelig hjelp – uten barrierer."
-         data-en="A neutral, open platform connecting legal aid, economic guidance, child & school support, community improvement and safe technology. Fast, human help—with no barriers.">
-        En nøytral, åpen plattform …
-      </p>
-      <div class="cta-row">
-        <a href="#hjelp" class="btn primary"
-           data-no="Hjelp meg nå" data-en="Help me now">Hjelp meg nå</a>
-        <a href="#kjerner" class="btn"
-           data-no="Utforsk kjerneområder" data-en="Explore focus areas">Utforsk kjerneområder</a>
-      </div>
-    </div>
-  </section>
+/* ====== Header ====== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.lang-switch button {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-  <!-- 6 focus cards -->
-  <section id="kjerner" class="grid wrap">
-    <article class="card">
-      <h3 data-no="Økonomi" data-en="Economy">Økonomi</h3>
-      <p data-no="Rettigheter ved gjeld, renter og tvangssalg. Praktiske steg, maler og ekte hjelp."
-         data-en="Rights in debt, interest and foreclosures. Practical steps, templates and real help.">
-      </p>
-      <ul>
-        <li data-no="Gjeld/Refinans – dine rettigheter" data-en="Debt/Refinance – your rights"></li>
-        <li data-no="Klage på urimelige renter/inkasso" data-en="Complaints on unfair interest/collections"></li>
-        <li data-no="Slik stopper du tvangssalg midlertidig" data-en="How to pause a foreclosure"></li>
-      </ul>
-    </article>
+/* ====== Hero Section ====== */
+.hero {
+  padding: 4rem 0;
+  text-align: center;
+}
+.hero-card {
+  background: rgba(255,255,255,0.05);
+  padding: 2rem;
+  border-radius: 10px;
+}
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.hero .lead {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.cta a {
+  display: inline-block;
+  margin: 0 0.5rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.btn-primary {
+  background: #1e90ff;
+  color: white;
+}
+.btn-secondary {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
 
-    <article class="card">
-      <h3 data-no="Juridisk" data-en="Legal"></h3>
-      <p data-no="Maler for innsyn, klager og varsler. Vei inn til advokater, ombud og støttenettverk."
-         data-en="Templates for access requests, complaints and notices. Pathways to lawyers, ombuds and support."></p>
-      <ul>
-        <li data-no="Innsyn (forvaltningsloven/offentleglova)" data-en="Access to records"></li>
-        <li data-no="Klage til Sivilombudet" data-en="Complaint to Parliamentary Ombud"></li>
-        <li data-no="EMK/Barnekonvensjonen – nøkkelartikler" data-en="ECHR/CRC – key articles"></li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3 data-no="Barn & utdanning" data-en="Children & Education"></h3>
-      <p data-no="Ressurser for foreldre og elever. Verktøy ved konflikt med skole eller barnevern."
-         data-en="Resources for parents and pupils. Tools for conflicts with school or child services."></p>
-      <ul>
-        <li data-no="Samtaleverktøy for foreldre–skole" data-en="Parent–school conversation toolkit"></li>
-        <li data-no="Trygg bruk av AI for elever" data-en="Safe AI use for students"></li>
-        <li data-no="Barnets beste – hva betyr det?" data-en="Best interests of the child—what it means"></li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3 data-no="Samfunn" data-en="Community"></h3>
-      <p data-no="Trygg plattform for dialog, forslag og varsling av urett. Respekt, åpenhet og medmenneskelighet."
-         data-en="Safe space for dialogue, ideas and whistleblowing. Respect, openness and humanity."></p>
-      <ul>
-        <li data-no="Meld fra trygt (anonymt valgfritt)" data-en="Report safely (optional anonymous)"></li>
-        <li data-no="Lokale initiativ og møteplasser" data-en="Local initiatives and meetups"></li>
-        <li data-no="Frivillighet og nettverk" data-en="Volunteering and networks"></li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3 data-no="Teknologi & AI" data-en="Technology & AI"></h3>
-      <p data-no="Bruk AI til dokumentasjon, opplæring og kommunikasjon. Personvern først."
-         data-en="Use AI for documentation, learning and communication. Privacy first."></p>
-      <ul>
-        <li data-no="Bevisinnsamling (trygge rutiner)" data-en="Evidence capture (safe routines)"></li>
-        <li data-no="AI-veiledning for foreldre og lærere" data-en="AI guidance for parents & teachers"></li>
-        <li data-no="Mot misinformasjon/deepfakes" data-en="Against misinformation/deepfakes"></li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3 data-no="Aktiviteter & kompetanse" data-en="Activities & Skills"></h3>
-      <p data-no="Kreative verksteder, idrett og digital læring. Å bygge mestring – sammen."
-         data-en="Creative labs, sports and digital learning. Building capability—together."></p>
-      <ul>
-        <li data-no="Kurs og micro-kurs (gratis/åpne)" data-en="Courses & micro-courses (free/open)"></li>
-        <li data-no="Mentorordning" data-en="Mentorship"></li>
-        <li data-no="Jobb- og oppdrags­matching" data-en="Job & project matching"></li>
-      </ul>
-    </article>
-  </section>
-
-  <!-- Help form -->
-  <section id="hjelp" class="wrap formblock">
-    <h2 data-no="Hjelp meg nå" data-en="Help me now">Hjelp meg nå</h2>
-    <p class="muted"
-       data-no="Fyll ut skjemaet. Du får kvittering på e-post. Vi kontakter deg så raskt som mulig."
-       data-en="Fill out the form. You’ll receive a receipt by e-mail. We’ll get back to you as soon as possible.">
-    </p>
-
-    <form name="hjelp-meg-na" method="POST" data-netlify="true" enctype="multipart/form-data" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="hjelp-meg-na">
-      <p class="hidden"><label>Ikke fyll ut: <input name="bot-field"></label></p>
-
-      <div class="grid-2">
-        <label><span data-no="Navn" data-en="Name">Navn</span>
-          <input name="navn" required>
-        </label>
-        <label><span data-no="E-post" data-en="Email">E-post</span>
-          <input type="email" name="epost" required>
-        </label>
-      </div>
-
-      <div class="grid-2">
-        <label><span data-no="Land/kommune" data-en="Country/Municipality">Land/kommune</span>
-          <input name="sted">
-        </label>
-        <label><span data-no="Tema" data-en="Topic">Tema</span>
-          <select name="tema" required>
-            <option data-no="Økonomi" data-en="Economy">Økonomi</option>
-            <option data-no="Juridisk" data-en="Legal">Juridisk</option>
-            <option data-no="Barne/skole" data-en="Child/School">Barne/skole</option>
-            <option data-no="Annet" data-en="Other">Annet</option>
-          </select>
-        </label>
-      </div>
-
-      <label><span data-no="Beskriv saken kort" data-en="Briefly describe your case">Beskriv saken kort</span>
-        <textarea name="beskrivelse" rows="6" required></textarea>
-      </label>
-
-      <label><span data-no="Last opp dokument (valgfritt)" data-en="Upload a document (optional)">Last opp dokument (valgfritt)</span>
-        <input type="file" name="vedlegg">
-      </label>
-
-      <label class="check">
-        <input type="checkbox" name="samtykke" required>
-        <span data-no="Jeg samtykker til at GA-13 kontakter meg om henvendelsen."
-              data-en="I consent to GA-13 contacting me about this request.">
-          Jeg samtykker …
-        </span>
-      </label>
-
-      <button class="btn primary" type="submit" data-no="Send" data-en="Send">Send</button>
-    </form>
-    <p class="tiny muted">
-      <a href="/privacy.html" data-no="Personvern" data-en="Privacy">Personvern</a> ·
-      <a href="/terms.html" data-no="Vilkår" data-en="Terms">Vilkår</a>
-    </p>
-  </section>
-
-  <!-- Contact footer -->
-  <footer class="footer">
-    <div class="wrap">
-      <div class="foot-grid">
-        <div>
-          <h4 data-no="Om GA-13" data-en="About GA-13">Om GA-13</h4>
-          <p data-no="Globalt nettverk for rettferdighet. Nøytral, ikke-kommersiell plattform som setter mennesker først."
-             data-en="Global network for justice. Neutral, non-commercial platform putting people first."></p>
-        </div>
-        <div>
-          <h4 data-no="Kontakt" data-en="Contact">Kontakt</h4>
-          <ul class="plain">
-            <li><a href="mailto:hello@ga13.org">hello@ga13.org</a></li>
-            <li><a href="#hjelp" data-no="Hjelp meg nå" data-en="Help me now">Hjelp meg nå</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 data-no="Språk" data-en="Language">Språk</h4>
-          <p><button id="f-no" class="chip">NO</button> <button id="f-en" class="chip">EN</button></p>
-        </div>
-      </div>
-      <p class="tiny muted">© <span id="year"></span> GA-13 · <span data-no="Alle hjerter på jord" data-en="All hearts on earth">Alle hjerter på jord</span></p>
-    </div>
-  </footer>
-
-  <script src="/script.js"></script>
-</body>
-</html>
+/* ====== Skjul gamle bakgrunnstekster ====== */
+.vertical-words,
+.vertical-text,
+.left-words,
+.bg-words,
+.bg-text {
+  display: none !important;
+  visibility: hidden !important;
+}
+.hero::before,
+.hero::after,
+.hero-card::before,
+.hero-card::after {
+  content: none !important;
+}
