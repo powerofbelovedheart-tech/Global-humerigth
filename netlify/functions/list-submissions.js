@@ -74,3 +74,11 @@ export default async (request, context) => {
     }
   });
 };
+/ (rot på prosjektet ditt – der index.html ligger)
+│
+├── index.html
+├── admin.html           ← admin-siden vi lagde
+│
+└── netlify/
+    └── functions/
+        └── list-submissions.js   ← funksjonsfila
