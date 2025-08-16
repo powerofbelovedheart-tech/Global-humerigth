@@ -503,6 +503,30 @@
 
     // Åpne automatisk hvis hash = #info
     if(location.hash === '#info'){ openModal(); }
+  ...
+  </section>
+
+  <script>
+    const form = document.getElementById("aiForm");
+    const input = document.getElementById("aiQuestion");
+    const answerBox = document.getElementById("aiAnswer");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); 
+      const question = input.value.trim();
+
+      if (question.length === 0) {
+        answerBox.textContent = "⚠️ Skriv inn et spørsmål først.";
+      } else {
+        answerBox.textContent = "🤖 AI svarer: Dette er et eksempel på et svar til spørsmålet ditt: '" + question + "'";
+      }
+
+      answerBox.classList.remove("hidden");
+    });
+  </sc  ...
+  </section>
+
+  
   </script>
 </body>
 </html>
