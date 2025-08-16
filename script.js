@@ -1,35 +1,36 @@
-<script>
-  // Mobilmeny
-  const navToggle = document.getElementById('navToggle');
-  const navMenu = document.getElementById('nav-menu');
-  navToggle?.addEventListener('click', () => {
-    const open = navMenu.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const question = document.getElementById("aiQuestion").value;
 
-  // Aktiv lenke i nav
-  const here = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-menu a').forEach(a=>{
-    const href = a.getAttribute('href');
-    if(href && href.endsWith(here)) a.classList.add('is-active');
-  });
+  // Bruker-boble
+  const userBubble = document.createElement("div");
+  userBubble.className = "bg-emerald-50 p-3 rounded-xl self-end";
+  userBubble.innerText = question;
+  chat.appendChild(userBubble);
 
-  // Årstall footer
-  document.getElementById('y')?.append(new Date().getFullYear());
-</script>
-// Demo for "Spør AI"
-const aiForm = document.getElementById('aiForm');
-if (aiForm) {
-  aiForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const q = document.getElementById('aiQuestion').value.trim();
-    const box = document.getElementById('aiAnswer');
-    if (!q) { box.classList.add('hidden'); return; }
+  // "AI skriver..." boble
+  const typingBubble = document.createElement("div");
+  typingBubble.className = "bg-gray-100 italic p-3 rounded-xl";
+  typingBubble.innerText = "AI skriver …";
+  chat.appendChild(typingBubble);
 
-    box.innerHTML = `
-      <p><strong>Du spurte:</strong> ${q}</p>
-      <p class="mt-2">⚡️ Demo-svar: Her vil du få kort forklaring, relevante paragrafer og forslag til setninger du kan bruke.
-      Inntil videre viser vi spørsmålet tilbake.</p>`;
-    box.classList.remove('hidden');
+  chat.scrollTop = chat.scrollHeight;
+
+  // Send til server
+  const res = await fetch("/ask", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ question })
   });
-}
+  const data = await res.json();
+
+  typingBubble.remove();
+
+  // AI-boble
+  const aiBubble = document.createElement("div");
+  aiBubble.className = "bg-white border p-3 rounded-xl shadow";
+  aiBubble.innerText = data.answer;
+  chat.appendChild(aiBubble);
+
+  chat.scrollTop = chat.scrollHeight;
+});
