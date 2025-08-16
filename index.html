@@ -14,52 +14,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-  <!-- Stiler -->
   <style>
-    /* Fargepalett og grunnstil */
-      :root{ 
-        --primary:#1e3a8a; --secondary:#3b82f6; --accent:#10b981; }
-      --bg:#f9fafb; --ink:#0f172a; --border:#e5e7eb;
-      --primary:#1e3a8a;        /* header-bakgrunn */
-      --primary-50:#e0e7ff;     /* lys blå seksjon */
-      --secondary:#3b82f6;      /* lenke/hover */
-      --accent:#10b981;         /* primær knapp */
-    }
-    body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';}
-    .glass{backdrop-filter:saturate(180%) blur(12px);background-color:rgba(255,255,255,.55);}
-    .prose p{margin-top:.75rem;}
-    .badge{font-size:.7rem;padding:.25rem .6rem;border-radius:999px;}
-
-    /* Knappestiler */
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.1rem;border-radius:14px;font-weight:600;border:1px solid transparent}
-    .btn-primary{background:var(--accent);color:#fff}
-    .btn-primary:hover{filter:brightness(.95)}
-    .btn-outline{border-color:var(--border);background:#fff;color:var(--ink)}
-    .btn-outline:hover{background:#f8fafc}
-
-    /* Seksjonstitler */
-    .section-title{position:relative;display:inline-block}
-    .section-title:after{content:"";position:absolute;left:0;bottom:-6px;width:60%;height:6px;background:linear-gradient(90deg,var(--accent),var(--secondary));border-radius:999px;opacity:.35}
-
-    /* Modal-animasjon */
-    .modal-enter{opacity:0;transform:translateY(12px) scale(.98);}
-    .modal-enter-active{opacity:1;transform:translateY(0) scale(1);transition:all .18s ease-out;}
-    .modal-leave{opacity:1;transform:translateY(0) scale(1);}
-    .modal-leave-active{opacity:0;transform:translateY(12px) scale(.98);transition:all .12s ease-in;}
+    :root{ --accent: #10b981; }
+    body{ font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
+    .glass{ backdrop-filter:saturate(180%) blur(12px); background-color: rgba(255,255,255,0.55); }
+    .prose p{ margin-top: .75rem; }
+    .badge{ font-size:.7rem; padding:.25rem .6rem; border-radius:999px; }
+    .modal-enter{ opacity:0; transform: translateY(12px) scale(.98); }
+    .modal-enter-active{ opacity:1; transform: translateY(0) scale(1); transition: all .18s ease-out; }
+    .modal-leave{ opacity:1; transform: translateY(0) scale(1); }
+    .modal-leave-active{ opacity:0; transform: translateY(12px) scale(.98); transition: all .12s ease-in; }
   </style>
 </head>
-
 <body class="bg-gray-50 text-gray-900">
   <!-- Nav -->
-  <header class="sticky top-0 z-40 bg-[var(--primary)] text-white shadow-sm">
+  <header class="sticky top-0 z-40 bg-white/80 border-b border-gray-100 glass">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#home" class="font-extrabold text-xl tracking-tight">GA<span class="text-[var(--secondary)]">13</span></a>
+      <a href="#home" class="font-extrabold text-xl tracking-tight">GA<span class="text-emerald-600">13</span></a>
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
         <a href="#declaration" class="hover:text-[var(--secondary)]/90">§13 Erklæring</a>
         <a href="#projects" class="hover:text-[var(--secondary)]/90">Prosjekter</a>
         <a href="#future" class="hover:text-[var(--secondary)]/90">Fremtidens lærer</a>
         <a href="#docs" class="hover:text-[var(--secondary)]/90">Dokumentasjon</a>
+        <a href="#about" class="hover:text-[var(--secondary)]/90">Om prosjektet</a>
         <a href="#contact" class="hover:text-[var(--secondary)]/90">Kontakt</a>
         <button id="lang" class="ml-2 inline-flex items-center rounded-full border px-3 py-1 text-xs hover:bg-white/10">NO / EN</button>
       </nav>
@@ -73,6 +50,7 @@
         <a href="#projects" class="hover:text-[var(--secondary)]/90">Prosjekter</a>
         <a href="#future" class="hover:text-[var(--secondary)]/90">Fremtidens lærer</a>
         <a href="#docs" class="hover:text-[var(--secondary)]/90">Dokumentasjon</a>
+        <a href="#about" class="hover:text-[var(--secondary)]/90">Om prosjektet</a>
         <a href="#contact" class="hover:text-[var(--secondary)]/90">Kontakt</a>
         <button id="langMobile" class="mt-2 inline-flex w-fit items-center rounded-full border px-3 py-1 text-xs hover:bg-white/10">NO / EN</button>
       </div>
@@ -81,18 +59,19 @@
 
   <!-- Hero -->
   <section id="home" class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary-50)] via-white to-white"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-white"></div>
+    <svg class="absolute -right-20 -top-20 w-[500px] h-[500px] opacity-20" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="var(--accent)" d="M50.3,-56.8C64.5,-44.6,74.1,-26.1,75.9,-7.1C77.7,11.8,71.7,31.1,59.6,44.7C47.6,58.2,29.5,66.2,10.9,69.5C-7.8,72.8,-27,71.4,-42.2,62.4C-57.4,53.3,-68.6,36.7,-72.1,18.4C-75.6,0.1,-71.5,-20,-60.9,-34.7C-50.2,-49.4,-33,-58.7,-14.5,-63.3C4,-68,23.8,-68.9,50.3,-56.8Z" transform="translate(100 100)" /></svg>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <div class="grid lg:grid-cols-2 gap-10 items-center">
         <div>
-          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">The Beloved Heart Declaration — <span class="text-[var(--accent)]">§13</span></h1>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">The Beloved Heart Declaration — <span class="text-emerald-600">§13</span></h1>
           <p class="mt-5 text-lg text-gray-700" data-i18n="hero">
             En plattform for sannhet, menneskeverd og teknologi som tjener barnas beste. Vi bygger åpne dokumenter, ekte media og trygge løsninger.
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href="#declaration" class="btn btn-primary">Les §13-erklæringen</a>
-            <a href="#projects" class="btn btn-outline">Utforsk prosjekter</a>
-            <button id="openModal" class="btn btn-outline">Åpne info-vindu</button>
+            <a href="#declaration" class="inline-flex items-center rounded-xl bg-emerald-600 text-white px-5 py-3 font-semibold hover:bg-emerald-700">Les §13-erklæringen</a>
+            <a href="#projects" class="inline-flex items-center rounded-xl border border-emerald-200 px-5 py-3 font-semibold hover:bg-emerald-50">Utforsk prosjekter</a>
+            <button id="openModal" class="inline-flex items-center rounded-xl border border-gray-200 px-5 py-3 font-semibold hover:bg-gray-50">Åpne info‑vindu</button>
           </div>
           <div class="mt-6 text-sm text-gray-600">
             <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-100">Åpen & gjennomsiktig</span>
@@ -102,17 +81,35 @@
         </div>
         <div class="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
           <h3 class="text-lg font-semibold">Siste oppdateringer</h3>
-          <ul id="news" class="mt-4 space-y-3 text-sm"></ul>
+          <ul id="news" class="mt-4 space-y-3 text-sm">
+            <!-- Fylt fra JS-listen under -->
+          </ul>
           <p class="mt-3 text-xs text-gray-500">Redigeres i <code>const NEWS</code> i bunnen av fila.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Declaration -->
-  <section id="declaration" class="py-20 border-t border-[var(--border)] bg-white">
+  <!-- About / Om prosjektet -->
+  <section id="about" class="py-20 bg-white border-t border-[var(--border)]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-extrabold section-title">§13 – Erklæringen</h2>
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold section-title">Om prosjektet</h2>
+        <p class="mt-4 text-gray-700">GA13 er et åpent arbeid for barns verdighet, sannhet og trygg teknologi. Siden samler dokumentasjon, erfaring og løsninger – fra personlige vitnesbyrd til praktiske verktøy – slik at flere kan forstå, lære og handle.</p>
+        <p class="mt-3 text-gray-700">Plattformen er bygget i åpenhet: vi viser kildene, forklarer valgene, og bruker AI som medlærer – ikke erstatning for mennesker. Målet er å gjøre kompliserte prosesser enklere å se, og gi pårørende og fagfolk et felles språk.</p>
+        <p class="mt-3 text-gray-700">Prosjektet er født av erfaring: fra tap og systemsvikt til oppbygging og struktur. Vi tror at sannhet, språk og fellesskap kan forandre liv – og at teknologi kan hjelpe oss å holde kursen.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#docs" class="btn btn-outline">Se dokumentasjon</a>
+          <a href="#contact" class="btn btn-primary">Bidra eller ta kontakt</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Declaration -->
+  <section id="declaration" class="py-20 border-t border-gray-100 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-extrabold">§13 – Erklæringen</h2>
       <div class="prose max-w-none text-gray-800" data-i18n="declHtml">
         <p><strong>Kjernen:</strong> Barns verdighet først. Sannferdig og ansvarlig media. Åpen teknologi som beskytter – ikke kontrollerer. Rettssikkerhet foran maktmisbruk.</p>
         <p>§13 er en levende erklæring og vil oppdateres i åpenhet. Her legger vi ut norsk og engelsk PDF, samt en kortfattet sideversjon som er lett å lese.</p>
@@ -126,13 +123,14 @@
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="py-20 bg-[var(--primary-50)]">
+  <section id="projects" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-end justify-between gap-6">
-        <h2 class="text-3xl font-extrabold section-title">Prosjekter</h2>
+        <h2 class="text-3xl font-extrabold">Prosjekter</h2>
         <a href="#contact" class="text-sm underline underline-offset-4">Bli med / samarbeid</a>
       </div>
       <div class="mt-8 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <!-- Card 1 -->
         <article class="bg-white border border-gray-100 rounded-2xl shadow-sm p-5">
           <h3 class="font-semibold text-lg">Happy Home</h3>
           <p class="mt-2 text-gray-700 text-sm">Trygge hjem og fellesskap gjennom dokumentasjon, dialog og praktiske løsninger.</p>
@@ -141,6 +139,7 @@
             <span class="inline-flex text-xs bg-gray-100 rounded-full px-3 py-1">Community</span>
           </div>
         </article>
+        <!-- Card 2 -->
         <article class="bg-white border border-gray-100 rounded-2xl shadow-sm p-5">
           <h3 class="font-semibold text-lg">The Beloved Heart — Media</h3>
           <p class="mt-2 text-gray-700 text-sm">Ekte vitnesbyrd, åpen dokumentasjon og etisk journalistikk i praksis.</p>
@@ -149,6 +148,7 @@
             <span class="inline-flex text-xs bg-gray-100 rounded-full px-3 py-1">Transparency</span>
           </div>
         </article>
+        <!-- Card 3 -->
         <article class="bg-white border border-gray-100 rounded-2xl shadow-sm p-5">
           <h3 class="font-semibold text-lg">GardenAngels13</h3>
           <p class="mt-2 text-gray-700 text-sm">Globalt nettverk for støtte, varsling og rask hjelp til barn og familier.</p>
@@ -162,10 +162,10 @@
   </section>
 
   <!-- Future Teacher -->
-  <section id="future" class="py-20 bg-white border-t border-[var(--border)]">
+  <section id="future" class="py-20 bg-white border-t border-gray-100">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <h2 class="text-3xl font-extrabold section-title">Fremtidens lærer</h2>
+        <h2 class="text-3xl font-extrabold">Fremtidens lærer</h2>
         <p class="mt-4 text-gray-700">Fremtidens lærer er ikke bare en person i et klasserom. Det er en måte å dele kunnskap, forståelse og erfaring på – der teknologi og menneskelighet møtes.</p>
         <p class="mt-3 text-gray-700">Vi lærer best når vi forstår hverandre, når vi kan stille spørsmål og få ærlige svar, og når vi føler oss trygge. Derfor handler fremtidens læring om mer enn bøker og tavler. Det handler om å lytte, dele og utvikle seg sammen.</p>
         <p class="mt-3 text-gray-700">Med AI og nye verktøy kan vi skape læring der barn og voksne kan finne svar i sitt eget tempo, og bli møtt med respekt for følelser og tanker. Fremtidens lærer er en guide, en venn – og en påminnelse om at vi alltid kan vokse.</p>
@@ -180,7 +180,7 @@
   <!-- Docs -->
   <section id="docs" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-extrabold section-title">Dokumentasjon</h2>
+      <h2 class="text-3xl font-extrabold">Dokumentasjon</h2>
       <p class="mt-3 text-gray-700">Åpne kilder, bevis og sammendrag. Her publiseres rapporter, PDF-er, tidslinjer og bevisoversikter.</p>
       <div class="mt-8 grid md:grid-cols-2 gap-6">
         <div class="rounded-2xl border border-gray-100 p-5">
@@ -198,10 +198,11 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 bg-[var(--primary-50)] border-t border-[var(--border)]">
+  <section id="contact" class="py-20 bg-gray-50 border-t border-gray-100">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-extrabold section-title">Kontakt</h2>
+      <h2 class="text-3xl font-extrabold">Kontakt</h2>
       <p class="mt-3 text-gray-700">Vil du bidra, lese hele saken eller samarbeide? Ta kontakt.</p>
+      <!-- Tips: bytt action til din Formspree-lenke senere -->
       <form class="mt-8 grid gap-4" method="POST" action="#">
         <div class="grid md:grid-cols-2 gap-4">
           <input class="w-full rounded-xl border px-4 py-3" name="name" placeholder="Navn" required />
@@ -229,7 +230,7 @@
           <button id="closeModal" class="inline-flex items-center rounded-full border px-3 py-1 text-xs hover:bg-gray-50">Lukk</button>
         </div>
         <div id="modalBody" class="mt-4 text-gray-700">
-          <p>Dette er et enkelt info-vindu. Du kan bruke det til å vise kortversjon av §13, en viktig beskjed eller en kunngjøring. Teksten under kan du endre i JavaScript nederst i fila (<code>MODAL_CONTENT</code>).</p>
+          <p>Dette er et enkelt info‑vindu. Du kan bruke det til å vise kortversjon av §13, en viktig beskjed eller en kunngjøring. Teksten under kan du endre i JavaScript nederst i fila (<code>MODAL_CONTENT</code>).</p>
         </div>
         <div class="mt-6 flex justify-end gap-3">
           <a href="#declaration" class="inline-flex items-center rounded-lg border px-4 py-2 hover:bg-gray-50">Les §13</a>
@@ -243,7 +244,6 @@
     © <span id="year"></span> GA13 — Beloved Heart for Human Rights. All rights reserved.
   </footer>
 
-  <!-- Script -->
   <script>
     // År i footer
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -273,26 +273,41 @@
     document.getElementById('lang')?.addEventListener('click', swapLang);
     document.getElementById('langMobile')?.addEventListener('click', swapLang);
 
-    // Data-lister
+    // Enkel «CMS» i bunn: redigerbare lister
     const NEWS = [
       { date: '2025-08-16', text: 'Oppstart på Mac – struktur for nettsiden og publisering.' },
-      { date: '2025-08-16', text: 'Forbereder første offentlige utgave av §13 (NO/EN).' },
-      { date: '2025-08-16', text: 'Samler dokumentasjon til åpen oversikt.' }
+      { date: '2025-08-17', text: 'Siden oppdatert med “Fremtidens lærer” og fargepalett.' },
+      { date: '2025-08-17', text: 'Første ekte data: Om prosjektet, bevis og tidslinje lagt inn.' }
     ];
     const EVIDENCE = [
-      'Vedtak fra barnevern uten fars medvirkning',
-      'SMS-dokumentasjon fra skolen som viser fars oppfølging',
-      'Politiaksjoner dokumentert med bilder og vitner',
-      'Tap av førerkort til tross for gyldig legeattest',
-      'Økonomisk ruin etter feil fra system og institusjoner',
-      'Langvarig besøksforbud uten reelle bevis'
+      'Vedtak fra barnevern – barn flyttet uten fars reell medvirkning',
+      'SMS/e-post som dokumenterer oppfølging og samarbeid fra far',
+      'Bilder/video over flere år som viser omsorg og nærvær',
+      'Politiaksjoner og inngrep dokumentert med vitner og foto',
+      'Tap av førerkort til tross for gyldig legeattest (dokumenter vedlagt)',
+      'Økonomisk ruin som følge av feil fra institusjoner',
+      'Langvarig besøksforbud uten faktagrunnlag – prosess beskrevet'
     ];
     const TIMELINE = [
-      { when: '2024–2025', what: 'Dokumentasjon samles, prosjektet GA13 etableres.' },
-      { when: '16. aug 2025', what: 'Oppstart på Mac – første nettside klargjøres.' },
-      { when: '17. aug 2025', what: '“Fra ruiner til levende kunstverk” publisert.' },
-      { when: 'Q4 2025', what: 'Publisering av §13 NO/EN og åpent media-arkiv.' }
+      { when: '2018–2022', what: 'Systemsvikt og rettslig press – dokumentasjon samles fortløpende.' },
+      { when: '2023', what: 'Avslutter medisiner etter 28 år – starter veien tilbake til egen styrke.' },
+      { when: '2024', what: 'Etablerer Beloved Heart for Human Rights og påbegynner §13.' },
+      { when: 'Aug 2025', what: 'Lanserer første offentlig side (GA13) og åpner for innsyn.' },
+      { when: 'Q4 2025', what: 'Publiserer §13 NO/EN og åpent media-arkiv.' }
     ];
+
+    // Modal innhold (rediger her hvis du vil endre tekst i vinduet)
+    const MODAL_CONTENT = {
+      title: 'Velkommen til GA13',
+      body: `
+        <p><strong>Fra ruiner til levende kunstverk.</strong> Vinduet her kan brukes til korte budskap, varsel, eller en mini‑oppsummering av §13.</p>
+        <ul class="list-disc pl-5 mt-3">
+          <li>Rask beskjed til besøkende</li>
+          <li>Kortversjon av §13</li>
+          <li>Lenke til kontakt eller dokumenter</li>
+        </ul>
+      `
+    };
 
     // Render helpers
     function el(tag, attrs={}, children=[]) {
@@ -304,25 +319,22 @@
       return n;
     }
 
-   const NEWS = [
-  { date: '2025-08-16', text: 'Lansering av første versjon av nettsiden GardenAngels13.' },
-  { date: '2025-08-17', text: 'Fokus flyttet til åpenhet og menneskelige rettigheter – siden bygges for å gi stemme til de som ikke blir hørt.' },
-  { date: '2025-08-18', text: 'Utviklingen fortsetter: vi legger inn ekte tekster, vitnesbyrd og kunstneriske uttrykk.' }
-];
-    const EVIDENCE = [
-  'Vedtak fra barnevernet: barn flyttet uten fars medvirkning',
-  'SMS og e-poster som viser nærvær, samarbeid og omsorg fra far',
-  'Bilder og filmklipp dokumentert over 10 år med barna',
-  'Politiaksjoner og ulovlige inngrep – dokumentert med vitner og foto',
-  'Personlige tekster skrevet under avrusning og kamp mot medisiner'
-];Each(t=> evUl.appendChild(el('li', {}, [t])));
+    // News
+    const newsUl = document.getElementById('news');
+    NEWS.forEach(item=>{
+      newsUl.appendChild(el('li', {class:'p-3 rounded-lg bg-gray-50'}, [
+        el('span', {class:'text-gray-500 mr-2'}, [item.date+': ']), document.createTextNode(item.text)
+      ]));
+    });
 
-   const TIMELINE = [
-  { when: '2018–2022', what: 'År med systemsvikt, rettsforfølgelser og tap av barn' },
-  { when: '2023', what: 'Avsluttet medisinering etter 28 år – startet veien tilbake til egen styrke' },
-  { when: '2024', what: 'Grunnla selskapet “Beloved Heart for Human Rights” og startet prosjektet §13' },
-  { when: '2025', what: 'Bygget nettsiden GardenAngels13 som et hjem for sannhet, bevis og rettferdighet' }
-];
+    // Evidence
+    const evUl = document.getElementById('evidenceList');
+    EVIDENCE.forEach(t=> evUl.appendChild(el('li', {}, [t])));
+
+    // Timeline
+    const tl = document.getElementById('timeline');
+    TIMELINE.forEach(t=> tl.appendChild(el('li', {}, [t.when+': '+t.what])));
+
     // Modal logic
     const modal = document.getElementById('modal');
     const modalCard = document.getElementById('modalCard');
@@ -332,42 +344,31 @@
     const mTitle = document.getElementById('modalTitle');
     const mBody = document.getElementById('modalBody');
 
-    const MODAL_CONTENT = {
-      title: '§13 — The Beloved Heart Declaration',
-      body: `
-        <p><strong>Fra ruiner til levende kunstverk.</strong></p>
-        <p>§13 står for barns verdighet, sannhet i media, åpen teknologi og rettssikkerhet foran maktmisbruk.</p>
-        <p>Her starter reisen mot <em>Happy Home</em> — en plattform bygget på kjærlighet, åpenhet og fellesskap.</p>
-        <ul class="list-disc pl-5 mt-3">
-          <li>Barn først – alltid.</li>
-          <li>Sannhet over frykt.</li>
-          <li>Åpenhet og trygg teknologi.</li>
-          <li>Et hjem for alle som har mistet et.</li>
-        </ul>
-        <p class="mt-4 text-sm text-gray-500">Dette er et levende vindu — innholdet kan oppdateres når som helst.</p>
-      `
-    };
-
     function openModal(){
       mTitle.textContent = MODAL_CONTENT.title;
       mBody.innerHTML = MODAL_CONTENT.body;
       modal.classList.remove('hidden');
       modalCard.classList.remove('modal-leave','modal-leave-active');
       modalCard.classList.add('modal-enter');
-      requestAnimationFrame(()=> modalCard.classList.add('modal-enter-active'));
+      requestAnimationFrame(()=>{
+        modalCard.classList.add('modal-enter-active');
+      });
     }
     function closeModal(){
       modalCard.classList.remove('modal-enter','modal-enter-active');
       modalCard.classList.add('modal-leave');
       requestAnimationFrame(()=>{
         modalCard.classList.add('modal-leave-active');
-        setTimeout(()=> modal.classList.add('hidden'), 120);
+        setTimeout(()=>{ modal.classList.add('hidden'); }, 120);
       });
     }
-    openers.forEach(b=> b && b.addEventListener('click', openModal));
+
+    openers.forEach(btn=> btn && btn.addEventListener('click', openModal));
     closer && closer.addEventListener('click', closeModal);
     backdrop && backdrop.addEventListener('click', closeModal);
     document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && !modal.classList.contains('hidden')) closeModal(); });
+
+    // Åpne automatisk hvis hash = #info
     if(location.hash === '#info'){ openModal(); }
   </script>
 </body>
