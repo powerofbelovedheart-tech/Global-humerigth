@@ -286,13 +286,13 @@ const MODAL_CONTENT = {
     }
 
     // News
-    const newsUl = document.getElementById('news');
-    NEWS.forEach(item=>{
-      newsUl.appendChild(el('li', {class:'p-3 rounded-lg bg-gray-50'}, [
-        el('span', {class:'text-gray-500 mr-2'}, [item.date+': ']), document.createTextNode(item.text)
-      ]));
-    });
-
+   const NEWS = [
+  { date: '2025-08-16', text: 'Oppstart på Mac – struktur for nettsiden og publisering.' },
+  { date: '2025-08-17', text: 'Siden er produsert fra ruiner til levende kunstverk for å bedre situasjoner for andre!' },
+  { date: '2025-08-18', text: 'Første vindu åpnet – kortversjon av §13 og Happy Home lagt inn.' },
+  { date: '2025-08-19', text: 'Dokumentasjon og bevis føres inn under EVIDENCE for åpen visning.' },
+  { date: '2025-08-20', text: 'Tidslinje startes – fra ruiner til oppbygging, steg for steg.' }
+];
     // Evidence
     const evUl = document.getElementById('evidenceList');
     EVIDENCE.forEach(t=> evUl.appendChild(el('li', {}, [t])));
