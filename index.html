@@ -258,17 +258,22 @@
     ];
 
     // Modal innhold (rediger her hvis du vil endre tekst i vinduet)
-    const MODAL_CONTENT = {
-      title: 'Velkommen til GA13',
-      body: `
-        <p><strong>Fra ruiner til levende kunstverk.</strong> Vinduet her kan brukes til korte budskap, varsel, eller en mini‑oppsummering av §13.</p>
-        <ul class="list-disc pl-5 mt-3">
-          <li>Rask beskjed til besøkende</li>
-          <li>Kortversjon av §13</li>
-          <li>Lenke til kontakt eller dokumenter</li>
-        </ul>
-      `
-    };
+const MODAL_CONTENT = {
+  title: '§13 — The Beloved Heart Declaration',
+  body: `
+    <p><strong>Fra ruiner til levende kunstverk.</strong></p>
+    <p>§13 står for barns verdighet, sannhet i media, åpen teknologi og rettssikkerhet foran maktmisbruk.</p>
+    <p>Her starter reisen mot <em>Happy Home</em> — en plattform bygget på kjærlighet, åpenhet og fellesskap.</p>
+    <ul class="list-disc pl-5 mt-3">
+      <li>Barn først – alltid.</li>
+      <li>Sannhet over frykt.</li>
+      <li>Åpenhet og trygg teknologi.</li>
+      <li>Et hjem for alle som har mistet et.</li>
+    </ul>
+    <p class="mt-4 text-sm text-gray-500">Dette er et levende vindu — innholdet kan oppdateres når som helst.</p>
+  `
+};
+    
 
     // Render helpers
     function el(tag, attrs={}, children=[]) {
