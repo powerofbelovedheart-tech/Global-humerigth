@@ -18,7 +18,8 @@
   <!-- Stiler -->
   <style>
     /* Fargepalett og grunnstil */
-    :root{
+      :root{ 
+        --primary:#1e3a8a; --secondary:#3b82f6; --accent:#10b981; }
       --bg:#f9fafb; --ink:#0f172a; --border:#e5e7eb;
       --primary:#1e3a8a;        /* header-bakgrunn */
       --primary-50:#e0e7ff;     /* lys blå seksjon */
@@ -303,22 +304,25 @@
       return n;
     }
 
-    // News
-    const newsUl = document.getElementById('news');
-    NEWS.forEach(item=>{
-      newsUl.appendChild(el('li', {class:'p-3 rounded-lg bg-gray-50'}, [
-        el('span', {class:'text-gray-500 mr-2'}, [item.date+': ']), document.createTextNode(item.text)
-      ]));
-    });
+   const NEWS = [
+  { date: '2025-08-16', text: 'Lansering av første versjon av nettsiden GardenAngels13.' },
+  { date: '2025-08-17', text: 'Fokus flyttet til åpenhet og menneskelige rettigheter – siden bygges for å gi stemme til de som ikke blir hørt.' },
+  { date: '2025-08-18', text: 'Utviklingen fortsetter: vi legger inn ekte tekster, vitnesbyrd og kunstneriske uttrykk.' }
+];
+    const EVIDENCE = [
+  'Vedtak fra barnevernet: barn flyttet uten fars medvirkning',
+  'SMS og e-poster som viser nærvær, samarbeid og omsorg fra far',
+  'Bilder og filmklipp dokumentert over 10 år med barna',
+  'Politiaksjoner og ulovlige inngrep – dokumentert med vitner og foto',
+  'Personlige tekster skrevet under avrusning og kamp mot medisiner'
+];Each(t=> evUl.appendChild(el('li', {}, [t])));
 
-    // Evidence
-    const evUl = document.getElementById('evidenceList');
-    EVIDENCE.forEach(t=> evUl.appendChild(el('li', {}, [t])));
-
-    // Timeline
-    const tl = document.getElementById('timeline');
-    TIMELINE.forEach(t=> tl.appendChild(el('li', {}, [t.when+': '+t.what])));
-
+   const TIMELINE = [
+  { when: '2018–2022', what: 'År med systemsvikt, rettsforfølgelser og tap av barn' },
+  { when: '2023', what: 'Avsluttet medisinering etter 28 år – startet veien tilbake til egen styrke' },
+  { when: '2024', what: 'Grunnla selskapet “Beloved Heart for Human Rights” og startet prosjektet §13' },
+  { when: '2025', what: 'Bygget nettsiden GardenAngels13 som et hjem for sannhet, bevis og rettferdighet' }
+];
     // Modal logic
     const modal = document.getElementById('modal');
     const modalCard = document.getElementById('modalCard');
