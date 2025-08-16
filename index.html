@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="no">
 <head>
   <meta charset="UTF-8" />
@@ -34,6 +34,7 @@
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
         <a href="#declaration" class="hover:text-emerald-700">§13 Erklæring</a>
         <a href="#projects" class="hover:text-emerald-700">Prosjekter</a>
+        <a href="#future" class="hover:text-emerald-700">Fremtidens lærer</a>
         <a href="#docs" class="hover:text-emerald-700">Dokumentasjon</a>
         <a href="#contact" class="hover:text-emerald-700">Kontakt</a>
         <button id="lang" class="ml-2 inline-flex items-center rounded-full border px-3 py-1 text-xs hover:bg-gray-50">NO / EN</button>
@@ -46,6 +47,7 @@
       <div class="px-4 py-3 flex flex-col gap-3">
         <a href="#declaration" class="hover:text-emerald-700">§13 Erklæring</a>
         <a href="#projects" class="hover:text-emerald-700">Prosjekter</a>
+        <a href="#future" class="hover:text-emerald-700">Fremtidens lærer</a>
         <a href="#docs" class="hover:text-emerald-700">Dokumentasjon</a>
         <a href="#contact" class="hover:text-emerald-700">Kontakt</a>
         <button id="langMobile" class="mt-2 inline-flex w-fit items-center rounded-full border px-3 py-1 text-xs hover:bg-gray-50">NO / EN</button>
@@ -137,6 +139,22 @@
             <span class="inline-flex text-xs bg-gray-100 rounded-full px-3 py-1">Network</span>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Teacher -->
+  <section id="future" class="py-20 bg-white border-t border-gray-100">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold">Fremtidens lærer</h2>
+        <p class="mt-4 text-gray-700">Fremtidens lærer er ikke bare en person i et klasserom. Det er en måte å dele kunnskap, forståelse og erfaring på – der teknologi og menneskelighet møtes.</p>
+        <p class="mt-3 text-gray-700">Vi lærer best når vi forstår hverandre, når vi kan stille spørsmål og få ærlige svar, og når vi føler oss trygge. Derfor handler fremtidens læring om mer enn bøker og tavler. Det handler om å lytte, dele og utvikle seg sammen.</p>
+        <p class="mt-3 text-gray-700">Med AI og nye verktøy kan vi skape læring der barn og voksne kan finne svar i sitt eget tempo, og bli møtt med respekt for følelser og tanker. Fremtidens lærer er en guide, en venn – og en påminnelse om at vi alltid kan vokse.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#docs" class="inline-flex items-center rounded-xl border px-4 py-2 hover:bg-gray-50">Les mer i dokumentasjon</a>
+          <a href="#contact" class="inline-flex items-center rounded-xl bg-emerald-600 text-white px-4 py-2 hover:bg-emerald-700">Ta kontakt</a>
+        </div>
       </div>
     </div>
   </section>
@@ -244,40 +262,31 @@
       { date: '2025-08-16', text: 'Samler dokumentasjon til åpen oversikt.' }
       // Legg dine egne linjer her under, samme format
     ];
-   const EVIDENCE = [
-  'Vedtak fra barnevern uten fars medvirkning',
-  'SMS-dokumentasjon fra skolen som viser fars oppfølging',
-  'Politiaksjoner dokumentert med bilder og vitner',
-  'Tap av førerkort til tross for gyldig legeattest',
-  'Økonomisk ruin etter feil fra system og institusjoner',
-  'Langvarig besøksforbud uten reelle bevis'
-];
+    const EVIDENCE = [
+      'Rettighetsbrudd – sammendrag (PDF kommer)',
+      'Tidslinje 2020–2025 – hovedpunkter',
+      'Primærkilder (PDF/lenker)'
+      // Legg flere punkter her, i hermetegn og med komma
+    ];
     const TIMELINE = [
-  { when: '2024', what: 'Dokumentasjon og bevis begynner å samles systematisk.' },
-  { when: 'Vår 2025', what: 'Prosjektet GA13 etableres som plattform for sannhet og rettferdighet.' },
-  { when: '16. aug 2025', what: 'Oppstart på Mac – første nettside klargjøres.' },
-  { when: '17. aug 2025', what: 'Første egen oppdatering lagt inn – “fra ruiner til levende kunstverk”.' },
-  { when: '18. aug 2025', what: 'Modal-vinduet åpnet – kortversjon av §13 publisert.' },
-  { when: 'Høst 2025', what: 'Publisering av §13 i full versjon (NO/EN) med dokumentasjon.' }
-];
+      { when: '2024–2025', what: 'Dokumentasjon samles, prosjektet GA13 etableres.' },
+      { when: 'Aug 2025', what: 'Første offentlige nettside – GitHub Pages.' },
+      { when: 'Q4 2025', what: 'Publisering av §13 NO/EN og åpent media-arkiv.' }
+      // Legg flere hendelser her
+    ];
 
     // Modal innhold (rediger her hvis du vil endre tekst i vinduet)
-const MODAL_CONTENT = {
-  title: '§13 — The Beloved Heart Declaration',
-  body: `
-    <p><strong>Fra ruiner til levende kunstverk.</strong></p>
-    <p>§13 står for barns verdighet, sannhet i media, åpen teknologi og rettssikkerhet foran maktmisbruk.</p>
-    <p>Her starter reisen mot <em>Happy Home</em> — en plattform bygget på kjærlighet, åpenhet og fellesskap.</p>
-    <ul class="list-disc pl-5 mt-3">
-      <li>Barn først – alltid.</li>
-      <li>Sannhet over frykt.</li>
-      <li>Åpenhet og trygg teknologi.</li>
-      <li>Et hjem for alle som har mistet et.</li>
-    </ul>
-    <p class="mt-4 text-sm text-gray-500">Dette er et levende vindu — innholdet kan oppdateres når som helst.</p>
-  `
-};
-    
+    const MODAL_CONTENT = {
+      title: 'Velkommen til GA13',
+      body: `
+        <p><strong>Fra ruiner til levende kunstverk.</strong> Vinduet her kan brukes til korte budskap, varsel, eller en mini‑oppsummering av §13.</p>
+        <ul class="list-disc pl-5 mt-3">
+          <li>Rask beskjed til besøkende</li>
+          <li>Kortversjon av §13</li>
+          <li>Lenke til kontakt eller dokumenter</li>
+        </ul>
+      `
+    };
 
     // Render helpers
     function el(tag, attrs={}, children=[]) {
@@ -290,13 +299,13 @@ const MODAL_CONTENT = {
     }
 
     // News
-   const NEWS = [
-  { date: '2025-08-16', text: 'Oppstart på Mac – struktur for nettsiden og publisering.' },
-  { date: '2025-08-17', text: 'Siden er produsert fra ruiner til levende kunstverk for å bedre situasjoner for andre!' },
-  { date: '2025-08-18', text: 'Første vindu åpnet – kortversjon av §13 og Happy Home lagt inn.' },
-  { date: '2025-08-19', text: 'Dokumentasjon og bevis føres inn under EVIDENCE for åpen visning.' },
-  { date: '2025-08-20', text: 'Tidslinje startes – fra ruiner til oppbygging, steg for steg.' }
-];
+    const newsUl = document.getElementById('news');
+    NEWS.forEach(item=>{
+      newsUl.appendChild(el('li', {class:'p-3 rounded-lg bg-gray-50'}, [
+        el('span', {class:'text-gray-500 mr-2'}, [item.date+': ']), document.createTextNode(item.text)
+      ]));
+    });
+
     // Evidence
     const evUl = document.getElementById('evidenceList');
     EVIDENCE.forEach(t=> evUl.appendChild(el('li', {}, [t])));
@@ -342,4 +351,4 @@ const MODAL_CONTENT = {
     if(location.hash === '#info'){ openModal(); }
   </script>
 </body>
-</html> 
+</html>
