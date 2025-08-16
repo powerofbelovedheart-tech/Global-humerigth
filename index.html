@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="no">
-<head>
+<header class="sticky top-0 z-40 bg-[var(--primary)] text-white shadow-sm">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GA13 — The Beloved Heart Declaration §13</title>
@@ -14,7 +14,32 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
+ <style>
+  /* Fargepalett */
+  :root{
+    --bg:#f9fafb; --ink:#0f172a; --border:#e5e7eb;
+    --primary:#1e3a8a;        /* dyp blå (header) */
+    --primary-50:#e0e7ff;     /* lys blå bakgrunn */
+    --secondary:#3b82f6;      /* klar blå (hover/lenker) */
+    --accent:#10b981;         /* grønn (primær knapp) */
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';}
+  .badge{font-size:.7rem;padding:.25rem .6rem;border-radius:999px;}
+  /* Knappestiler */
+  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.1rem;border-radius:14px;font-weight:600;border:1px solid transparent}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{filter:brightness(.95)}
+  .btn-outline{border-color:var(--border);background:#fff;color:var(--ink)}
+  .btn-outline:hover{background:#f8fafc}
+  /* Tittel-understrek */
+  .section-title{position:relative;display:inline-block}
+  .section-title:after{content:\"\";position:absolute;left:0;bottom:-6px;width:60%;height:6px;background:linear-gradient(90deg,var(--accent),var(--secondary));border-radius:999px;opacity:.35}
+</style>
+  <div class="mt-8 flex flex-wrap gap-3">
+  <a href="#declaration" class="btn btn-primary">Les §13-erklæringen</a>
+  <a href="#projects" class="btn btn-outline">Utforsk prosjekter</a>
+  <button id="openModal" class="btn btn-outline">Åpne info-vindu</button>
+</div>
     :root{ --accent: #10b981; }
     body{ font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
     .glass{ backdrop-filter:saturate(180%) blur(12px); background-color: rgba(255,255,255,0.55); }
@@ -58,6 +83,15 @@
   <!-- Hero -->
   <section id="home" class="relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-white"></div>
+    <section id="home" class="relative overflow-hidden">
+  ...
+  <div class="mt-8 flex flex-wrap gap-3">   <!-- KNAPP-CONTAINEREN -->
+    <a href="#declaration" class="inline-flex ...">Les §13-erklæringen</a>
+    <a href="#projects" class="inline-flex ...">Utforsk prosjekter</a>
+    <button id="openModal" class="inline-flex ...">Åpne info-vindu</button>
+  </div>
+  ...
+</section>
     <svg class="absolute -right-20 -top-20 w-[500px] h-[500px] opacity-20" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="var(--accent)" d="M50.3,-56.8C64.5,-44.6,74.1,-26.1,75.9,-7.1C77.7,11.8,71.7,31.1,59.6,44.7C47.6,58.2,29.5,66.2,10.9,69.5C-7.8,72.8,-27,71.4,-42.2,62.4C-57.4,53.3,-68.6,36.7,-72.1,18.4C-75.6,0.1,-71.5,-20,-60.9,-34.7C-50.2,-49.4,-33,-58.7,-14.5,-63.3C4,-68,23.8,-68.9,50.3,-56.8Z" transform="translate(100 100)" /></svg>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <div class="grid lg:grid-cols-2 gap-10 items-center">
@@ -154,6 +188,10 @@
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="#docs" class="inline-flex items-center rounded-xl border px-4 py-2 hover:bg-gray-50">Les mer i dokumentasjon</a>
           <a href="#contact" class="inline-flex items-center rounded-xl bg-emerald-600 text-white px-4 py-2 hover:bg-emerald-700">Ta kontakt</a>
+        <div class="mt-8 flex flex-wrap gap-3">
+  ...
+  <a href="#future" class="btn btn-outline">Om Fremtidens lærer</a>
+</div>
         </div>
       </div>
     </div>
@@ -223,6 +261,12 @@
   </div>
 
   <footer class="py-10 text-center text-sm text-gray-600">
+    <footer ...>
+  ...
+  <div class="mt-4">
+    <a href="#contact" class="btn btn-outline">Kontakt</a>
+  </div>
+</footer>
     © <span id="year"></span> GA13 — Beloved Heart for Human Rights. All rights reserved.
   </footer>
 
