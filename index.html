@@ -1,6 +1,34 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
+  <body class="bg-gray-50 text-gray-900">
+  <!-- Nav -->
+  <header class="sticky top-0 z-40 bg-[var(--primary)] text-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="font-extrabold text-xl tracking-tight">GA<span class="text-[var(--secondary)]">13</span></a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#declaration" class="hover:text-[var(--secondary)]/90">§13 Erklæring</a>
+        <a href="#projects" class="hover:text-[var(--secondary)]/90">Prosjekter</a>
+        <a href="#future" class="hover:text-[var(--secondary)]/90">Fremtidens lærer</a>
+        <a href="#docs" class="hover:text-[var(--secondary)]/90">Dokumentasjon</a>
+        <a href="#contact" class="hover:text-[var(--secondary)]/90">Kontakt</a>
+        <button id="lang" class="ml-2 inline-flex items-center rounded-full border px-3 py-1 text-xs hover:bg-white/10">NO / EN</button>
+      </nav>
+      <button class="md:hidden inline-flex items-center p-2" id="menuBtn" aria-label="Meny">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+      </button>
+    </div>
+    <div id="mobileNav" class="md:hidden hidden border-t border-white/20">
+      <div class="px-4 py-3 flex flex-col gap-3">
+        <a href="#declaration" class="hover:text-[var(--secondary)]/90">§13 Erklæring</a>
+        <a href="#projects" class="hover:text-[var(--secondary)]/90">Prosjekter</a>
+        <a href="#future" class="hover:text-[var(--secondary)]/90">Fremtidens lærer</a>
+        <a href="#docs" class="hover:text-[var(--secondary)]/90">Dokumentasjon</a>
+        <a href="#contact" class="hover:text-[var(--secondary)]/90">Kontakt</a>
+        <button id="langMobile" class="mt-2 inline-flex w-fit items-center rounded-full border px-3 py-1 text-xs hover:bg-white/10">NO / EN</button>
+      </div>
+    </div>
+  </header>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GA13 — The Beloved Heart Declaration §13</title>
