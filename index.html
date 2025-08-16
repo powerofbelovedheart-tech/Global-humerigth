@@ -277,13 +277,10 @@
       </button>
     </form>
 
-    <!-- AI Svar-boks -->
-    <div id="aiAnswer" class="hidden mt-6 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 font-medium shadow-sm">
-      <!-- Svaret fra AI kommer her -->
-    </div>
+    <!-- Her kommer svarene som chat -->
+    <div id="aiChat" class="mt-8 space-y-4"></div>
   </div>
 </section>
-
 <script>
   const form = document.getElementById("aiForm");
   const input = document.getElementById("aiQuestion");
@@ -536,6 +533,34 @@
   </section>
 
   
-  </script>
+ <script>
+  const form = document.getElementById('aiForm');
+  const input = document.getElementById('aiQuestion');
+  const chat = document.getElementById('aiChat');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const question = input.value.trim();
+    if (!question) {
+      alert("Skriv inn et spørsmål først.");
+      return;
+    }
+
+    // Brukerens melding
+    const userBubble = document.createElement('div');
+    userBubble.className = "bg-emerald-100 p-3 rounded-xl self-end text-right";
+    userBubble.innerText = question;
+    chat.appendChild(userBubble);
+
+    // AI sitt demo-svar
+    const aiBubble = document.createElement('div');
+    aiBubble.className = "bg-white border p-3 rounded-xl shadow";
+    aiBubble.innerText = "AI-svar (demo): Det høres ut som en situasjon med barnevernet. Du har rett til å be om skriftlig begrunnelse og kan kontakte en advokat.";
+    chat.appendChild(aiBubble);
+
+    input.value = "";
+    chat.scrollTop = chat.scrollHeight;
+  });
+</script>
 </body>
 </html>
