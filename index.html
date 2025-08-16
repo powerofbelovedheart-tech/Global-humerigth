@@ -267,32 +267,41 @@
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl font-extrabold">Spør AI om rettigheter</h2>
 
-   <form id="aiForm" class="mt-6 flex gap-2">
-  <input id="aiQuestion"
-         class="flex-1 rounded-xl border px-4 py-3"
-         placeholder="Skriv situasjonen din … f.eks. ‘Barnevernet banker på døra uanmeldt’"
-         required />
-  <button type="submit"
-          class="rounded-xl bg-emerald-600 text-white px-5 py-3 font-semibold hover:bg-emerald-700">
-    Spør
-  </button>
-</form>
+    <form id="aiForm" class="mt-6 flex gap-2">
+      <input id="aiQuestion"
+             class="flex-1 rounded-xl border px-4 py-3"
+             placeholder="Skriv situasjonen din … f.eks. ‘Barnevernet banker på døra uanmeldt’" />
+      <button type="submit"
+              class="rounded-xl bg-emerald-600 text-white px-5 py-3 font-semibold hover:bg-emerald-700">
+        Spør
+      </button>
+    </form>
 
-<!-- Nytt: svar-boks -->
-<div id="aiAnswer"
-     class="mt-6 hidden rounded-xl border bg-white p-4 text-sm text-gray-800"></div>
-<p class="mt-3 text-xs text-gray-500">
-  Demo: viser et forslag basert på teksten din. Senere kobler vi til ekte AI-svar.
-</p>
-
-    <div id="aiAnswer"
-         class="mt-4 text-sm text-gray-800 hidden bg-white border border-gray-100 rounded-xl p-4"></div>
-
-    <p class="mt-3 text-xs text-gray-500">
-      Demo: viser spørsmålet tilbake. Senere kobler vi til ekte AI-svar.
-    </p>
+    <!-- AI Svar-boks -->
+    <div id="aiAnswer" class="hidden mt-6 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 font-medium shadow-sm">
+      <!-- Svaret fra AI kommer her -->
+    </div>
   </div>
 </section>
+
+<script>
+  const form = document.getElementById("aiForm");
+  const input = document.getElementById("aiQuestion");
+  const answerBox = document.getElementById("aiAnswer");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); 
+    const question = input.value.trim();
+
+    if (question.length === 0) {
+      answerBox.textContent = "⚠️ Skriv inn et spørsmål først.";
+    } else {
+      answerBox.textContent = "🤖 AI svarer: Dette er et eksempel på et svar til spørsmålet ditt: '" + question + "'";
+    }
+
+    answerBox.classList.remove("hidden");
+  });
+</script>
 
   <!-- Future Teacher -->
   <section id="future" class="py-20 bg-white border-t border-gray-100">
