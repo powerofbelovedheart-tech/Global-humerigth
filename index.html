@@ -85,11 +85,11 @@
     <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-white"></div>
     <section id="home" class="relative overflow-hidden">
   ...
-  <div class="mt-8 flex flex-wrap gap-3">   <!-- KNAPP-CONTAINEREN -->
-    <a href="#declaration" class="inline-flex ...">Les §13-erklæringen</a>
-    <a href="#projects" class="inline-flex ...">Utforsk prosjekter</a>
-    <button id="openModal" class="inline-flex ...">Åpne info-vindu</button>
-  </div>
+  <div class="mt-8 flex flex-col gap-3">
+  <a href="#declaration" class="btn btn-primary">Les §13-erklæringen</a>
+  <a href="#projects" class="btn btn-outline">Utforsk prosjekter</a>
+  <button id="openModal" class="btn btn-outline">Åpne info-vindu</button>
+</div>
   ...
 </section>
     <svg class="absolute -right-20 -top-20 w-[500px] h-[500px] opacity-20" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="var(--accent)" d="M50.3,-56.8C64.5,-44.6,74.1,-26.1,75.9,-7.1C77.7,11.8,71.7,31.1,59.6,44.7C47.6,58.2,29.5,66.2,10.9,69.5C-7.8,72.8,-27,71.4,-42.2,62.4C-57.4,53.3,-68.6,36.7,-72.1,18.4C-75.6,0.1,-71.5,-20,-60.9,-34.7C-50.2,-49.4,-33,-58.7,-14.5,-63.3C4,-68,23.8,-68.9,50.3,-56.8Z" transform="translate(100 100)" /></svg>
@@ -394,5 +394,11 @@
     // Åpne automatisk hvis hash = #info
     if(location.hash === '#info'){ openModal(); }
   </script>
+  <footer ...>
+  ...
+  <div class="mt-4">
+    <a href="#contact" class="btn btn-outline">Kontakt</a>
+  </div>
+</footer>
 </body>
 </html>
