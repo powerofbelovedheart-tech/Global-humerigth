@@ -17,3 +17,19 @@
   // Årstall footer
   document.getElementById('y')?.append(new Date().getFullYear());
 </script>
+// Demo for "Spør AI"
+const aiForm = document.getElementById('aiForm');
+if (aiForm) {
+  aiForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const q = document.getElementById('aiQuestion').value.trim();
+    const box = document.getElementById('aiAnswer');
+    if (!q) { box.classList.add('hidden'); return; }
+
+    box.innerHTML = `
+      <p><strong>Du spurte:</strong> ${q}</p>
+      <p class="mt-2">⚡️ Demo-svar: Her vil du få kort forklaring, relevante paragrafer og forslag til setninger du kan bruke.
+      Inntil videre viser vi spørsmålet tilbake.</p>`;
+    box.classList.remove('hidden');
+  });
+}
