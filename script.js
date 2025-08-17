@@ -1,3 +1,6 @@
+const form = document.getElementById("aiForm");
+const chat = document.getElementById("chat");
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const question = document.getElementById("aiQuestion").value;
